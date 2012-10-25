@@ -3,7 +3,6 @@ NTNU Subjects
 
 
 Subjects
-========
 
-*tdt4150 - Advance Databases
+* tdt4150 - Advance Databases
 
