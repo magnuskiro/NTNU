@@ -1,2 +1,18 @@
+
+# Folders
 runtime-EclipseApplication/
+
+
 *.log
+
+# java compile files
+*.class
+*/target/*
+
+# Package Files 
+*.jar
+*.war
+*.ear
+
+# IntelliJ Idea
+*/.idea/*

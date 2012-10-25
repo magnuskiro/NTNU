@@ -1,0 +1,171 @@
+# Task 1:
+    * Short Overview:
+        Lucene is a text indexing and searching tool widely used in search engines and for single site searching.
+        It uses Documents and with Fields of text to represent data. This makes it independent for file formats.
+    * Fundamental concepts of Lucene:
+        Lucene only cares about string when it comes to searching and indexing. Lucene breaks documents words, and then builds an index for each word.
+    * Usage of Document:
+        A Lucene Document is a record in the index. A Document has a list of fields; each field has a name and a textual value.
+        Which basically says that a Document is a piece of data in compiled heap of data that is created with Lucene.
+    * Usage of Field:
+        A Field is one part of a Document. The field contains data about the Document.
+        Typical use of a Field is to indicate and store content i a Document.
+
+# Task 2: Indexing
+    * Steps involved in indexing, according to the source file:
+    ** main
+        get path from input arguments.
+        initialise analyser
+        initialise index writer config
+        set open mode for index writer config
+        initialise the index writer
+        run indexDocs with the index writer and the path to documents to be indexed.
+
+    ** indexDocs
+        for all files in given path
+            create a Document
+            assign a path for the document
+            add last modified value.
+            add file content to document
+            the we write the index.
+
+    * Console output:
+    Indexing to directory 'index'...
+    adding /home/kiro/ntnu/tdt4117/ex2/apple/doc7.txt
+    adding /home/kiro/ntnu/tdt4117/ex2/apple/doc2.txt
+    adding /home/kiro/ntnu/tdt4117/ex2/apple/doc5.txt
+    adding /home/kiro/ntnu/tdt4117/ex2/apple/doc10.txt
+    adding /home/kiro/ntnu/tdt4117/ex2/apple/doc6.txt
+    adding /home/kiro/ntnu/tdt4117/ex2/apple/doc8.txt
+    adding /home/kiro/ntnu/tdt4117/ex2/apple/doc3.txt
+    adding /home/kiro/ntnu/tdt4117/ex2/apple/doc1.txt
+    adding /home/kiro/ntnu/tdt4117/ex2/apple/doc9.txt
+    adding /home/kiro/ntnu/tdt4117/ex2/apple/doc4.txt
+    327 total milliseconds
+
+# Task 3: Searching
+    * What query model is used here? Do returned documents contain all query terms together (AND) or are all documents containing any of them returned (OR)?
+        The results indicate that the query model is OR.
+        As seen in query2(apple grape), document 9 is returned as a match, while document 9 doesn't contain apple as a word.
+
+    * Console output:
+    ** apple
+        Searching for: apple
+        7 total matching documents
+        1. /home/kiro/ntnu/tdt4117/ex2/apple/doc7.txt
+        2. /home/kiro/ntnu/tdt4117/ex2/apple/doc2.txt
+        3. /home/kiro/ntnu/tdt4117/ex2/apple/doc4.txt
+        4. /home/kiro/ntnu/tdt4117/ex2/apple/doc10.txt
+        5. /home/kiro/ntnu/tdt4117/ex2/apple/doc3.txt
+        6. /home/kiro/ntnu/tdt4117/ex2/apple/doc1.txt
+        7. /home/kiro/ntnu/tdt4117/ex2/apple/doc5.txt
+        Press (q)uit or enter number to jump to a page.
+    ** apple grape
+        Searching for: apple grape
+        8 total matching documents
+        1. /home/kiro/ntnu/tdt4117/ex2/apple/doc2.txt
+        2. /home/kiro/ntnu/tdt4117/ex2/apple/doc10.txt
+        3. /home/kiro/ntnu/tdt4117/ex2/apple/doc3.txt
+        4. /home/kiro/ntnu/tdt4117/ex2/apple/doc5.txt
+        5. /home/kiro/ntnu/tdt4117/ex2/apple/doc9.txt
+        6. /home/kiro/ntnu/tdt4117/ex2/apple/doc7.txt
+        7. /home/kiro/ntnu/tdt4117/ex2/apple/doc4.txt
+        8. /home/kiro/ntnu/tdt4117/ex2/apple/doc1.txt
+        Press (q)uit or enter number to jump to a page.
+    ** apple grape melon
+        Searching for: apple grape melon
+        10 total matching documents
+        1. /home/kiro/ntnu/tdt4117/ex2/apple/doc10.txt
+        2. /home/kiro/ntnu/tdt4117/ex2/apple/doc3.txt
+        3. /home/kiro/ntnu/tdt4117/ex2/apple/doc5.txt
+        4. /home/kiro/ntnu/tdt4117/ex2/apple/doc2.txt
+        5. /home/kiro/ntnu/tdt4117/ex2/apple/doc9.txt
+        6. /home/kiro/ntnu/tdt4117/ex2/apple/doc1.txt
+        7. /home/kiro/ntnu/tdt4117/ex2/apple/doc4.txt
+        8. /home/kiro/ntnu/tdt4117/ex2/apple/doc7.txt
+        9. /home/kiro/ntnu/tdt4117/ex2/apple/doc6.txt
+        10. /home/kiro/ntnu/tdt4117/ex2/apple/doc8.txt
+        Press (q)uit or enter number to jump to a page.
+
+# Task 4:
+    * Explain given code snippet:
+        instantiate a BooleanQuery
+        tokenize the search string
+        create a TermQuery for all tokens in the search string
+        add the TermQuery to the BooleanQuery.
+
+    * What type of boolean query is processed by this code?
+        This code processes an AND query, where the document has to contain all search terms to be a match.
+
+    * Console output, unchanged:
+        ** apple
+            Searching for: +apple
+            7 total matching documents
+            1. /home/kiro/ntnu/tdt4117/ex2/apple/doc7.txt
+            2. /home/kiro/ntnu/tdt4117/ex2/apple/doc2.txt
+            3. /home/kiro/ntnu/tdt4117/ex2/apple/doc4.txt
+            4. /home/kiro/ntnu/tdt4117/ex2/apple/doc10.txt
+            5. /home/kiro/ntnu/tdt4117/ex2/apple/doc3.txt
+            6. /home/kiro/ntnu/tdt4117/ex2/apple/doc1.txt
+            7. /home/kiro/ntnu/tdt4117/ex2/apple/doc5.txt
+            Press (q)uit or enter number to jump to a page.
+        ** apple grape
+            Searching for: +apple +grape
+            4 total matching documents
+            1. /home/kiro/ntnu/tdt4117/ex2/apple/doc2.txt
+            2. /home/kiro/ntnu/tdt4117/ex2/apple/doc10.txt
+            3. /home/kiro/ntnu/tdt4117/ex2/apple/doc3.txt
+            4. /home/kiro/ntnu/tdt4117/ex2/apple/doc5.txt
+            Press (q)uit or enter number to jump to a page.
+        ** apple grape melon
+            Searching for: +apple +grape +melon
+            3 total matching documents
+            1. /home/kiro/ntnu/tdt4117/ex2/apple/doc10.txt
+            2. /home/kiro/ntnu/tdt4117/ex2/apple/doc3.txt
+            3. /home/kiro/ntnu/tdt4117/ex2/apple/doc5.txt
+            Press (q)uit or enter number to jump to a page.
+
+    * Changes to the source code: (line 103)
+    ** before:
+        query.add(tq, BooleanClause.Occur.MUST);
+    ** after:
+        query.add(tq, BooleanClause.Occur.SHOULD);
+
+    * Console output, OR queries:
+        ** apple
+            Searching for: apple
+            7 total matching documents
+            1. /home/kiro/ntnu/tdt4117/ex2/apple/doc7.txt
+            2. /home/kiro/ntnu/tdt4117/ex2/apple/doc2.txt
+            3. /home/kiro/ntnu/tdt4117/ex2/apple/doc4.txt
+            4. /home/kiro/ntnu/tdt4117/ex2/apple/doc10.txt
+            5. /home/kiro/ntnu/tdt4117/ex2/apple/doc3.txt
+            6. /home/kiro/ntnu/tdt4117/ex2/apple/doc1.txt
+            7. /home/kiro/ntnu/tdt4117/ex2/apple/doc5.txt
+            Press (q)uit or enter number to jump to a page.
+        ** apple grape
+            Searching for: apple grape
+            8 total matching documents
+            1. /home/kiro/ntnu/tdt4117/ex2/apple/doc2.txt
+            2. /home/kiro/ntnu/tdt4117/ex2/apple/doc10.txt
+            3. /home/kiro/ntnu/tdt4117/ex2/apple/doc3.txt
+            4. /home/kiro/ntnu/tdt4117/ex2/apple/doc5.txt
+            5. /home/kiro/ntnu/tdt4117/ex2/apple/doc9.txt
+            6. /home/kiro/ntnu/tdt4117/ex2/apple/doc7.txt
+            7. /home/kiro/ntnu/tdt4117/ex2/apple/doc4.txt
+            8. /home/kiro/ntnu/tdt4117/ex2/apple/doc1.txt
+            Press (q)uit or enter number to jump to a page.
+        ** apple grape melon
+            Searching for: apple grape melon
+            10 total matching documents
+            1. /home/kiro/ntnu/tdt4117/ex2/apple/doc10.txt
+            2. /home/kiro/ntnu/tdt4117/ex2/apple/doc3.txt
+            3. /home/kiro/ntnu/tdt4117/ex2/apple/doc5.txt
+            4. /home/kiro/ntnu/tdt4117/ex2/apple/doc2.txt
+            5. /home/kiro/ntnu/tdt4117/ex2/apple/doc9.txt
+            6. /home/kiro/ntnu/tdt4117/ex2/apple/doc1.txt
+            7. /home/kiro/ntnu/tdt4117/ex2/apple/doc4.txt
+            8. /home/kiro/ntnu/tdt4117/ex2/apple/doc7.txt
+            9. /home/kiro/ntnu/tdt4117/ex2/apple/doc6.txt
+            10. /home/kiro/ntnu/tdt4117/ex2/apple/doc8.txt
+            Press (q)uit or enter number to jump to a page.
