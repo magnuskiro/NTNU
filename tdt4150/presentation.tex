@@ -74,6 +74,8 @@
 \author{Magnus Kirø}
 \date{\scriptsize Norwegian University of Science and Technology \\ \vspace{.10cm} \today }
 
+
+% here begins the presentation content. 
 \begin{document}
 
 \frame{
@@ -81,51 +83,28 @@
 }
 
 \section[Outline]{}
+\subsection*{}
+
+%\subsection{Overview}
+\frame{\frametitle{Presentation Goals}
+The purpose of paper is to consider MapReduce and a regular Database Management Systems for large-scale data analysis. 
+
+\vspace{0.25cm}
+\begin{enumerate}
+	\item \textbf{Parallel DBMS} and \textbf{MR}, two approaches to large-scale data analysis.  
+\vspace{0.25cm}
+	\item Thee \textbf{Architectural Elements} of DBMS and MR.
+\vspace{0.25cm}
+	\item Outlinei of \textbf{Benchmark Results} and \textbf{Best Practice} for large-scale data analysis.
+\end{enumerate}
+}
+
 \frame{\tableofcontents}
 
-\section{General overview of the project}
-\subsection{Aims}
-\frame{\frametitle{Aims}
-The \textbf{general aims} of our research project can be summarised in the following points:
-\vspace{0.25cm}
-\begin{enumerate}
-\item Track \textbf{trends} on the Web by applying Machine Learning methods (track expresses the notions of infer or predict as well)
-\vspace{0.25cm}
-\item Extend current or invent new \textbf{methodologies} (where and if needed) for accomplishing our primary aim
-\vspace{0.25cm}
-\item Build \textbf{tools} that apply the experimental/theoretical results in real and large-scale applications (featured research)
-\end{enumerate}
-}
 
-\subsection{Being more specific}
-\frame{\frametitle{Being more specific}
-\begin{enumerate}
-\item \textbf{Trends} about what? Examples?
-      \begin{itemize}
-        \item Predict flu rates (\emph{epidemics})
-        \item Infer vote intensions (\emph{politics})
-        \item Infer traffic/weather conditions (\emph{toy problems})\pause
-      \end{itemize}
-\vspace{0.25cm}
-\item \textbf{Methodologies}?
-      \begin{itemize}
-        \item Feature extraction/selection
-        \item Exploit probabilistic relationships (PGMs)
-        \item Regression/classification/ranking scenarios
-        \item Active learning\pause
-      \end{itemize}
-\vspace{0.25cm}
-\item \textbf{Applications}?
-      \begin{itemize}
-        \item Back-end infrastructure for data collection/retrieval/mining
-        \item Real time online tools for making and displaying predictions (like the \href{http://geopatterns.enm.bris.ac.uk/epidemics/}{\textbf{Flu detector}})
-      \end{itemize}
-\end{enumerate}
-}
-
-\section{Last 6 months}
-\subsection{P1: Tracking the flu pandemic by monitoring the Social Web}
-\frame{\frametitle{P1 - Summary (1 of 3)}
+\section{Two Approaches} % - to large scale data analysis. 
+\subsection{DBMS}
+\frame{\frametitle{Database Management System}
 {\footnotesize
 \begin{tabbing}
 Title: \hspace{1.25cm} \= \textbf{Tracking the flu pandemic by monitoring the Social Web}\\
@@ -144,7 +123,7 @@ Submitted to:          \> IAPR Cognitive Information Processing 2010 (accepted)
 \end{itemize}
 }
 
-\frame{\frametitle{P1 - Summary (2 of 3)}
+\frame{\frametitle{DBMS - }
 
 \textbf{Validation} schemes:
     \begin{enumerate}
@@ -176,7 +155,7 @@ Submitted to:          \> IAPR Cognitive Information Processing 2010 (accepted)
     \end{enumerate}
 }
 
-\frame{\frametitle{P1 - Summary (3 of 3)}
+\frame{\frametitle{DBMS - hei}
 \begin{enumerate}
 \item Inferred vs Official flu rate in North England\\
 \centering \includegraphics[scale=.5]{figures/Lasso_Inference_regionC_NEng.pdf}
@@ -187,8 +166,8 @@ Submitted to:          \> IAPR Cognitive Information Processing 2010 (accepted)
 \end{enumerate}
 }
 
-\subsection{P2: Flu detector - Tracking epidemics on Twitter}
-\frame{\frametitle{P2 - Summary}
+\subsection{Map Reduce}
+\frame{\frametitle{MR - }
 {\footnotesize
 \begin{tabbing}
 Title: \hspace{1.25cm} \= \textbf{Flu detector - Tracking epidemics on Twitter}\\
@@ -207,19 +186,9 @@ Submitted to:          \> ECML PKDD 2010 Demos (under review)
 \end{itemize}
 }
 
-\subsection{Other activities}
-\frame{\frametitle{Other activities}
-\begin{itemize}
-\item Studied/implemented the necessary statistical tools and algorithms (in MATLAB or Java)
-\item Extended further the infrastructure for conducting large scale experiments and data retrieval on demand
-\item TA for Intro to AI, Data Analysis and Pattern Analysis \& Statistical Learning
-\item Attended some of the ISL meetings and seminars
-\end{itemize}
-}
-
-\section{Next 6 months}
-\subsection{General goals \& activities}
-\frame{\frametitle{General goals \& activities}
+\section{Architectural Elements} % trade-offs in architectures. 
+\subsection{Schema Support}
+\frame{\frametitle{Schema Support}
 \begin{enumerate}
 \item ... (content omitted)
 \item ... (content omitted)
@@ -228,21 +197,82 @@ Submitted to:          \> ECML PKDD 2010 Demos (under review)
 \end{enumerate}
 }
 
-\subsection{A more time specific tentative plan}
+\subsection{Indexing}
+\frame{\frametitle{Indexing}
+\begin{enumerate}
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\end{enumerate}
+}
+
+\subsection{Programming Model}
+\frame{\frametitle{Programming Model}
+\begin{enumerate}
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\end{enumerate}
+}
+
+\subsection{Data Distribution}
+\frame{\frametitle{Data Distribution}
+\begin{enumerate}
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\end{enumerate}
+}
+
+\subsection{Execution Strategy}
+\frame{\frametitle{Execution Strategy}
+\begin{enumerate}
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\end{enumerate}
+}
+
+\subsection{Flexibility}
+\frame{\frametitle{Flexibility}
+\begin{enumerate}
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\end{enumerate}
+}
+
+\subsection{Fault Tolerance}
+\frame{\frametitle{Fault Tolerance}
+\begin{enumerate}
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\end{enumerate}
+}
+
+\section{Results}
+\subsection{Benchmark Results}
 \frame{\frametitle{A more time specific tentative plan}
-\begin{itemize}
-\item In \textbf{June}: ... (content omitted)
-\item In \textbf{July}: ... (content omitted)
-\item In \textbf{August}: ... (content omitted)
-\item In \textbf{September - November}: ... (content omitted)
-\end{itemize}
+
+}
+
+\subsection{Best Practice}
+\frame{\frametitle{A more time specific tentative plan}
+
 }
 
 \section*{}
 \frame{
     \begin{center}
         \huge
-        This is the last slide.\\ \pause
+        This is the last slide.\\
         \vspace{1cm}
         Any questions?
     \end{center}
