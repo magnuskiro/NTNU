@@ -2,6 +2,9 @@
 % 26/05/2010
 % edited by Bill Lampos
 %
+% 25.10.2012
+% Edited by Magnus Kirø
+%
 % Feel free to use (copy) the structure (latex formatting source code)
 % but not the content of this document.
 %
@@ -95,7 +98,7 @@ The purpose of paper is to consider MapReduce and a regular Database Management 
 \vspace{0.25cm}
 	\item Thee \textbf{Architectural Elements} of DBMS and MR.
 \vspace{0.25cm}
-	\item Outlinei of \textbf{Benchmark Results} and \textbf{Best Practice} for large-scale data analysis.
+	\item Outline of \textbf{Benchmark Results} and \textbf{Best Practice} for large-scale data analysis.
 \end{enumerate}
 }
 
@@ -103,90 +106,38 @@ The purpose of paper is to consider MapReduce and a regular Database Management 
 
 
 \section{Two Approaches} % - to large scale data analysis. 
-\subsection{DBMS}
-\frame{\frametitle{Database Management System}
-{\footnotesize
-\begin{tabbing}
-Title: \hspace{1.25cm} \= \textbf{Tracking the flu pandemic by monitoring the Social Web}\\
-Authors:               \> V. Lampos and N. Cristianini\\
-Submitted to:          \> IAPR Cognitive Information Processing 2010 (accepted)
-\end{tabbing}
-}
+\subsection{MR vs DBMS}
+\frame{\frametitle{MR vs DBMS}
+
 \begin{itemize}
-\item Twitter and Health Protection Agency data for weeks 26-49, 2009 (on average 160,000 tweets collected per day geolocated in 54 urban centres in the UK)
-\item Frequency of \textbf{41 flu related words} (markers) in Twitter corpus had a correlation of $>$\textbf{80\%} with the HPA flu rates in all UK regions
-\item Learn a better list of weighted markers \textbf{automatically}:
-    \begin{itemize}
-    \item Generate a list of candidate markers (1560 words taken from flu related web pages)
-    \item Use \textbf{LASSO} for feature selection
-    \end{itemize}
+	\item MR
+		\begin{itemize}
+			\item Only two Functions:
+			% todo say
+			\begin{itemize}
+				\item \textbf{Map}
+				% todo say
+				\item \textbf{Reduce}
+				% todo say
+			\end{itemize}	
+
+			\item Data is stored in a distributed file system on the node. 
+			% todo say
+
+		\end{itemize}
+
+	\item BDMS
+		\begin{itemize}
+			\item Tables are partitioned across nodes
+			% todo 
+			\item Query optimizer, that translates SQL to a query plan. execution of the query plan is divided among multiple nodes.
+			% todo
+			\item underlying storage details can be disregarded by the programmers.
+			% todo 
+		\end{itemize}
 \end{itemize}
 }
 
-\frame{\frametitle{DBMS - }
-
-\textbf{Validation} schemes:
-    \begin{enumerate}
-    \item Train on one region, validate regularisation parameter on another, test on the remaining regions (for all possible combinations)
-
-    \begin{table}[!t]
-    \tiny
-    \renewcommand{\arraystretch}{1}
-    \centering
-    \begin{tabular}{cccccc}
-    \hline
-    Train/Validate (regions) & \textbf{A} & \textbf{B}      & \textbf{C} & \textbf{D}       & \textbf{E}     \\\hline
-    \textbf{A}     & -          & 0.9594          & 0.9375     & 0.9348           & 0.9297         \\%\hline
-    \textbf{B}     & 0.9455     & -               & 0.9476     & 0.9267           & 0.9003         \\%\hline
-    \textbf{C}     & 0.9154     & 0.9513          & -          & 0.8188           & 0.908          \\%\hline
-    \textbf{D}     & 0.9463     & 0.9459          & 0.9424     & -                & 0.9337         \\%\hline
-    \textbf{E}     & 0.8798     & 0.9506          & 0.9455     & 0.8935           & -              \\\hline
-    &              &            &\multicolumn{2}{c}{Total Avg.}                   & \textbf{0.9256}\\\cline{4-6}
-    \end{tabular}
-    \end{table}
-
-    \begin{spacing}{0.5}{
-    \textbf{97 selected words}\tiny : lung, unwel, temperatur, like, headach, season, unusu, chronic, child, dai, appetit, stai, symptom, spread, diarrhoea, start, muscl, weaken, immun, feel, liver, plenti, antivir, follow,
-    sore, peopl, nation, small, pandem, pregnant, thermomet, bed, loss, heart, mention, condit, ...
-    }
-    \end{spacing}
-
-    \item Aggregate data from all regions, test on weeks 28 and 41 (2009) and train using the rest of the data set
-    \end{enumerate}
-}
-
-\frame{\frametitle{DBMS - hei}
-\begin{enumerate}
-\item Inferred vs Official flu rate in North England\\
-\centering \includegraphics[scale=.5]{figures/Lasso_Inference_regionC_NEng.pdf}
-
-\item Inferred vs Official rates in all regions (aggregated data set)\\
-\centering \includegraphics[scale=.5]{figures/Lasso_Inference_Aggregate_IMPROVED.pdf}
-
-\end{enumerate}
-}
-
-\subsection{Map Reduce}
-\frame{\frametitle{MR - }
-{\footnotesize
-\begin{tabbing}
-Title: \hspace{1.25cm} \= \textbf{Flu detector - Tracking epidemics on Twitter}\\
-Authors:               \> V. Lampos, T. De Bie, and N. Cristianini\\
-Submitted to:          \> ECML PKDD 2010 Demos (under review)
-\end{tabbing}
-}
-
-\begin{itemize}
-\item Extending and making more robust the methodology of P1
-\item Larger data sets (bigger time series) and more (2675) \href{http://geopatterns.enm.bris.ac.uk/epidemics/files/candidate_features.txt}{candidate features}
-\item Select a list of features (markers) using BoLASSO (bootstrap version of LASSO)
-\item Then learn weights of those markers via linear least squares regression
-\item Stricter evaluation of the methodology - \href{http://geopatterns.enm.bris.ac.uk/epidemics/twitter-flu-eval.php}{\textbf{Available online}}
-\item Put all this into practice and come up with the \href{http://geopatterns.enm.bris.ac.uk/epidemics/}{\textbf{Flu detector}}
-\end{itemize}
-}
-
-\section{Architectural Elements} % trade-offs in architectures. 
 \subsection{Schema Support}
 \frame{\frametitle{Schema Support}
 \begin{enumerate}
@@ -259,13 +210,65 @@ Submitted to:          \> ECML PKDD 2010 Demos (under review)
 
 \section{Results}
 \subsection{Benchmark Results}
-\frame{\frametitle{A more time specific tentative plan}
-
+\frame{\frametitle{Benchmark Results}
+\begin{enumerate}
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\end{enumerate}
 }
 
 \subsection{Best Practice}
-\frame{\frametitle{A more time specific tentative plan}
+\frame{\frametitle{Best Practice}
+\begin{enumerate}
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\end{enumerate}
+}
 
+\section{Discussion}
+\subsection{Pros'n Cons}
+\frame{\frametitle{MR vs DBMS}
+The different setups have different strong points. 
+\begin{enumerate}
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\end{enumerate}
+}
+
+\subsection{Drawbacks}
+\frame{\frametitle{Drawbacks}
+\begin{enumerate}
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\end{enumerate}
+}
+
+\subsection{Related Topics}
+\frame{\frametitle{Related Topics}
+\begin{enumerate}
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\end{enumerate}
+}
+
+\section{Conclusion}
+\frame{\frametitle{A more time specific tentative plan}
+\begin{enumerate}
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\item ... (content omitted)
+\end{enumerate}
 }
 
 \section*{}
