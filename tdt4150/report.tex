@@ -1,0 +1,223 @@
+\documentclass[11pt, a4paper]{article}
+\title{A Comparison of Approaches \\ to Large-Scale Data Analysis}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[pdfborder=0 0 0]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+
+% hides the section numbering. 
+\setcounter{secnumdepth}{-1} 
+
+\DeclareGraphicsExtensions{.pdf, .png, .jpg, .jpeg}
+\graphicspath{{./images/}}
+
+\author{
+        Magnus L Kirø 
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+\pagenumbering{arabic}
+
+\begin{abstract}
+This is the paper's abstract \ldots
+\end{abstract}
+
+\section{Two Approaches} % - to large scale data analysis. 
+\subsection{Map Reduce (MR)}
+MapReduce(MR) is a techneque to store data i a base. It has two functions. Map and Reduce. 
+This makes MR simple. The simplicity is what makes MR attractive. 
+Basically it's like throwing data in a bucket and read it when needed. 
+
+The mapping cunction, \textbf{Map}, map the data into files that are stored in the underlying distributed file system. 
+The reducing function, \textbf{Reduce}, compiles the output data from a mapping function to creata a combined result to a query. 
+The two functions has to be implemented by the eveloper. This is one of the negative points about MR. 
+
+\subsection{Parallel Database Management System (DBMS)}
+\begin{enumerate}
+	\item Tables are partitioned across nodes
+	\item Query optimizer, that translates SQL to a query plan. Execution of the query plan is divided among multiple nodes.
+	\item Underlying storage details can be disregarded by the programmers.
+\end{enumerate}
+}
+
+\subsection{Schema Support}
+\begin{enumerate}
+\item MR does not have Schema support. Manual data integrity enforcement is required.  
+\item DBMS has Schema support. Data integrity is automatically enforced by the schema. 
+\end{enumerate}
+}
+
+\subsection{Indexing}
+\begin{enumerate}
+\item MR does not have inbuildt indexing. Again the programmer has to implement it, if the functionality is wanted. 
+\item DBMS provides indexing. 
+\end{enumerate}
+}
+
+\subsection{Programming Model}
+\begin{enumerate}
+\item MR, Codasyl style, provide an algorithm to get the data you want.  
+\item DBMS, Relational style, state what you want. 
+\end{enumerate}
+}
+
+\subsection{Data Distribution}
+\begin{enumerate}
+\item MR: get all documents, then compute the result. 
+\item DBMS: distributes code to all nodes, the nodes compute partial answers, answers are combined into the result. 
+\end{enumerate}
+}
+
+\subsection{Execution Strategy}
+\begin{enumerate}
+\item MR: Pull data. Nodes*Maps files - potentially a severe performance problem.  
+\item DBMS: Push data.
+\end{enumerate}
+}
+
+\subsection{Flexibility}
+\begin{enumerate}
+\item MR has the most flexibility. You can do nearly whatevery you want. But you have to enforce your own rules. 
+\item DBMS is strict and limited, but comes with great support after a long development time and lots of use. 
+\end{enumerate}
+}
+
+\subsection{Fault Tolerance}
+\begin{enumerate}
+\item MR: Node crash - task is recheduled to another node. Only that subtask is lost in computing time. 
+\item DBMS: Node crash - the whole transaction has to be restarted. Might be very expensive. 
+\end{enumerate}
+}
+
+
+\section{Benchmark}
+\subsection{Environment}
+\begin{enumerate}
+\item Hadoop, DBMS-X and Vertica. 
+\item Hadoop whitout compression. The rest with.  
+\item Task execution: Each task was executed three times. 
+\item All systems was optimized for the tasks given.
+\end{enumerate}
+}
+
+\subsection{Grep Task}
+\begin{enumerate}
+\item Scan all files for a string pattern.  
+\item 100byte records, 10byte key, 90 byte random data. once in every 10.000 records. 
+\item Hadoop: Command line to copy data to FS. Significant startup cost. 
+\item DBMS: Hash aware load data. 
+\item Vertica: Provides a copy cmd. 
+\end{enumerate}
+}
+
+\subsection{Selection Task}
+\begin{enumerate}
+\item 36.000 data records per file on each node. 
+\item Hadoop: Fisnishes so quickly that a torrent of controll messages increases the total execution time. 
+\item Again Hadoop is outperformed by the other two. 
+ 
+\end{enumerate}
+}
+
+\subsection{Aggregation Task}
+\begin{enumerate}
+\item Task: calculate total revenue by IP. 
+\item Produces 2.5 million records(53MB) and 2.000 records(24KB). 
+\item Vertica slows down. But does not read unnecessary data columns. 
+\item Hadoop: finds all elements of correct type, then sums up the results.  
+\end{enumerate}
+}
+
+\subsection{Join Task}
+\begin{enumerate}
+\item Task: Page rankings in a time period. 
+\item Complex MR program with three phases. 
+\item Reading and processing data is the most time consuming.  
+\end{enumerate}
+}
+
+\subsection{UDF Aggregation task}
+\begin{enumerate}
+\item Task: Counting links in documents.
+\item DBMS-X and Hadoop has close to constant execution time. 
+\item Result writing gets slower with increased number of nodes.  
+\end{enumerate}
+}
+
+\section{Discussion}
+\subsection{Install} 
+\begin{enumerate}
+\item Hadoop: Easy install, trial and error optimization. Task tuning. 
+\item DBMS-X: Straight forward install. But the configuration proved difficult. 
+\item Vertica: Quite easy install. But too automated tuinig capabilities. 
+\end{enumerate}
+}
+
+\subsection{Task Startup}
+\begin{enumerate}
+\item MR: 10 sec until the task is distributed. 25 sec for all nodes to start executing. 
+\item Hadoop reuse JVM reduced startup time by 10-15\%
+\item DBMS: startup time was one of the first things that was improved.
+\item Resent improvements (article from 2009). 
+\end{enumerate}
+}
+
+\subsection{Compression}
+\begin{enumerate}
+\item Both DBMS-X and Vertica worked better with data compression. 
+\item Hadoop worked better without compression. 
+\end{enumerate}
+}
+
+\subsection{Data Loading}
+\begin{enumerate}
+\item Hadoop was the best system to load and read data. 
+\item Hadoop was more CPU intensive. 
+\item DBMSs can reorganize data on load. 
+\end{enumerate}
+}
+
+\subsection{Exectuion Strategies}
+\begin{enumerate}
+\item Hadoops overhead messaging slowed it down. 
+\item DBMS data push strategy
+\item DBMS query plan. 
+\end{enumerate}
+}
+
+\subsection{Failure Models}
+\begin{enumerate}
+\item More HW = more failures. 
+\item MR is more tolerant to failure. 
+\item Sophisticated error recovery could improve performance. 
+\end{enumerate}
+}
+
+\subsection{Ease of Use}
+\begin{enumerate}
+\item MR(Hadoop) was easier to get up and running. Simple structure. But algorithms have to be implemented.  
+\item DBMS: might be easier to maintain later. Less data enforecement to do. 
+\end{enumerate}
+}
+
+\subsection{Additional Tools}
+\begin{enumerate}
+\item DBMS have a long history of development and have a lot of extrernal tools to use. 
+\item MR is still young so there is not to many tools available yet. 
+\end{enumerate}
+}
+
+\section{Conclusion}
+\subsection{Summary of solutions and drawbacks}
+\begin{enumerate}
+\item Small scale data analysis will work better with DBMSs. 
+\item Large scale data analysis today is way bigger then it was in 2009. 
+\item Hadoop and MR systems has room for improvement and will probably be improved over time. 
+\item Both architectures will probably remain, due to their different strenghts and areas of use. 
+\end{enumerate}
+
+\end{document}
