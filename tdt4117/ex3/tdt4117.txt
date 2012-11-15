@@ -1,0 +1,62 @@
+#Task 1.1
+By building the huffman tree we get that: 
+a=10000
+b=1001
+c=00000
+d=0001
+e=01
+f=001
+g=10001
+h=00001
+i=11
+l=101
+
+or sorted by bit length and value.
+00000=c
+00001=H
+10000=a
+10001=g
+0001=d
+1001=b
+001=f
+101=l
+01=e
+11=l
+
+Average code length would then be 3.8 bits per code. 
+When the frequency is equal for all letters we get an average code length of 3.4 bits per code. 
+
+the tree produces these codes: 
+0000=a
+0001=b
+0010=c
+0011=d
+100=E
+101=f
+110=g
+111=i
+010=h
+011=l
+
+#Task 1.2
+1110010100100001 can be broken into 7 parts:
+1,1,1,001,010,010,0001
+These codes can be found in the given table. 
+And the code is easily translated to: BBBQTTL
+
+To build the tree, we can easily start with a root node, add two edges assign 1 an 0 to the edges and se if we have a letter that fits one of the two possible leaf nodes. 
+If it fits, we assign the letter. If not, we create two new edges from the unassigned leaf node. And repeat until we have no letters left.
+Then we should have a full tree, without loose edges. 
+Then we can just traverse the tree for every number in the code and split the code for each leaf node we hit.
+The result is the split above. 
+
+#Task 2.1
+10 documents are indexed by Lucene. The fields indexed is path, contents and modified. Where path is the file location on the system, modified is the time of modification and contents is the terms indexed.
+
+#Task 2.2
+There are 20 terms of the modified type. Three in the contents type(apple, grape, melon). And 10 path terms. 
+
+#Task 2.3
+The document panel is divided into 4 main areas. "Browse by document number", "Browse by term", "Browse documents with this term" and overview of the selected document in the bottom half of the window. From the documents tab we can delete documents and browse documents based on the available fields. 
+
+See screen1.png.
