@@ -17,3 +17,10 @@ runtime-EclipseApplication/
 # IntelliJ Idea
 *.idea/
 *.iml
+
+# Eclipse hell
+*/eclipse/*
+.settings
+.metadata
+
+
