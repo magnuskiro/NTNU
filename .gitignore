@@ -7,7 +7,7 @@ runtime-EclipseApplication/
 
 # java compile files
 *.class
-*/target/*
+*target/
 
 # Package Files 
 *.jar
@@ -15,4 +15,5 @@ runtime-EclipseApplication/
 *.ear
 
 # IntelliJ Idea
-*/.idea/*
+*.idea/
+*.iml
