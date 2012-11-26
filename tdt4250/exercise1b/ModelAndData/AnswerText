@@ -1,0 +1,49 @@
+====Part1 (Describe the models conformity to these statements.)
+A: Actors that develop or have to relate to (parts of) the model. Can be persons or tools.
+    
+L: What can be expressed in the modeling language
+    
+M: What is expressed in the model
+
+D: What can be expressed about the domain (area of interest)
+
+K: The explicit knowledge of the participating persons
+
+I: What the persons in the audience interpret the model to say
+	The model can be interpreted as a stand-alone course overview model. 
+	A model that describes course dependencies, and the belonging exercise program. 
+	And the people connected to the course. 
+	 
+T: What relevant tools interpret the model to say
+
+G: The goals of the modeling
+
+====Part2
+	#improve the model(do changes to the ecore diagram, nothing else.)
+   		Updated with reference between person and answer. Group removed from answer.  
+	#Write a discussion about the possitive and negative sides of the changes to the model. 
+		The most obvious of the positive sides is that persons are linked to answers. 
+		So it's easier to go from a particular answer to a person. 
+		We also removed the group field in the answer because it's unnecessary. 
+		The group information should, if necessary at all, be stored in the person. 
+		The placement of a group field can be discussed widely as there is no best place to have it. 
+		A negative side is that we have a recursive reference model. 
+		You can go from one entity to another to another without going back to the previous one.  
+		Overall we think that the model conforms well with the quality framework, 
+		and provides a simple but sufficient model. 
+			
+
+===========TASK DESCRIPTION. 
+
+In this assignment, you are to evaluate the quality of the domain model you created in assignment 1. 
+Be aware that the model is expected to be used in a model-driven process, that means, 
+the model will be used for subsequent purposes, like data creation, DSL definition, 
+code generation and etc. Your tasks are: 
+
+1,  Use the SEQUAL model describing the different sets and  evaluate the quality of your 
+domain model in assignment 1 according to the   framework. Report this  in a text file.
+
+2,  Improve the domain model according to the findings in part 1. 
+You should export the project and submit the .zip file. 
+Indicate in the text file what changes has been done and how quality has been improved. 
+Discuss if this has gone on the account of other quality types, and the trade-off you have done in this regard.

@@ -1,0 +1,24 @@
+Title: "QA example"
+
+ID x "Are you ready"? yes!    
+
+Section ID A "Math"  try 3 times reveal correct answer
+{    
+ID a1 "What is 2 + 2"? 4! Next: a3 if 1 tries  
+ 
+ID a2 "What is 2 - 2"? 0! 
+	Candidates: 0, 1, 2
+	Next: b2 if 1 tries 
+	
+ID a3 "What is the square root of 2"? ="Math.sqrt(2)" +- 0.001!
+}
+
+Section ID B "Geography"
+{
+ID b1 "Where is Norway"? #3!
+	Candidates: "In the middle of somewhere", "In the middle of anywhere", "In the middle of nowhere"
+
+ID b2 "What is the capitol of Norway"? "Oslo"! 
+}    
+   
+         

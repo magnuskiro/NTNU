@@ -1,0 +1,47 @@
+grammar qa.xtext.Qa with org.eclipse.xtext.common.Terminals 
+
+import "platform:/resource/qa/model/qa.ecore" 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+QATest:
+'Title: ' title=EString
+(options = QAContainerOptions)?
+(parts += QAPart)*
+;
+
+QAContainerOptions: 
+	'try' maxTries = INT 'times' (revealAnswer ?= 'reveal' 'correct' 'answer')?
+;
+
+QAPart: Question | QASection;
+
+Answer:
+	TextAnswer | NumberAnswer | YesNoAnswer | OptionAnswer | ExpressionAnswer;
+
+Question:
+('ID' name=ID)? text = EString ('?'?)
+correct = Answer ('!'?)
+('Candidates' ':' candidates += Answer ( "," candidates += Answer)*)?
+(nextRules += NextRule)*
+;
+
+NextRule:
+	{NextRule} 'Next' ':' (next = [QAPart])? ('if' tries = INT 'tries')?
+;
+
+QASection:
+'Section' ('ID' name=ID)? title=EString 
+(options = QAContainerOptions)?
+'{'
+		(questions += Question)*
+'}';
+
+TextAnswer: text = EString;
+NumberAnswer: number = EDouble ('+-' epsilon = EDouble)?;
+YesNoAnswer: {YesNoAnswer} 'no' | yes?='yes';
+OptionAnswer: '#' optionNumber=EInt;
+ExpressionAnswer: '=' expression=EString ('+-' epsilon = EDouble)?;
+
+EString returns ecore::EString: STRING;
+EDouble returns ecore::EDouble: '-'? INT ('.' INT (('E'|'e') '-'? INT)?)?;
+EInt returns ecore::EInt: '-'? INT;
