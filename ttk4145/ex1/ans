@@ -1,0 +1,94 @@
+===Part1
+
+#What does "$<", "$^" and "$@" mean?
+$< variable evaluates to the first prerequisite in the first rule for this target
+
+$^ evaluates to the list of prerequisites of rules that have already occured for this target. 
+
+$@ evaluates to the filename of the target and the target member name. 
+
+
+#What does "$(shell find -name "*.c")" do?
+It creates a variable containing all the filenames that end with .c in the particular folder the makefile is executed. 
+
+#What is ".PHONY:"?
+Is a defualt command. So that when you run make clean clean is not found as a file, and the makefile will default to the .phony statement. 
+
+
+#What effect has the gcc-argument "-MMD, and how does it relate to the Makefile statement "include $(DEPS)"?
+-MMD tells the compiler to generate Makefile dependency-information as a side effect of compilation. This information is stored in a dependency file, which has the suffix ".d" The "include $(DEPS)" tells Make to include the generated dependency file
+
+
+#How does make determine which Makefile to use when "make" is run without arguments?
+The make command will look for one of these makefiles: "GNUmakefile", "makefile", "Makefile" and execute them if found, in that order.
+
+===Part3
+lynx:~$ svnadmin create ttk4145
+lynx:~$ ls
+Documents/  dokument/  eclipse/  public  public_html@  python/  temp/  ttk4145/  win/
+lynx:~$ cd ttk4145/
+lynx:~/ttk4145$ ls
+conf/  db/  format  hooks/  locks/  README.txt
+lynx:~/ttk4145$ cat readme
+cat: readme: No such file or directory
+lynx:~/ttk4145$ cat README.txt 
+This is a Subversion repository; use the 'svnadmin' tool to examine
+it.  Do not add, delete, or modify files here unless you know how
+to avoid corrupting the repository.
+
+Visit http://subversion.tigris.org/ for more information.
+lynx:~/ttk4145$ 
+
+dusken@dusken ~ $ svn checkout svn+ssh://kiro@lynx.stud.ntnu.no/home/shome/ki/kiro/ttk4145
+kiro@lynx.stud.ntnu.no's password: 
+kiro@lynx.stud.ntnu.no's password: 
+Checked out revision 0.
+dusken@dusken ~/ttk4145 $ nano readme
+dusken@dusken ~/ttk4145 $ cat readme 
+testings
+dusken@dusken ~/ttk4145 $ svn add readme 
+A         readme
+dusken@dusken ~/ttk4145 $ svn commit
+kiro@lynx.stud.ntnu.no's password: 
+Adding         readme
+Transmitting file data .svn: Commit failed (details follow):
+svn: File already exists: filesystem '/home/shome/ki/kiro/ttk4145/db', transaction '1-1', path '/readme'
+svn: Your commit message was left in a temporary file:
+svn:    '/home/dusken/ttk4145/svn-commit.tmp'
+
+magnuskiro@pegasus:~$ svn checkout svn+ssh://kiro@lynx.stud.ntnu.no/home/shome/ki/kiro/ttk4145
+The authenticity of host 'lynx.stud.ntnu.no (2001:700:300:7::21)' can't be established.
+DSA key fingerprint is a9:e8:8b:07:db:62:b6:bb:b0:9a:0d:f5:2a:3f:45:db.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'lynx.stud.ntnu.no,2001:700:300:7::21' (DSA) to the list of known hosts.
+kiro@lynx.stud.ntnu.no's password: 
+kiro@lynx.stud.ntnu.no's password: 
+Checked out revision 0.
+magnuskiro@pegasus:~/ttk4145$ nano readme
+magnuskiro@pegasus:~/ttk4145$ cat readme 
+This is going to be fun!
+magnuskiro@pegasus:~/ttk4145$ svn add readme 
+svn: warning: 'readme' is already under version control
+magnuskiro@pegasus:~/ttk4145$ svn commit 
+kiro@lynx.stud.ntnu.no's password: 
+Adding         readme
+Transmitting file data .
+Committed revision 1.
+
+dusken@dusken ~/ttk4145 $ svn update
+kiro@lynx.stud.ntnu.no's password: 
+Conflict discovered in 'readme'.
+Select: (p) postpone, (df) diff-full, (e) edit,
+        (mc) mine-conflict, (tc) theirs-conflict,
+        (s) show all options: e
+Select: (p) postpone, (df) diff-full, (e) edit, (r) resolved,
+        (mc) mine-conflict, (tc) theirs-conflict,
+        (s) show all options: r
+E    readme
+Updated to revision 1.
+dusken@dusken ~/ttk4145 $ cat readme 
+testings
+This is going to be fun!
+
+===Part4
+

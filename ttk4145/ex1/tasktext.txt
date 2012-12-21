@@ -1,0 +1,241 @@
+BASIC TOOLS
+This exercise will make you familiar with some basic programming tools, which are useful, but not directly relevant for your exam. These tools will hopefully be of help to future exercises and to the project.
+
+Information Sources
+Use the Internet actively when looking for information. You are not likely to be the first person in the world with your problem. Look for tutorials and how-to's.
+
+Use the manual ("man") whenever you want to know the syntax of a shell command or a C library function.
+
+For information on mapping your home directory, basic Linux commands etc., see the "Short Guide to Linux Programming".
+
+Spend some time on this exercise; it will make life easier later on.
+
+Part 1 - make and Makefile
+"make" is a tool that helps you compile and link your programs. Its main feature it that it saves compilation time by only re-compiling files that have changed since the last compile.
+
+"make" requires a Makefile to work. The Makefile lists the dependencies between files, and what to do to make a file that is missing or out-of-date. The rule is simple: If "file-1" depend on "file-2", and "file-2" is newer than "file-1", then "file-1" must be remade. You may think of "file-1" as a program, and "file-2" as the source code.
+
+The rule
+
+target: file-1 file-2
+
+	command
+
+means that the file target depends on file-1 and file-2; and that to make or re-make target, you must run command. Important! The whitespace before commandmust be a single <TAB>, it cannot be spaces.
+
+To understand how make operates, you can use the command
+
+make --debug=b
+
+For example, consider the following Makefile:
+
+main: main.o library.o
+
+    gcc -o main main.o library.o
+
+
+main.o: main.c library.c library.h
+
+    gcc -c -Wall main.c
+
+
+library.o: library.c library.h
+
+    gcc -c -Wall library.c
+
+If you run "make --debug=b" you get the following output:
+
+Reading makefiles...
+
+Updating goal targets....
+
+ File `main' does not exist.
+
+   File `main.o' does not exist.
+
+  Must remake target `main.o'.
+
+gcc -c -Wall main.c
+
+  Successfully remade target file `main.o'.
+
+   File `library.o' does not exist.
+
+  Must remake target `library.o'.
+
+gcc -c -Wall library.c
+
+  Successfully remade target file `library.o'.
+
+Must remake target `main'.
+
+gcc -o main main.o library.o
+
+Successfully remade target file `main'.
+
+Say that "library.h" has been changed. Running the same make command again yields:
+
+Reading makefiles...
+
+Updating goal targets....
+
+   Prerequisite `library.h' is newer than target `main.o'.
+
+  Must remake target `main.o'.
+
+gcc -c -Wall main.c
+
+  Successfully remade target file `main.o'.
+
+   Prerequisite `library.h' is newer than target `library.o'.
+
+  Must remake target `library.o'.
+
+gcc -c -Wall library.c
+
+  Successfully remade target file `library.o'.
+
+ Prerequisite `main.o' is newer than target `main'.
+
+ Prerequisite `library.o' is newer than target `main'.
+
+Must remake target `main'.
+
+gcc -o main main.o library.o
+
+Successfully remade target file `main'.
+
+Hints:
+
+Understand how make works. Make does not simply run sequentially through the Makefile!
+Make distinguishes between tabs and spaces. Where a tab is required, spaces cannot be used.
+Look at examples and tutorials online! Google "GNU Make Reference" for the complete manual.
+ 
+
+Assignment: Look at the Makefile for the elevator driver (found in "driver.zip") Answer the following questions:
+
+What does "$<", "$^" and "$@" mean?
+What does "$(shell find -name "*.c")" do?
+What is ".PHONY:"?
+What effect has the gcc-argument "-MMD, and how does it relate to the Makefile statement "include $(DEPS)"?
+How does make determine which Makefile to use when "make" is run without arguments?
+ 
+
+Part 2 - IDE - Eclipse
+IDE is a software application that provides comprehensive facilities to computer programmers for software development. Eclipse is an example of such an IDE. It is well known for its extensible plugin system.
+
+Assignment: Create a C project using Eclipse and compile the source files found in "driver.zip". Don't forget to add the necessary linker libraries to the Project. Use Project -> Properties -> C/C++ build -> Settings -> GCC Linker -> Libraries -> Add.
+
+Part 3 - Subversion (svn)
+Subversion (svn) is a version control system. This tool helps a group of people work on the same files in a systematic and safe manner. Multiple users can make changes to the same file, and merge the changes later. It also keeps track of all versions of files, so that you can revert all changes made since a given date. To effectively use subversion the group needs a common group directory at an external server. Apply for one at http://www.stud.ntnu.no/kundesenter/
+
+The most common subversion commands are (short forms in parenthesis):
+
+svnadmin create
+svn checkout (co)
+svn status
+svn commit (ci)
+svn update (up)
+svn revert
+svn add
+svn remove (rm)
+svn copy (cp)
+svn move (mv)
+svn mkdir
+ 
+
+The svn manual is available at http://svnbook.red-bean.com/. To create a repository at the student server, use the server type "svn+ssh". Use a fully qualified path name when checking out, such as
+
+svn checkout svn+ssh://mladens@login.stud.ntnu.no/home/groups/mygroup/svnroot
+
+for a group directory, or
+
+svn checkout svn+ssh://mladens@login.stud.ntnu.no/home/others/shome/ml/mladens/svnroot
+
+for your personal directory. To find the full directory path, log on to the student server, change to your directory and type
+
+pwd
+
+Assignment: Create a repository for your exercise and project files. Check out your project using the command line or RapidSVN Client at two different locations, and provoke a merge conflict. Resolve the conflict.
+
+Part 4 - The need for synchronization between threads
+Using preemptive scheduling, threads may interfere with each other by interrupting each other at unfortunate times.
+
+global i;
+
+
+thread1: {
+
+	i = i + 1;
+
+}
+
+
+thread2: {
+
+	i = i - 1;
+
+}
+
+In this pseudo program it is not necessarily so that "i" is back at its original value after thread1 and thread2 have executed.
+
+Assignment: These two threads are not suited for demonstrating this problem as they stand now. Modify them and implement a program in C/POSIX that can demonstrate the problem.
+
+Another concurrent program is this:
+
+volatile long long int i = 0LL;
+
+
+thread1: {
+
+    while(1) 
+
+        i = -1LL;
+
+}
+
+
+thread2: {
+
+    while(1) 
+
+        i = 0LL;
+
+}
+
+
+thread3: {
+
+    while(1) {
+
+        if (i != 0LL && i != -1LL) 
+
+            printf("error!: i = %lld\n",i);
+
+    }
+
+}
+
+Here, "i" is a global long long. It is only set to -1 and 0, but it may still trigger the error message!
+
+Assignment: Which four different error messages can theoretically appear? Think carefully!
+
+Optional: Implement and run this program on a 32-bit computer.
+
+Hints:
+
+Remember to mark a variable as "volatile" if it is shared amongst threads.
+See "man pthread_create" for information on how to create a multi-threaded C program.
+ 
+
+Part 5 - GDB
+gdb is a text-based debugger that lets you examine and change a program while it's running. Some information on gdb can be found in the "Short Guide to Linux Programming".
+
+Assignment: The program in "strange.c" (found in "strange.zip") prints strange results. Examine it using gdb to find and fix all the bugs! You can use GDB from within the Eclipse IDE while in the "Debug Perspective" but to do that you first need to create an Eclipse C project.
+
+ 
+
+Part 6 - Dynamic Analysis Tools - Valgrind
+Valgrind is an instrumentation framework for building dynamic analysis tools. There are Valgrind tools that can automatically detect many memory management and threading bugs, and profile your programs in detail.
+
+Assignment: Create two Eclipse C projects "Memcheck" and "Helgrind" using the files found in "Valgrind.zip". Profile the first application using Valgrind "Memcheck" tool and the second one using the Valgrind "Helgrind" tool. You can select the tool you want to use in the "Profile Configurations -> Valgrind Options" Eclipse dialog.

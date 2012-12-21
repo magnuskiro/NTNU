@@ -1,0 +1,48 @@
+INITIALIZE ELEVATOR:
+
+    Create datastructures 
+        GLOBAL_GOING_UP = set()    # ARE THESE NEEDED?
+        GLOBAL_GOING_DOWN = set()  # SEPERATE LISTS FOR EACH ELEVATOR?
+        MY_GOING_UP = set()           
+        MY_GOING_DOWN = set()         
+        CURRENT_JOBS = set()     # the jobs this elevator can pick up on it's way to it's destination.   
+        DIRECTION = ''          
+        CURRENT_FLOOR = Do we get this from the driver?           
+        STOP_NEXT = False
+    
+    GET OVERVIEW OF SYSTEM:
+        - Broadcast "I'm here! This is me!"
+        - Listen for other elevators that are online
+        - If other elevators are online, add these to system overview
+    
+    START ELEVATOR:
+        - Begin waiting for jobs
+        - First job that arrives is added to CURRENT_JOBS
+        - Broadcast this job to all other elevators and add to GLOBAL_LIST
+        - Start moving in direction of first job
+            * assume that when someone wants to go up or down, they want to go all the way to the top or bottom
+            * if elevator at top, and floor in middle wants to go up, move down, do not pick up those going down
+            * pick up people, start moving up and then take other jobs going up
+        - Add each new job to GOING_UP or GOING_DOWN accordingly
+        - Check list of current jobs to see if any can be done along the way
+        - When elevator has reached top or bottom check for jobs going other direction
+            * if at top, and no one wants to go up, choose job going up from lowest floor
+        
+        MONITOR OTHER ELEVATORS:
+            - Listen for still-alive-messages
+            - Update system overview with the time message is received from every elevator
+            - If no message is received from elevator within a set time period, regard that elevator as dead
+                * add dead elevators jobs to private list
+                * remove elevator from list of elevators
+            - Listen for other messages
+                * OBSTRUCTION message - elevator is obstructed
+                    - wait for a set time period, if elevator still obstructed, add jobs to own list
+                    - continue to listen for messages
+                * RUNNING message
+                    - obstructed elevator works again
+        
+        IF OBSTRUCTED:
+            - Broadcast "Unable to move!" for as long as obstruction lasts
+            - When obstruction is cleared, clear list of jobs
+            - Wait for new jobs
+        

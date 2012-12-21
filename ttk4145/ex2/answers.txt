@@ -1,0 +1,57 @@
+1)    What does the client application do when it detects socket failure (Which state it goes to?)?
+       
+      Ans: It goes to the initial state
+
+
+2)    What are the two ways we detect socket failure?
+
+      Ans: When we try to create a socket, and it fails, and when we try to connect to the server
+      
+      
+3)    What does the client application do when connect() fails (Which state?)?
+
+      Ans: It keeps trying until successful
+
+
+4)    Why do we use SO_REUSEADDR in setsockopt() before we bind()? Because of which socket state (LISTEN, TIME_WAIT, SYN??)?
+
+      Ans: It is the easiest and most effective option for reducing the "address already in use" error. TIME_WAIT state
+
+
+5)    Why do we parse data in such a complicated way?
+
+      Ans: To allow for future extension and different kind of messages
+
+
+6)    Why are the sockets set to be non-blocking? Which function is used for that?
+
+      Ans: The function setNonBlocking() is used for this, and we set the sockets to be non-blocking so that the socket won't stop responding for incoming messages when waiting to send
+
+7)    Why is in the client application the socket set as non-blocking after the connect is successful and not before?
+
+      Ans: Because there's no need for the socket to be non-blocking before a connection is made, before a connection is made, all the socket does is to listen for incoming connections so there's nothing to block
+      
+
+8)    Explain the socksend() function at the top of the “CliServ.c”. What does it do and why is it implemented so?
+
+      Ans: socksend() sends data through the socket. It takes the socket, the data to send, and the length of the data as input parameters. It then calls send() and checks that all the data was sent, if not, it calls send() again with the remaining data        
+        
+        
+9)    Run Server and one Client and let them run for a minute. Kill server or client, what happens and why?
+
+      Ans: When we kill the one and only client, the server prints the message "no data after ping". If we kill the server, the client prints the same message
+
+
+10)    Run one Server and several clients. Kill one client. What happens and why?
+
+       Ans: When we kill one client, the remaining clients receives an updated list of the connected clients
+
+
+11)    Run 3 clients. Then SERVER. Then kill SERVER. What happens and why? Start Server Again. What happens and why?
+
+       Ans: When killing the server, the clients prints a "CLIENT -> send error", when the server is started again, the clients connect and receive a list of connected clients because as long as they are running they will try to connect to a server at the specified address and port
+
+
+12)  Why do we issue signal(SIGPIPE, SIG_IGN) call in the main(...)? What are the other two ways of solving that problem?
+
+     Ans: We issue this because by default, when a pipe is broken, the process trying to send data through the pipe receives a SIGPIPE signal, which tells the process to terminate. By issuing SIG_IGN, we tell the process to ignore this signal and therefore it will not terminate when encountering a broken pipe. One alternative is implement a signal handler, the other is to set the MSG_NOSIGNAL flag in the send() call

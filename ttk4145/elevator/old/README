@@ -1,0 +1,15 @@
+Should there be a global job list? 
+    - if one elevator receives many jobs, but not the others, the system is very inefficient
+    - how to stop elevators from choosing the same jobs? 
+    - use a manager! aka dispatcher
+    
+
+How to represent orders?:
+    - as an object, or a tuple?
+    
+How to represent a message?:
+    - use a simple string like we've planned all along?
+    - or have an object representing the message?
+    
+
+

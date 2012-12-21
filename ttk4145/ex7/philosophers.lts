@@ -1,0 +1,33 @@
+FORK = (get->put->FORK).
+
+PHIL = (sitdown->right.get->left.get->eat->right.put->left.put->rise->PHIL).
+
+|| DINERS(N=3) = forall [i:0..N-1] 
+	(phil[i]:PHIL || {phil[i].left,phil[((i-1)+N)%N].right}::FORK).
+	
+Tried up to 100 philosophers, went slow but didn't freeze	
+
+####
+
+FORK = (get->put->FORK).
+
+PHIL(I=0) = (when (I==0) sitdown->left.get->right.get->eat->left.put->right.put->rise->PHIL
+			| when (I!=0) sitdown->right.get->left.get->eat->right.put->left.put->rise->PHIL).
+
+|| DINERS(N=5) = forall [i:0..N-1] 
+	(phil[i]:PHIL || {phil[i].left,phil[((i-1)+N)%N].right}::FORK).
+	
+One left-handed philosopher... still deadlocks
+
+######
+	
+FORK = (get->put->FORK).
+
+PHIL(I=0) = (when (I%2==0) sitdown->left.get->right.get->eat->left.put->right.put->rise->PHIL
+			| when (I%2==1) sitdown->right.get->left.get->eat->right.put->left.put->rise->PHIL).
+
+|| DINERS(N=5) = forall [i:0..N-1] 
+	(phil[i]:PHIL(i) || {phil[i].left,phil[((i-1)+N)%N].right}::FORK).
+	
+No deadlocks, even numbered philosophers choose left fork, odd numbered choose right
+

@@ -1,0 +1,8 @@
+DRINK = (coffee -> milk -> sugar -> COFFEE | tea -> milk -> sugar -> DRINK),
+COFFEE = (milk -> sugar -> COFFEE).
+
+
+DRINK = (coffee -> milk -> sugar -> COFFEE | tea -> milk -> sugar -> DRINK).
+property COFFEE = (milk->sugar->COFFEE).
+
+|| SYS = (DRINK || COFFEE).

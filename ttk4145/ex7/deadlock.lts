@@ -1,0 +1,4 @@
+COUNT (N=10)  = COUNT[0],
+COUNT[i:0..N] = (when(i>6) dec->COUNT[i-2]
+				|when(i<6) inc->COUNT[i+2]
+				). 
