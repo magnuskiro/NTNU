@@ -15,9 +15,9 @@ runtime-EclipseApplication/
 *.ear
 
 # IntelliJ Idea
-.iml
-.iws
-.ipr
+*.iml
+*.iws
+*.ipr
 *.idea/
 
 # Eclipse hell
