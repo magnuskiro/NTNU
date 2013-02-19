@@ -1,0 +1,4 @@
+In the code synchronize is used to make sure an object is not accessed by more the one thread at a time. 
+Additionaly, in the CustomerQueue we check if the queues are full/empty. In either case we do nothing. 
+And the Doorman and the Barber comtinues to be unaffected by the fact that the shop is full or empty. 
+

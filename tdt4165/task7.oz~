@@ -1,0 +1,9 @@
+declare
+fun {Length Xs}
+   if Xs.1==nill
+      0
+   else
+      {Length Xs.2}
+end
+
+{Browse {Length [1 2 3 4]}}

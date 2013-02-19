@@ -1,0 +1,67 @@
+*oppgave 1
+a)
+Vi bruker logiske og fysiske klokker i et distribuert system er at vi vil vite mest mulig om hendelsesforløpet i systemet og med det kunne ta øyebliksbilder. Det er er i dag vannskelig med de fysiske og logiske klokkene vi bruker. De fysiske klokkene er det vannskelig å synkronisere så vi benytter oss av logiske klokke for å finne hendelsesforløp i systemer. De logiske klokkene kan synkroniseres opp mot hverandre ved at de finner ut hvilke hendelser som skjedde etterhverandre. Ulempen med de logiske klokkene er at de ikke kan ta øyeblikksbilder av systemet. Noe som igjen gjør det litt vanskeligere å feilsøke i systemet. 
+
+b)
+a--> J
+    #a og b er i samme prosess så vi vet at a kommer før b. 
+    #b sender meldig til j hvilket betyr at b skjer før j. 
+    # Dermed må a ha skjedd før j. 
+k-->h
+    #h skjer etter e
+    #e skjer etter k
+    #dermed må h skje etter k.
+    
+c) 
+Siden lamport klokker ikke sier noe om rekkefølgen ting har skjedd i så kan vi ikke bruke dem til å orden på relasjoner mellom hendelser. Det de derrimot gjør er å sende en teller som inkrementeres etterhvert. Så lamport klokkene holder tellinga på antall utførte hendelser. 
+
+Vektorklokker på sin side holder orden på hendelsenes rekkefølge. Vektorklokkene sender med informasjon om rekkefølgen meldinger har ankommet. Dette gjør at vi kan si noe om skjedd-før-relasjonene. Informasjonen om ordningen av prosesser og ikke bare sendingen av meldinger gjør at vi kan mer høy sikkerhet si noe om skjedd-før-relasjonene. 
+
+d)
+Når vi har en observert tur-retur tid på 30ms vil vi ikke kunne sette klokken vår til nor mer nøyaktig enn sendt tidspunkt + 30/2ms. 30/2 fordi det er halvparten av tiden vi brukte fra forespørsel til vi fikk svar. Dette sier ingenting om nettet i mellom klient og tjener. Noe som igjen gjør at vi bare får en nøyaktighet på rundt 50%. Det at vi ikke vet noe om nettverket mellom klient og tjener betyr at det kan ta 1ms å spørre om tiden, mens det tar 28ms for serveren å svare på forespørselen og så tar det 1ms å sende svar. 
+
+Om klienten ikke vet noe om prosesseringstiden vil unøyaktighetene ikke ender seg noe i dette tilfellet. Antar vi at klienten vet noe om prosesseringstiden kan vi gi et bedre estimat. 
+
+*oppgave2:
+t0=tiden når første pakke blir sendt
+t1=tiden når første pakke blir mottatt
+t2=tiden når andre pakke blir sendt
+t3=tiden når andre pakke blir mottatt. 
+
+Forskyvningen er gitt av tiden mellom sendig og mottak av første pakke pluss forskjellen mellom sending og mottak av den andre pakken.
+
+((t1-t0) + (t2-t3)) /2 
+
+Estimert offsettet blir:
+((09:14:35.480 - 09:14:25.430) + (09:14:37.7 - 09:14:27.725))/2 =
+(0:0:10.50 + 0:0:09.075)/2 = 
+0:0:19.575/2 ~ 0:0:9.788
+
+Round-trip time:
+(09:14:37.7 - 09:14:25.430) - (09:14:37.7 - 09:14:35.480) =
+0:0:12.27 - 0:0:02.22 =
+0:0:10.05
+
+gir egentlig forskyvning: (0:0:9.788 ± 0:0:10.5) / 2
+
+*oppgave 3)
+s_00--->s_10-\->s_20-\->s_30--->s_31--->s_32--->s_33-\->s_43--->s_44
+              ->s_11-\->s_21-/->s_22-/->s_23-/        ->s_34-/
+                      ->s_12-/->s_13-/
+              
+grafen går fra venstre til høyre.      
+-\-> ned et hakk
+-/ opp et hakk                 
+-/-> et hakk opp eller neste til høyre
+---> neste til høyre   
+s_22 kan altså bevege seg til s_32 eller s_23, mens s_13 kan bare bevege seg til s_23. 
+
+*oppgave4)
+A begynner med verdien 21. A sender verdien 21 til B etterfulgt av markørmeldingen m. B mottar 21 først på c1, b oppdaterer verdien sin og sender 22 ut på c2. B mottar så m(markørmeldingen) fra c1 og sender en ny markørmelding ut på c2. Ferdig. 
+
+tilstander:
+A(21)   c1=<m,21>   c2=<>       B(20)
+A(21)   c1=<m>      c2=<>       B(21)
+A(21)   c1=<m>      c2=<22>     B(22)
+A(21)   c1=<>       c2=<22>     B(22)
+A(21)   c1=<>       c2=<22,m>   B(22) <-- siste tilstand.

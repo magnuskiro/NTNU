@@ -1,0 +1,12 @@
+.idea/*
+out/*
+
+*.iml
+*.aux
+*.bbl
+*.log
+*.blg
+*.class
+
+
+.ark.tex.properties.xml

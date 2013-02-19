@@ -1,0 +1,12 @@
+declare
+fun{Max X Y}
+   if X>0 then
+      if Y<=0 then
+	 X
+      else
+	 Y
+      end    
+   else
+      {Max X-1 Y-1}
+   end
+end

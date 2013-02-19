@@ -1,0 +1,49 @@
+
+Oppgave 2. Praktisk.
+
+a) Ta som utgangspunkt et Pastry-nettverk med 12 bits GUID. Anta at det finnes 25 peers med GUID lik 011, 014, 01C 062, 08A, 431, 463, 54B, 8A1, 882, AF0, AF9, AF3, AFA, B41, B85, C21, C32, C73, CA5, CC2, D31, D76, DAC, DD4. Lag rutingtabeller til nodene 011 og AF3. Hver rute i rutingtabellene skal enten inneholde ingenting eller GUID til en node.
+
+Ans:
+#011
+\   0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F  
+0   0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F
+   me             431 54B         882     AF0 B41 C21 DAC
+1  00  01  02  03  04  05  06  07  08  09  0A  0B  0C  0D  0E  0F
+       me                 062     08A
+2 001 011 012 013 014 015 016 017 018 019 01A 01B 01C 01D 01E 01F 
+       me         014                             01C
+
+#AF3
+\   0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F  
+0   0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F
+  011             431 54B         882      me B41 C21 DD4
+1  A0  A1  A2  A3  A4  A5  A6  A7  A8  A9  AA  AB  AC  AD  AE  AF
+                                                               me
+2 AF0 AF1 AF2 AF3 AF4 AF5 AF6 AF7 AF8 AF9 AFA AFB AFC AFD AFE AFF
+  AF0          me                     AF9 AFA
+
+b) Bruk rutingtabellen fra 2a) til å vise hva som skjer hvis node AF3 ønsker å utføre et oppslag på verdien DAC. Forklar hva som skjer.
+Anta at hver node har en løvnodetabell av størrelse 2 - dvs. at hver node i tillegg til rutingtabellen bare vet om sin nærmeste nabo med høyere GUID og nærmeste nabo med lavere GUID. Beskriv andre antagelser du gjør.
+
+Ans:
+Med antagelsen av at man har DD4 i øverste rad i routingtabellen(fra 2a) så vil man få dette handlingsforløpet når DAC kobler seg til nettet gjennom AF3:
+AF3 sjekker om DAC er i routingtabellen, den fins ikke, så AF3 slår opp på øverste nivå og ser om den har noen med samme prefix. DD4 har samme prefix som DAC, så man slår opp hos DA4 som igjen har DAC i sin routingtabell. Dermed kan AF3 koble til DAC.
+
+
+c) En node med GUID 54C kontakter node AF3 med ønske om å bli med i Pastry-nettverket. Hva skjer så?
+
+Ans: 
+Først vil 54C kontakte AF3 og får AF3 til å vidresende forespørselen til 54B og legge til det øverste nivået av routingtabellen sin.  
+54B vil legge til det andre nivået og slå opp hos seg selv for å finne nærmeste numeriske nabo. Og spør den for å få det nederste nivået i routingtabellen. Så vil 54B, som er numerisk mest lik 54C, sende meldingen med routingtabellen og nærmeste løvnode av 54C til bake til 54C. 
+Når alle nivåene er funnet blir hele routingtabellen returnert til 54C.
+
+
+d) En node har mistet tilkobling til nettverket (dvs noden “døde” og ikke er tilgjengelig lenger). Beskriv de viktigste tingene dette medfører. 
+
+Ans:
+Sirkelen av løvnodetabeller vil være brutt og må oppdateres. Man må også oppdatere routingtabellene som hadde den døde noden som enrty i sin tabell. Dette vil fære til at man må bruke litt mer tid på routing når en node dør enn ellers. Routingtabellene vil bli oppdatert at man går til den noden som er numerisk mest lik den noden som døde og får et nytt entry derfra. 
+
+
+
+
+ 

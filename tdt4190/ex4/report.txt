@@ -1,0 +1,37 @@
+
+== Beskrivelse
+Oppgaven går ut på å finne vranglåser i et distribuert system, og forhindre dem. Den utdelte kildekoden håndterer ressurser, distribuerte servere og transaksjoner fra før av. Dette gjør at vi kan fokusere på algoritmene for "tidsavbrudd" og "edge chasing".
+
+== Implementasjon
+
+
+* Timeout
+lock(int transactionId) i Resource classen og acquireLock(LockedResource resource) i Transaction classen er de metodene som må endres, for at implementasjonen av tidsavbrud på låsing av ressurser, skal fungere.
+
+lock(int transactionId) venter i utgangspunktet evit på at en ressursen skal bli ledig. Det endret vi slik at den venter et tilfeldig antall sekunder mellom en og fem. Om ressursen ikke blir ledig returneres verdien "False", ellers returneres verdien "True" 
+
+acquireLock(LockedResource resource) metoden skriver i utgangspunktet bare ut en feilmelding. Vi endret den til å avbryte den spesifikke transaksjonen om ressursen ikke blir tildelt. 
+
+* Edge Chasing
+I implementasjonen av edge chasing har vi modifisert de samme metodene som i timeout og lagt til en sjekk på hvilken vranglåsmodus som skal brukes. Vi har også lagt til en probing metode i Server og Transaction. Hver transaksjon som blir startet lager en ny tråd som kaller probing metoden i Server. Probingmetoden tar inn en liste med identifikatorer. Denne listen består av identifikatorene til alle transaksjonene som probingkjeden har vært innom. Hver gang probingmetoden blir kalt sjekker den om denne transaksjonen fins i listen. Hvis den fins, så vet man at det har oppstått en vranglås og transaksjonen avbrytes. Hvis den ikke finner sin egen id vil probingmetoden til den neste tråden i kjeden bli kalt. Om man kommer til en transaksjon som ikke venter på noe vil kjeden bli avsluttet siden man vet at det ikke er noe vranglås i systemet. 
+
+Når en vranglås er blitt oppdaget sier vi ifra til ressursen. Til det har vi lagt til en metode i server. Den kaller notify på den gitte ressursen med notifyResource metoden. Dette medførere at den originale tråden, hvor transaksjonen henger, fortsetter. Da vil den fortsette med timeout logikken. Da vil transaksjonen bli avbrutt og tilknyttede ressurser frigjort. Med det vil vranglåsen være løst. 
+
+
+== Diskusjon
+
+* Timeout
+Løsningen er potensielt treg. Tregheten avhenger av hvor lenge vi venter før vi avbryter en transaksjon. Med en kort ventetid vil man potensielt avbryte mange fler transaksjoner enn nødvendig. Implementasjonen er også enkel og fører til minimalt med ekstra nettverkstrafikk, noe som er bra ved liten tilgang på båndbredde. 
+
+Fantomvranglåser vil ofte bli oppdaget og håndtert, siden timeout ikke vet noe om transaksjonen som holder på den ressursen som ventes på. 
+
+Karakteristikkene over tilsier at timeouts vil være effektive i nettverk hvor man har garantier om meldingssendinger. I slike nettverk gjør man gode tidsestimater, noe som igjen gjør at man kan regulere tidsavbruddene til et mer nøyaktig nivå, slik at man ikke trenger å vente mer enn høyst nødvendig. 
+
+
+* Edge Chasing
+Edge chasing er en mer effektiv algoritme for jobben når man har liten forsinkelse og god båndbredde i nettverket. Man får færre unødvendige avbrytelser, men den er til gjengjeld litt vannskeligere å implementere. 
+
+Implementasjonen vår har noen svakheter som gjør at effektiviteten kunne vært bedre. Blandt annet prøver vi å låse en ressurs samtidig som vi sender probing meldingene. Dette resulterer i at mange meldinger blir sendt samtidig, og flere tråder kan oppdage samme vranglås samtidig og kanselere transaksjonen fra to steder.  
+
+Implementasjonen vil også fange opp fantomvranglåser. Programmet vil tro at fantomvraglåsene er virkelige. Det er fordi vi ikke gjør noe sjekk når en vranglås oppdages. Programmet vet bare at det fins en vranglås i systemet. Vranglåsen kan ha blitt løst allerede, ved at en annen tråd har løst denne, eller at ressursen har blitt ledig i mellomtiden. 
+

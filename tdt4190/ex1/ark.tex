@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english, norsk]{babel}
+
+\begin{document}
+    Distsys ex1 - RMI \\
+    Jan Alexander Bremnes & Magnus Kirø \\ 
+
+\section{Server}    
+        How the server side sets up the RMI part of the code. \\
+
+        Creates the user interface class that manages the game.\\
+	    \underline{code:} TicTacToeGui serverGui = new TicTacToeGui("Server", 'X', null);
+			
+        Creates the communication instance. The class that is used for communication \\
+		\underline{code:} TicTacToeImpl impl = new TicTacToeImpl(serverGui);
+		
+		Make the communication instance visible to clients that connect.\\
+        \underline{code:} Naming.rebind("rmi://"+adresse+"/TicTacToe",impl);
+	
+\section{Client}
+	    What the client does to make the RMI connection work. \\
+	
+	    This is the address that will be bound to the RMI connection. the address is input from command line.\\
+    	\underline{code:} String url = "rmi://"+adresse+"/TicTacToe"; 
+    	
+        Binds the servers communication class to the clients server variable. This enables us to call methods in the servers calass. \\
+		\underline{code:} TicTacToe server = (TicTacToe)Naming.lookup(url);
+
+		Setup of the lients communication class. This is the calss that the server can connect to execute methods on the client. \\
+        \underline{code:} TicTacToeImpl client = new TicTacToeImpl(clientGui);
+
+		Sets the clients communication instance at the server. This gives the server the reference to the clients communications class, so the server can perform actions on the client side. \\
+        \underline{code:} server.setClient(client);
+
+\end{document}

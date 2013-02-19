@@ -1,0 +1,6 @@
+declare Sum
+fun {SumTo F L}
+   F + L + {SumTo F-1 L-1}
+end
+
+{Browse {SumTo 3 5}}

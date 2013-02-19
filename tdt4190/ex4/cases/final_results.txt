@@ -1,0 +1,515 @@
+Wed Mar 28 16:27:23 CEST 2012
+-----------cases/output_test_case_A_server_1.txt==================================================================
+1: Test case A started.
+80: Server 1 was notified of the arrival of server 2
+152: Server 1 was notified of the arrival of server 3
+184: Server 1 was notified of the arrival of server 4
+981: Server 1 started.
+4883: Server 1 started its transactions.
+4900: Transaction 1000 arrived.
+4902: TRANS 1000: Starting transaction 1000.
+4903: TRANS 1000: Trying to claim lock of resource 0 at server 3
+4912: TRANS 1000: Waiting for other transaction, sending probe message to it
+4913: TRANS 1000: Lock claimed. Processing...
+5414: TRANS 1000: Trying to claim lock of resource 9 at server 1
+5415: TRANS 1000: Waiting for other transaction, sending probe message to it
+5421: TRANS 1000: Deadlock detected: [1, 1]
+5432: TRANS 1000: Trying to resolve deadlock
+5432: TRANS 1000: Waiting for other transaction, sending probe message to it
+5434: TRANS 1000: Aborting transaction 1000.
+5435: TRANS 1000: Deadlock detected: [3, 1, 1]
+5435: TRANS 1000: Trying to resolve deadlock
+5438: TRANS 1000: Unlocked resource 0 at server 3
+5439: TRANS 1000: Transaction 1000 aborted.
+5439: Transaction 1000 ended.
+5496: Transaction 1001 arrived.
+5497: TRANS 1001: Starting transaction 1001.
+5497: TRANS 1001: Trying to claim lock of resource 1 at server 3
+5504: TRANS 1001: Waiting for other transaction, sending probe message to it
+5509: TRANS 1001: Lock claimed. Processing...
+5611: TRANS 1001: Trying to claim lock of resource 1 at server 4
+5612: TRANS 1001: Waiting for other transaction, sending probe message to it
+5626: TRANS 1001: Deadlock detected: [1, 4, 1]
+5626: TRANS 1001: Trying to resolve deadlock
+5636: TRANS 1001: Aborting transaction 1001.
+5643: TRANS 1001: Unlocked resource 1 at server 3
+5643: TRANS 1001: Transaction 1001 aborted.
+5643: Transaction 1001 ended.
+5644: End of input file reached, no more transactions will be started.
+34925: Contact with server 1 was lost.
+-----------cases/output_test_case_A_server_2.txt==================================================================
+3: Test case A started.
+62: Server 2 was notified of the arrival of server 3
+93: Server 2 was notified of the arrival of server 4
+899: Server 2 started.
+4798: Server 2 started its transactions.
+4820: Transaction 2000 arrived.
+4824: TRANS 2000: Starting transaction 2000.
+4830: TRANS 2000: Trying to claim lock of resource 9 at server 1
+4842: TRANS 2000: Lock claimed. Processing...
+4842: TRANS 2000: Waiting for other transaction, sending probe message to it
+8844: TRANS 2000: Committing transaction 2000.
+8861: TRANS 2000: Unlocked resource 9 at server 1
+8862: TRANS 2000: Transaction 2000 committed.
+8862: Transaction 2000 ended.
+8921: Transaction 2001 arrived.
+8922: TRANS 2001: Starting transaction 2001.
+8923: TRANS 2001: Trying to claim lock of resource 1 at server 1
+8924: TRANS 2001: Waiting for other transaction, sending probe message to it
+8926: TRANS 2001: Lock claimed. Processing...
+9028: TRANS 2001: Trying to claim lock of resource 1 at server 2
+9029: TRANS 2001: Waiting for other transaction, sending probe message to it
+9032: TRANS 2001: Deadlock detected: [2, 2]
+9038: TRANS 2001: Trying to resolve deadlock
+9041: TRANS 2001: Aborting transaction 2001.
+9045: TRANS 2001: Unlocked resource 1 at server 1
+9046: TRANS 2001: Transaction 2001 aborted.
+9047: Transaction 2001 ended.
+9050: End of input file reached, no more transactions will be started.
+34863: Server 2 was notified of the departure of server 1 by server 1.
+41434: Contact with server 2 was lost.
+-----------cases/output_test_case_A_server_3.txt==================================================================
+1: Test case A started.
+7: Server 3 was notified of the arrival of server 4
+829: Server 3 started.
+4723: Server 3 started its transactions.
+4752: Transaction 3000 arrived.
+4753: TRANS 3000: Starting transaction 3000.
+4757: TRANS 3000: Trying to claim lock of resource 0 at server 4
+4764: TRANS 3000: Lock claimed. Processing...
+5265: TRANS 3000: Trying to claim lock of resource 9 at server 1
+5272: TRANS 3000: Waiting for other transaction, sending probe message to it
+5294: TRANS 3000: Aborting transaction 3000.
+5302: TRANS 3000: Unlocked resource 0 at server 4
+5303: TRANS 3000: Transaction 3000 aborted.
+5304: Transaction 3000 ended.
+5361: Transaction 3001 arrived.
+5362: TRANS 3001: Starting transaction 3001.
+5362: TRANS 3001: Trying to claim lock of resource 1 at server 4
+5363: TRANS 3001: Waiting for other transaction, sending probe message to it
+5364: TRANS 3001: Lock claimed. Processing...
+5466: TRANS 3001: Trying to claim lock of resource 1 at server 1
+5471: TRANS 3001: Lock claimed. Processing...
+6473: TRANS 3001: Committing transaction 3001.
+6480: TRANS 3001: Unlocked resource 1 at server 1
+6484: TRANS 3001: Unlocked resource 1 at server 4
+6484: TRANS 3001: Transaction 3001 committed.
+6484: Transaction 3001 ended.
+6489: End of input file reached, no more transactions will be started.
+34785: Server 3 was notified of the departure of server 1 by server 1.
+41372: Server 3 was notified of the departure of server 2 by server 2.
+43645: Server 3 was notified of the departure of server 4 by server 4.
+47431: Contact with server 3 was lost.
+-----------cases/output_test_case_A_server_4.txt==================================================================
+1: Test case A started.
+781: Server 4 started.
+4686: Server 4 started its transactions.
+4796: Transaction 4000 arrived.
+4797: TRANS 4000: Starting transaction 4000.
+4801: TRANS 4000: Trying to claim lock of resource 0 at server 2
+4806: TRANS 4000: Waiting for other transaction, sending probe message to it
+4807: TRANS 4000: Lock claimed. Processing...
+5308: TRANS 4000: Trying to claim lock of resource 9 at server 1
+5320: TRANS 4000: Waiting for other transaction, sending probe message to it
+5335: TRANS 4000: Waiting for other transaction, sending probe message to it
+5440: TRANS 4000: Waiting for other transaction, sending probe message to it
+8742: TRANS 4000: Lock claimed. Processing...
+8753: TRANS 4000: Committing transaction 4000.
+8756: TRANS 4000: Unlocked resource 9 at server 1
+8759: TRANS 4000: Unlocked resource 0 at server 2
+8771: TRANS 4000: Transaction 4000 committed.
+8772: Transaction 4000 ended.
+8837: Transaction 4001 arrived.
+8838: TRANS 4001: Starting transaction 4001.
+8839: TRANS 4001: Trying to claim lock of resource 1 at server 2
+8841: TRANS 4001: Waiting for other transaction, sending probe message to it
+8847: TRANS 4001: Lock claimed. Processing...
+8948: TRANS 4001: Trying to claim lock of resource 1 at server 3
+8954: TRANS 4001: Lock claimed. Processing...
+9955: TRANS 4001: Committing transaction 4001.
+9959: TRANS 4001: Unlocked resource 1 at server 3
+9970: TRANS 4001: Unlocked resource 1 at server 2
+9971: TRANS 4001: Transaction 4001 committed.
+9971: Transaction 4001 ended.
+9974: End of input file reached, no more transactions will be started.
+34746: Server 4 was notified of the departure of server 1 by server 1.
+41334: Server 4 was notified of the departure of server 2 by server 2.
+43608: Contact with server 4 was lost.
+-----------cases/output_test_case_B_server_1.txt==================================================================
+1: Test case B started.
+105: Server 1 was notified of the arrival of server 2
+157: Server 1 was notified of the arrival of server 3
+174: Server 1 was notified of the arrival of server 4
+846: Server 1 started.
+4177: Server 1 started its transactions.
+4270: Transaction 1000 arrived.
+4273: TRANS 1000: Starting transaction 1000.
+4279: TRANS 1000: Trying to claim lock of resource 0 at server 4
+4282: TRANS 1000: Lock claimed. Processing...
+4285: TRANS 1000: Waiting for other transaction, sending probe message to it
+4783: TRANS 1000: Trying to claim lock of resource 9 at server 1
+4784: TRANS 1000: Waiting for other transaction, sending probe message to it
+4801: TRANS 1000: Deadlock detected: [1, 1]
+4803: TRANS 1000: Trying to resolve deadlock
+8297: TRANS 1000: Lock claimed. Processing...
+8314: TRANS 1000: Committing transaction 1000.
+8315: TRANS 1000: Unlocked resource 9 at server 1
+8317: TRANS 1000: Unlocked resource 0 at server 4
+8317: TRANS 1000: Transaction 1000 committed.
+8318: Transaction 1000 ended.
+8375: Transaction 1001 arrived.
+8375: TRANS 1001: Starting transaction 1001.
+8375: TRANS 1001: Trying to claim lock of resource 0 at server 4
+8402: TRANS 1001: Waiting for other transaction, sending probe message to it
+8403: TRANS 1001: Lock claimed. Processing...
+8406: TRANS 1001: Waiting for other transaction, sending probe message to it
+8418: TRANS 1001: Trying to claim lock of resource 1 at server 4
+8424: TRANS 1001: Waiting for other transaction, sending probe message to it
+8428: TRANS 1001: Lock claimed. Processing...
+8442: TRANS 1001: Trying to claim lock of resource 2 at server 4
+8451: TRANS 1001: Waiting for other transaction, sending probe message to it
+8453: TRANS 1001: Lock claimed. Processing...
+8464: TRANS 1001: Trying to claim lock of resource 3 at server 4
+8473: TRANS 1001: Lock claimed. Processing...
+8474: TRANS 1001: Waiting for other transaction, sending probe message to it
+8491: TRANS 1001: Trying to claim lock of resource 4 at server 4
+8492: TRANS 1001: Waiting for other transaction, sending probe message to it
+8493: TRANS 1001: Lock claimed. Processing...
+8504: TRANS 1001: Trying to claim lock of resource 5 at server 4
+8506: TRANS 1001: Waiting for other transaction, sending probe message to it
+8507: TRANS 1001: Lock claimed. Processing...
+8517: TRANS 1001: Trying to claim lock of resource 6 at server 4
+8519: TRANS 1001: Lock claimed. Processing...
+8530: TRANS 1001: Trying to claim lock of resource 7 at server 4
+8532: TRANS 1001: Waiting for other transaction, sending probe message to it
+8536: TRANS 1001: Lock claimed. Processing...
+8546: TRANS 1001: Trying to claim lock of resource 8 at server 4
+8547: TRANS 1001: Waiting for other transaction, sending probe message to it
+8548: TRANS 1001: Lock claimed. Processing...
+8558: TRANS 1001: Trying to claim lock of resource 9 at server 4
+8559: TRANS 1001: Waiting for other transaction, sending probe message to it
+8560: TRANS 1001: Lock claimed. Processing...
+9561: TRANS 1001: Trying to claim lock of resource 5 at server 2
+9562: TRANS 1001: Waiting for other transaction, sending probe message to it
+9563: TRANS 1001: Lock claimed. Processing...
+9574: TRANS 1001: Committing transaction 1001.
+9575: TRANS 1001: Unlocked resource 5 at server 2
+9577: TRANS 1001: Unlocked resource 9 at server 4
+9578: TRANS 1001: Unlocked resource 8 at server 4
+9592: TRANS 1001: Unlocked resource 7 at server 4
+9594: TRANS 1001: Unlocked resource 6 at server 4
+9598: TRANS 1001: Unlocked resource 5 at server 4
+9599: TRANS 1001: Unlocked resource 4 at server 4
+9601: TRANS 1001: Unlocked resource 3 at server 4
+9602: TRANS 1001: Unlocked resource 2 at server 4
+9604: TRANS 1001: Unlocked resource 1 at server 4
+9605: TRANS 1001: Unlocked resource 0 at server 4
+9605: TRANS 1001: Transaction 1001 committed.
+9605: Transaction 1001 ended.
+9610: End of input file reached, no more transactions will be started.
+14902: Server 1 was notified of the departure of server 2 by server 2.
+16179: Contact with server 1 was lost.
+-----------cases/output_test_case_B_server_2.txt==================================================================
+0: Test case B started.
+32: Server 2 was notified of the arrival of server 3
+58: Server 2 was notified of the arrival of server 4
+876: Server 2 started.
+4069: Server 2 started its transactions.
+4087: Transaction 2000 arrived.
+4088: TRANS 2000: Starting transaction 2000.
+4089: TRANS 2000: Trying to claim lock of resource 0 at server 2
+4094: TRANS 2000: Waiting for other transaction, sending probe message to it
+4097: TRANS 2000: Lock claimed. Processing...
+4598: TRANS 2000: Trying to claim lock of resource 9 at server 1
+4601: TRANS 2000: Waiting for other transaction, sending probe message to it
+4701: TRANS 2000: Aborting transaction 2000.
+4704: TRANS 2000: Unlocked resource 0 at server 2
+4705: TRANS 2000: Transaction 2000 aborted.
+4706: Transaction 2000 ended.
+4767: Transaction 2001 arrived.
+4767: TRANS 2001: Starting transaction 2001.
+4768: TRANS 2001: Trying to claim lock of resource 0 at server 2
+4769: TRANS 2001: Waiting for other transaction, sending probe message to it
+4772: TRANS 2001: Lock claimed. Processing...
+4788: TRANS 2001: Trying to claim lock of resource 1 at server 2
+4789: TRANS 2001: Lock claimed. Processing...
+4800: TRANS 2001: Trying to claim lock of resource 2 at server 2
+4801: TRANS 2001: Waiting for other transaction, sending probe message to it
+4801: TRANS 2001: Lock claimed. Processing...
+4812: TRANS 2001: Trying to claim lock of resource 3 at server 2
+4813: TRANS 2001: Waiting for other transaction, sending probe message to it
+4813: TRANS 2001: Lock claimed. Processing...
+4824: TRANS 2001: Trying to claim lock of resource 4 at server 2
+4824: TRANS 2001: Lock claimed. Processing...
+4825: TRANS 2001: Waiting for other transaction, sending probe message to it
+4835: TRANS 2001: Trying to claim lock of resource 5 at server 2
+4835: TRANS 2001: Waiting for other transaction, sending probe message to it
+4837: TRANS 2001: Lock claimed. Processing...
+4847: TRANS 2001: Trying to claim lock of resource 6 at server 2
+4848: TRANS 2001: Waiting for other transaction, sending probe message to it
+4848: TRANS 2001: Lock claimed. Processing...
+4859: TRANS 2001: Trying to claim lock of resource 7 at server 2
+4859: TRANS 2001: Lock claimed. Processing...
+4876: TRANS 2001: Trying to claim lock of resource 8 at server 2
+4877: TRANS 2001: Lock claimed. Processing...
+4887: TRANS 2001: Trying to claim lock of resource 9 at server 2
+4888: TRANS 2001: Lock claimed. Processing...
+4888: TRANS 2001: Waiting for other transaction, sending probe message to it
+5889: TRANS 2001: Trying to claim lock of resource 5 at server 3
+5895: TRANS 2001: Lock claimed. Processing...
+5896: TRANS 2001: Waiting for other transaction, sending probe message to it
+5906: TRANS 2001: Committing transaction 2001.
+5910: TRANS 2001: Unlocked resource 5 at server 3
+5910: TRANS 2001: Unlocked resource 9 at server 2
+5910: TRANS 2001: Unlocked resource 8 at server 2
+5911: TRANS 2001: Unlocked resource 7 at server 2
+5911: TRANS 2001: Unlocked resource 6 at server 2
+5911: TRANS 2001: Unlocked resource 5 at server 2
+5911: TRANS 2001: Unlocked resource 4 at server 2
+5911: TRANS 2001: Unlocked resource 3 at server 2
+5912: TRANS 2001: Unlocked resource 2 at server 2
+5912: TRANS 2001: Unlocked resource 1 at server 2
+5912: TRANS 2001: Unlocked resource 0 at server 2
+5912: TRANS 2001: Transaction 2001 committed.
+5912: Transaction 2001 ended.
+5913: End of input file reached, no more transactions will be started.
+14788: Contact with server 2 was lost.
+-----------cases/output_test_case_B_server_3.txt==================================================================
+1: Test case B started.
+801: Server 3 started.
+4015: Server 3 started its transactions.
+4112: Transaction 3000 arrived.
+4114: TRANS 3000: Starting transaction 3000.
+4116: TRANS 3000: Trying to claim lock of resource 9 at server 1
+4120: TRANS 3000: Lock claimed. Processing...
+8122: TRANS 3000: Committing transaction 3000.
+8132: TRANS 3000: Unlocked resource 9 at server 1
+8133: TRANS 3000: Transaction 3000 committed.
+8133: Transaction 3000 ended.
+8187: Transaction 3001 arrived.
+8188: TRANS 3001: Starting transaction 3001.
+8188: TRANS 3001: Trying to claim lock of resource 0 at server 1
+8192: TRANS 3001: Waiting for other transaction, sending probe message to it
+8193: TRANS 3001: Lock claimed. Processing...
+8203: TRANS 3001: Trying to claim lock of resource 1 at server 1
+8204: TRANS 3001: Waiting for other transaction, sending probe message to it
+8205: TRANS 3001: Lock claimed. Processing...
+8216: TRANS 3001: Trying to claim lock of resource 2 at server 1
+8228: TRANS 3001: Waiting for other transaction, sending probe message to it
+8229: TRANS 3001: Waiting for other transaction, sending probe message to it
+8244: TRANS 3001: Lock claimed. Processing...
+8255: TRANS 3001: Trying to claim lock of resource 3 at server 1
+8271: TRANS 3001: Lock claimed. Processing...
+8290: TRANS 3001: Trying to claim lock of resource 4 at server 1
+8294: TRANS 3001: Waiting for other transaction, sending probe message to it
+8301: TRANS 3001: Lock claimed. Processing...
+8312: TRANS 3001: Trying to claim lock of resource 5 at server 1
+8313: TRANS 3001: Waiting for other transaction, sending probe message to it
+8314: TRANS 3001: Lock claimed. Processing...
+8325: TRANS 3001: Trying to claim lock of resource 6 at server 1
+8328: TRANS 3001: Lock claimed. Processing...
+8338: TRANS 3001: Trying to claim lock of resource 7 at server 1
+8341: TRANS 3001: Lock claimed. Processing...
+8351: TRANS 3001: Trying to claim lock of resource 8 at server 1
+8352: TRANS 3001: Waiting for other transaction, sending probe message to it
+8353: TRANS 3001: Lock claimed. Processing...
+8377: TRANS 3001: Trying to claim lock of resource 9 at server 1
+8382: TRANS 3001: Lock claimed. Processing...
+9382: TRANS 3001: Trying to claim lock of resource 5 at server 4
+9384: TRANS 3001: Waiting for other transaction, sending probe message to it
+9438: TRANS 3001: Lock claimed. Processing...
+9448: TRANS 3001: Committing transaction 3001.
+9450: TRANS 3001: Unlocked resource 5 at server 4
+9453: TRANS 3001: Unlocked resource 9 at server 1
+9457: TRANS 3001: Unlocked resource 8 at server 1
+9462: TRANS 3001: Unlocked resource 7 at server 1
+9463: TRANS 3001: Unlocked resource 6 at server 1
+9474: TRANS 3001: Unlocked resource 5 at server 1
+9476: TRANS 3001: Unlocked resource 4 at server 1
+9477: TRANS 3001: Unlocked resource 3 at server 1
+9478: TRANS 3001: Unlocked resource 2 at server 1
+9491: TRANS 3001: Unlocked resource 1 at server 1
+9492: TRANS 3001: Unlocked resource 0 at server 1
+9494: TRANS 3001: Transaction 3001 committed.
+9495: Transaction 3001 ended.
+9496: End of input file reached, no more transactions will be started.
+14740: Server 3 was notified of the departure of server 2 by server 2.
+16026: Server 3 was notified of the departure of server 1 by server 1.
+16738: Contact with server 3 was lost.
+-----------cases/output_test_case_B_server_4.txt==================================================================
+1: Test case B started.
+763: Server 4 started.
+3996: Server 4 started its transactions.
+4075: Transaction 4000 arrived.
+4077: TRANS 4000: Starting transaction 4000.
+4079: TRANS 4000: Trying to claim lock of resource 0 at server 3
+4083: TRANS 4000: Waiting for other transaction, sending probe message to it
+4084: TRANS 4000: Lock claimed. Processing...
+4585: TRANS 4000: Trying to claim lock of resource 9 at server 1
+4586: TRANS 4000: Waiting for other transaction, sending probe message to it
+8108: TRANS 4000: Lock claimed. Processing...
+8119: TRANS 4000: Committing transaction 4000.
+8125: TRANS 4000: Unlocked resource 9 at server 1
+8126: TRANS 4000: Unlocked resource 0 at server 3
+8127: TRANS 4000: Transaction 4000 committed.
+8127: Transaction 4000 ended.
+8184: Transaction 4001 arrived.
+8184: TRANS 4001: Starting transaction 4001.
+8184: TRANS 4001: Trying to claim lock of resource 0 at server 3
+8185: TRANS 4001: Waiting for other transaction, sending probe message to it
+8186: TRANS 4001: Lock claimed. Processing...
+8197: TRANS 4001: Trying to claim lock of resource 1 at server 3
+8202: TRANS 4001: Waiting for other transaction, sending probe message to it
+8212: TRANS 4001: Lock claimed. Processing...
+8224: TRANS 4001: Trying to claim lock of resource 2 at server 3
+8228: TRANS 4001: Lock claimed. Processing...
+8240: TRANS 4001: Trying to claim lock of resource 3 at server 3
+8251: TRANS 4001: Lock claimed. Processing...
+8262: TRANS 4001: Trying to claim lock of resource 4 at server 3
+8266: TRANS 4001: Lock claimed. Processing...
+8280: TRANS 4001: Trying to claim lock of resource 5 at server 3
+8280: TRANS 4001: Waiting for other transaction, sending probe message to it
+8281: TRANS 4001: Lock claimed. Processing...
+8292: TRANS 4001: Trying to claim lock of resource 6 at server 3
+8298: TRANS 4001: Waiting for other transaction, sending probe message to it
+8299: TRANS 4001: Lock claimed. Processing...
+8311: TRANS 4001: Trying to claim lock of resource 7 at server 3
+8314: TRANS 4001: Waiting for other transaction, sending probe message to it
+8314: TRANS 4001: Lock claimed. Processing...
+8324: TRANS 4001: Trying to claim lock of resource 8 at server 3
+8325: TRANS 4001: Waiting for other transaction, sending probe message to it
+8327: TRANS 4001: Lock claimed. Processing...
+8337: TRANS 4001: Trying to claim lock of resource 9 at server 3
+8339: TRANS 4001: Lock claimed. Processing...
+9340: TRANS 4001: Trying to claim lock of resource 5 at server 1
+9342: TRANS 4001: Waiting for other transaction, sending probe message to it
+9374: TRANS 4001: Waiting for other transaction, sending probe message to it
+9451: TRANS 4001: Lock claimed. Processing...
+9462: TRANS 4001: Committing transaction 4001.
+9463: TRANS 4001: Unlocked resource 5 at server 1
+9465: TRANS 4001: Unlocked resource 9 at server 3
+9466: TRANS 4001: Unlocked resource 8 at server 3
+9467: TRANS 4001: Unlocked resource 7 at server 3
+9469: TRANS 4001: Unlocked resource 6 at server 3
+9470: TRANS 4001: Unlocked resource 5 at server 3
+9475: TRANS 4001: Unlocked resource 4 at server 3
+9477: TRANS 4001: Unlocked resource 3 at server 3
+9479: TRANS 4001: Unlocked resource 2 at server 3
+9481: TRANS 4001: Unlocked resource 1 at server 3
+9482: TRANS 4001: Unlocked resource 0 at server 3
+9482: TRANS 4001: Transaction 4001 committed.
+9482: Transaction 4001 ended.
+9483: End of input file reached, no more transactions will be started.
+14721: Server 4 was notified of the departure of server 2 by server 2.
+16006: Server 4 was notified of the departure of server 1 by server 1.
+16723: Server 4 was notified of the departure of server 3 by server 3.
+17380: Contact with server 4 was lost.
+-----------cases/output_test_case_C_server_1.txt==================================================================
+3: Test case C started.
+114: Server 1 was notified of the arrival of server 2
+188: Server 1 was notified of the arrival of server 3
+271: Server 1 was notified of the arrival of server 4
+876: Server 1 started.
+3003: Server 1 started its transactions.
+3092: Transaction 1000 arrived.
+3094: TRANS 1000: Starting transaction 1000.
+3096: TRANS 1000: Trying to claim lock of resource 0 at server 4
+3102: TRANS 1000: Waiting for other transaction, sending probe message to it
+3103: TRANS 1000: Lock claimed. Processing...
+3604: TRANS 1000: Trying to claim lock of resource 9 at server 1
+3605: TRANS 1000: Waiting for other transaction, sending probe message to it
+3606: TRANS 1000: Deadlock detected: [1, 1]
+3607: TRANS 1000: Trying to resolve deadlock
+7104: TRANS 1000: Lock claimed. Processing...
+7124: TRANS 1000: Committing transaction 1000.
+7125: TRANS 1000: Unlocked resource 9 at server 1
+7126: TRANS 1000: Unlocked resource 0 at server 4
+7127: TRANS 1000: Transaction 1000 committed.
+7127: Transaction 1000 ended.
+7128: End of input file reached, no more transactions will be started.
+16325: Server 1 was notified of the departure of server 2 by server 2.
+16699: Contact with server 1 was lost.
+-----------cases/output_test_case_C_server_2.txt==================================================================
+1: Test case C started.
+46: Server 2 was notified of the arrival of server 3
+119: Server 2 was notified of the arrival of server 4
+846: Server 2 started.
+2879: Server 2 started its transactions.
+2956: Transaction 2000 arrived.
+2957: TRANS 2000: Starting transaction 2000.
+2959: TRANS 2000: Trying to claim lock of resource 9 at server 1
+2968: TRANS 2000: Waiting for other transaction, sending probe message to it
+2971: TRANS 2000: Lock claimed. Processing...
+6973: TRANS 2000: Committing transaction 2000.
+6980: TRANS 2000: Unlocked resource 9 at server 1
+6980: TRANS 2000: Transaction 2000 committed.
+6980: Transaction 2000 ended.
+7036: Transaction 2001 arrived.
+7036: TRANS 2001: Starting transaction 2001.
+7037: TRANS 2001: Trying to claim lock of resource 7 at server 2
+7046: TRANS 2001: Lock claimed. Processing...
+7047: TRANS 2001: Waiting for other transaction, sending probe message to it
+7347: TRANS 2001: Trying to claim lock of resource 4 at server 4
+7356: TRANS 2001: Waiting for other transaction, sending probe message to it
+7773: TRANS 2001: Waiting for other transaction, sending probe message to it
+7787: TRANS 2001: Lock claimed. Processing...
+7888: TRANS 2001: Committing transaction 2001.
+7891: TRANS 2001: Unlocked resource 4 at server 4
+7893: TRANS 2001: Unlocked resource 7 at server 2
+7894: TRANS 2001: Transaction 2001 committed.
+7894: Transaction 2001 ended.
+7895: End of input file reached, no more transactions will be started.
+16202: Contact with server 2 was lost.
+-----------cases/output_test_case_C_server_3.txt==================================================================
+1: Test case C started.
+22: Server 3 was notified of the arrival of server 4
+917: Server 3 started.
+2802: Server 3 started its transactions.
+2859: Transaction 3000 arrived.
+2862: TRANS 3000: Starting transaction 3000.
+2864: TRANS 3000: Trying to claim lock of resource 0 at server 2
+2870: TRANS 3000: Lock claimed. Processing...
+3371: TRANS 3000: Trying to claim lock of resource 9 at server 1
+3377: TRANS 3000: Waiting for other transaction, sending probe message to it
+3420: TRANS 3000: Aborting transaction 3000.
+3424: TRANS 3000: Unlocked resource 0 at server 2
+3425: TRANS 3000: Transaction 3000 aborted.
+3426: Transaction 3000 ended.
+3478: End of input file reached, no more transactions will be started.
+16133: Server 3 was notified of the departure of server 2 by server 2.
+16513: Server 3 was notified of the departure of server 1 by server 1.
+17181: Contact with server 3 was lost.
+-----------cases/output_test_case_C_server_4.txt==================================================================
+1: Test case C started.
+868: Server 4 started.
+2715: Server 4 started its transactions.
+2781: Transaction 4000 arrived.
+2783: TRANS 4000: Starting transaction 4000.
+2787: TRANS 4000: Trying to claim lock of resource 0 at server 3
+2797: TRANS 4000: Waiting for other transaction, sending probe message to it
+2800: TRANS 4000: Lock claimed. Processing...
+3302: TRANS 4000: Trying to claim lock of resource 9 at server 1
+3310: TRANS 4000: Waiting for other transaction, sending probe message to it
+6819: TRANS 4000: Lock claimed. Processing...
+6830: TRANS 4000: Committing transaction 4000.
+6845: TRANS 4000: Unlocked resource 9 at server 1
+6848: TRANS 4000: Unlocked resource 0 at server 3
+6848: TRANS 4000: Transaction 4000 committed.
+6848: Transaction 4000 ended.
+6905: Transaction 4001 arrived.
+6906: TRANS 4001: Starting transaction 4001.
+6906: TRANS 4001: Trying to claim lock of resource 4 at server 4
+6907: TRANS 4001: Lock claimed. Processing...
+7608: TRANS 4001: Trying to claim lock of resource 7 at server 2
+7610: TRANS 4001: Waiting for other transaction, sending probe message to it
+7622: TRANS 4001: Deadlock detected: [4, 2, 4]
+7623: TRANS 4001: Trying to resolve deadlock
+7627: TRANS 4001: Aborting transaction 4001.
+7628: TRANS 4001: Unlocked resource 4 at server 4
+7629: TRANS 4001: Transaction 4001 aborted.
+7630: Transaction 4001 ended.
+7632: End of input file reached, no more transactions will be started.
+16046: Server 4 was notified of the departure of server 2 by server 2.
+16427: Server 4 was notified of the departure of server 1 by server 1.
+17099: Server 4 was notified of the departure of server 3 by server 3.
+17933: Contact with server 4 was lost.

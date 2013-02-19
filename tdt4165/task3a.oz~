@@ -1,0 +1,9 @@
+declare 
+fun {min X Y}
+    if X>Y then
+       Y
+    end
+    if Y>X then
+       X
+    end
+end

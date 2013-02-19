@@ -1,0 +1,139 @@
+sammarbeid med janalexa
+
+Task1
+a) local X(free) in {P(free) X(bound) Y(free)} end
+b) local X(free) in local Y(free) in {X(bound) Y(bound) Z(free)} end end
+c) proc {P(free) X(free)} local Y(free) in {Q(free) Z(free) Y(bound)} end end
+d) case X(free) of f(Y(free)) then {P(free) Y(bound)} else {Q(free) Y(bound)} end
+
+Task2
+(ex) = external
+(in) = internal
+a) proc {P(ex) X(ex) Y(ex)} {Q(ex) X(in) Y(in)} end
+b) proc {P(ex) X(ex) Y(ex)} {P(in) X(in) Y(in)} end
+c) proc {P(ex) X(ex) Y(ex)} {Q(ex) Z(ex) U(ex)} end
+d) proc {P(ex) X(ex) Y(ex)} local Z(ex) in {Q(ex) Z(in) U(ex)} end end
+e) proc {P(ex) X(ex) Y(ex)} local Z(ex) in {Q(external) Z(in) Y(in)} end end
+
+task3
+a)
+local Append in
+	Append = proc {$ Xs Ys ?Zs}
+		case Xs of nil then
+			Zs = Ys
+		else 
+			case Xs of '|' (X Xr) then
+				locale Zr in  
+					Zs='|'(X Zr) {Append Xr Ys Zr} 
+				end 
+			end
+		end
+	end
+end
+
+b) 
+fun {Max N M}
+	if N==0 then
+		M
+	elseif M==0 then
+		N
+	else
+		1+{Max N-1 M-1}
+	end
+end
+
+locale Max in
+	locale RecMax in
+		RecMax = proc {$ N M A ?S}
+			locale NIsZero in
+				{Value.'==' N 0 NIsZero}
+				if NIsZero then
+					{Number.'+' M A S}
+				else 
+					locale MIsZero in 
+						{Value.'==' M 0 MIsZero}
+						if MIsZero then
+							{Number.'+' N A S}
+						else
+							locale NewN in
+								locale NewM in
+									locale NewA in
+										{Number.'-' N 1 NewN}
+										{Number.'-' M 1 NewM}
+										{Number.'+' A 1 NewA}
+										{RecMax NewN NewM NewA S}
+									end
+								end
+							end
+						end
+					end
+				end				
+			end
+		Max = 	proc {$ N M ?S}
+					{RecMax N M 0 S}
+				end 
+	end
+end
+
+Task4
+(local <x1>,...,<xn> in <s> end , E)
+
+* Create a new variable <x1>,...,<xn> in the store.
+* E' = E + { <x1> => <x1>,...,<xn> => <xn> }
+* Push (<s>,E') on the stack.
+
+Task 5)
+	a)
+	([(local B in if B then skip else skip end end, φ)], φ)
+	1)
+		local B in blir poppet
+		φ += B -> x
+	([(if B then skip else skip end end, {B -> x})], φ)
+	2)
+		if B blir poppet
+		B referer ikke til noe så error condition blir kastet
+	
+	b)
+	([(local B in B = false if B then skip else skip end end, φ)], φ)
+	1)
+		"local B in" blir poppet
+		φ += B -> x
+	([(B = false if B then skip else skip end, {B -> x})], φ)
+	2) 
+		B = false blir poppet
+		φ += x -> false
+	([(if B then skip else skip end end, {B -> x})], {x -> false})
+	3)
+		if B then skip else skip end blir poppet
+		B er false så skip fra else clausen blir pushet
+	([(skip, {B -> x})], {x -> false})
+	4)
+		skip popes fra stacken og utførelse av programmet er ferdig
+	c)
+	([(local X Z A B P in proc{P X Y} Y = X + Z end Z = 7 X = 4 {P X A} {P A B} end, φ)], φ)
+	1)
+		local X Z A B P in <s>1 end blir poppet
+		φ += {X -> x Z -> z A -> a B -> b P -> p}
+	([(proc{P X Y} Y = X + Z end Z = 7 X = 4 {P X A} {P A B}, {X -> x Z -> z A -> a B -> b P -> p})], φ)
+	2)
+		proc{P X Y} Y = X + Z end blir poppet
+		Prosedyren blir pushet på stakken og Z blir lukket inne sammen med prosedyren på en måte
+	3)
+		Z = 7 blir lagt til i minnet
+	4)
+		X = 4 blir lagt til i minnet
+	5)
+		prosedyren P blir kalt og A blir 11
+	6)
+		prosedyren P blir klat og B blir 18
+
+
+Task6
+a	Not Unifiable, X can not be 2 and 3 at the same time. 
+b	Unifiable 
+c	Unifiable
+d	Not Unifiable, The number 2 mess things up. 
+e	Unifiable
+
+
+

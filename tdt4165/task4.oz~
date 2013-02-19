@@ -1,0 +1,9 @@
+A D O pi in
+{Circle R}
+   pi = 3.14
+   A = pi*R*R
+   D = 2*R
+   O = pi*D
+end
+
+{Browse {Circle 5}}

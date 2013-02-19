@@ -1,0 +1,19 @@
+Oppgave 1. Teori.
+
+a) I et distribuert system med høy churn vil deltakende noder forlate og slutte seg til systemet hele tiden. Er likemannsnettverk eller klient-tjener best egnet til å tåle høy churn? Begrunn svaret.
+
+Ans: 
+Churn rate er utskiftningsraten. Altså hvor mange McDonalds medarbeidere som slutter i en gitt tidsperiode. For Amazone er det gunstig å ha lav churn rate på kundene, siden det gir mer inntekt. Det samme gjelder for peer-to-peer netverk. Om man har mange noder koblet til nettet samtidig vil man få høyere hastighetere og dele informasjon fortere. I peer-to-peer nettverk er det ofte en liten gruppe noder som holder seg stabile over lengre tidsperioder, mens man vil ha mange noder som kommer og går. Dette førere til høy churn. Hovedproblemet med churn i peer-to-peer er at det ikke er sikker om en node forblir i nettet eller ikke. Så man risikerer at informasjonen man leter etter kan forsvinne eller bli utilgjengelig. I peer-to-peer vil man også ha overhead når man kobler seg til, siden man må finne ut hvilke noder fins i nettet. Detter er dog en liten kostnad i forhold til den gevinsten man kan få ved mange noder og lav churn. For klient-tjener vil høy og lav churn spille en veldig liten rolle. Det er tjenerne som har alle nødvendig informasjon i nettet og man vet at hver server har kopi av de di andre har. Har man høy churn her, så vil klientene koble seg til og fra veldig ofte. Noe som er å foretrekke i et klient-tjener nett, siden tjeneren helst ikke bruke båndbredde på inaktive klienter. Tjenerene er stabile og vil ikke falle ut av nettet i et klient-tjener nett. Dette gjør at klienter med mindre omtanke kan koble til og fra nettet. Altså at de kobler seg til på nytt når de trenger noe. Man trenger heller ikke dele noe tilbake til nettet i en klient-tjener modell. Tjenerens uavhengighet til klientene gjør at systemet tåler veldig høy churn. Mens man i peer-to-peer nett vil få store problemer når alle nodene faller ut av nettet. I peer-to-peer nett vil alle også dele informasjon, slik at man i mange tilfeller får høye hastigheter, når man ikke har mange noder vil man få lave hastigheter. Noe som oppstår ved høy churn. 
+    Når systemne er distribuerte vil man få samme problemstillingen som beskrevet over for peer-to-peer nett, da alle kan koble seg til dette nettet. I en klient-tjener modell vil man i et distribuert system ha flere servere som holder på den samme informasjonen. Altså at server nr1 har et sett med informasjon og server nr2 har en eksakt kopi av den samme informasjonen. Her vil det med flere tjenere bli et mer stabilt nett. I et peer-to-peer nett vil man aldri være sikker på om informasjonen fortsatt esisterer i sin helhet. Dette gjør et rent peer-to-peer nett sårbart i mange sammenhenter. 
+    Anbefalingen er altså å benytte en klient-tjener arkitektur i det distribuerte systemet slik at man til enhver tid er sikker på at man vet at all data er intakt. 
+    TL;DR klient-tjener, fordi dataen holdes intakt hele tiden, noe man ikke har en garanti for i et likemannsnettverk. 
+
+
+b) Hvorfor er søk i strukturerte likemannsnettverk begrenset til oppslag på nøkkel (GUID), mens søk i ustrukturerte likemannsnettverk kan være hva som helst?
+
+Ans: 
+Likemannsnettverk med struktur bruker GUID til å identifisere noder i nettet. Man bruker GUIDen til å koble seg til en annen node. Derfor må man bruke GUID-nøkkelen når man gjør oppslag i nettet.
+I ustrukturerte likemannsnettverk har man ingen distribuert identifikator, så man må hoppe et og et steg utover i treet for å finne den noden man vil finne. Altså at man går til en node og ser om denne noden er den man leter etter eller har informasjon om den man leter etter. Så går man til neste node og spør igjen. 
+
+
+

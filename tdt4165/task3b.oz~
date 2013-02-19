@@ -1,0 +1,10 @@
+declare
+fun { IsBigger n t }
+   if n>t then
+      Y=true
+   else
+      Y=false
+   end
+end
+
+{Browse {IsBigger 10 11}}
