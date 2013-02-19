@@ -1,0 +1,156 @@
+oving6
+kiro
+
+%%%Facts and statements:
+
+%thing
+    ako(money, thing).
+        ako(dollar, money).
+        ako(kroner, money).
+    ako(super_market, thing).
+    ako(goods, thing).
+        ako(assorted_item, goods).
+            ako(personal_hygien, assorted_item).
+                ako(deodorant, personal_hygien).
+        ako(edible, goods).
+            ako(food, edible).
+                ako(vegetable, food).
+                    ako(tomato, vegetable).
+            ako(meat, food).
+                ako(beef, meat).
+                    ako(ground_beef, beef).
+    ako(assorted_item, thing).
+    ako(mammal, thing).
+        ako(person, mammal).
+            ako(adult, person).
+                ako(male, person).
+                ako(female, person).
+            ako(child, person).
+    ako(producer, thing)
+        ako(factory, producer).
+        ako(farm, producer).
+
+%%%Attributes:
+hasatt(food, weight, pounds).
+hasatt(goods, price, money).
+
+%%%Relations:
+isa(north_berkley_safeway, super_market).
+isa(john, male).
+isa(john, adult).
+isa(tomato, vegetable).
+isa(ground_beef, beef).
+
+%%%Question specific Relations:
+sells(super_market, goods).
+have(tomato, weight, 0.5).
+bought(john, tomato).
+bought(john, ground_beef).
+bought(john, deodorant).
+made(farm, vegetable).
+made(factory, assorted_item).
+
+%%%Relation rules:
+%% query predicate
+hasvalues(X,A) :- 
+    hasvalue(X,A,V),
+    ans([X,A,V]).
+
+hasvalue(X,A,V) :-
+    has(X,A,V).
+hasvalue(X,A,V) :- 
+ \+ has(X,A,_),
+    instant(X,C),
+    have(C,A,V),
+ \+ interveningatt(X,C,A).
+
+%% instance
+instant(X,D):- 
+    isa(X,C),
+    subsubclass(C,D).
+
+instant(X,X).
+
+isFood(X, I):- 
+    instant(X, mammal), 
+    instant(I, edible).
+
+eatLater(X, I):- 
+    isFood(X, I), 
+    got(X, I).
+
+amount(X, A, T):- 
+    subsubclass(X, Y), 
+    hasatt(Y, A, T).    
+
+brought(X, I, S):- 
+    instant(X, person), 
+	need(X, I, S).
+
+need(X, I, S):- 
+    selling(S, NI),
+	got(X, NI),
+	subsubclass(I, NM),
+	subsubclass(NM, money).
+	amount(NI, price, NM).
+    
+got(X, D):- 
+    subsubclass(C, D), 
+	bought(X, C).
+	
+selling(X, D):- 
+    subsubclass(D, C), 
+	sells(super_market, C), 
+	instant(X, super_market).
+
+produced(X, D):- 
+    subsubclass(X, producer), 
+	subsubclass(D, E), 
+	made(X, E).
+
+interveningatt(X,C2,A):-
+    interveningclass(X,C1,C2),
+    have(C1,A,_).
+
+interveningclass(X,C1,C2):-
+    instant(X,C1),
+    subclass(C1,C2).
+
+%% exclusive
+subclass(C,D):- 
+    ako(C,C1),
+    subsubclass(C1,D).
+
+%% inclusive
+subsubclass(C,C). 
+subsubclass(C,E):-
+    ako(C,D),
+    subsubclass(D,E).
+
+ans(X):-write(X),nl,fail.
+
+%%%Answer queries: 
+%a.  Is John a child or an adult? [Adult]
+instant(john, adult).
+
+%b.  Does John now have at least two tomatoes? [Yes]
+
+%c.  Did John buy any meat? [Yes]
+got(john, meat).
+
+%d.  If Mary was buying tomatoes at the same time as John did see her? [Yes]
+
+%e.  Are the tomatoes made in the supermarket ? [No]
+produced(super_market, tomato).
+
+%f. What is John going to do with the tomatoes ? [Eat them]
+eatLater(john, tomato).
+
+%g. Does Safeway sell deodorants ? [Yes]
+selling(north_berkley_safeway, deodorant).
+
+%h. Did John bring any money to the supermarket? [Yes]
+brought(john, money, super_market).
+
+%i. Did John have less money after going to the supermarket ?[Yes]
+
