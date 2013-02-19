@@ -1,0 +1,44 @@
+1. 
+Micro is the lower level of a system. Macro is the higher level. 
+From these levels we can find emergence in agent-based models. 
+The micro aspect is the system and agent specific aspects. 
+While the macro part describes the design of society and those external elements that interact with the system. 
+
+2.  
+The main difference between practical and reasoning agents are that practical agents focus on choosing the best action of the available ones, while reasoning agents analyse the world and try to find the optimal solution. 
+
+3.
+Brook defines level of competence as: "Level of competence is an informal specification of a disired class of behaviors.".
+
+The radical change from traditional to neuvell AI can mainly be summarised as a transition of focus. 
+The focus change from creating human-level of intelligence in a system, to focusing on recreating a tiny part of intelligence from insects and smallanimals. 
+
+4.
+The action selection is based on levels. The overall intelligence is divided into many simple behaviors. 
+These behaviors are represented the levels. When the agent has to react to an event it goes through all the levels executes those actions. 
+This makes for a highly responsive behavior. Example: when a robot runs into something, the first thing it does is to move away from it, then it can evaluate the obstacle, then continue with finding and optimizing a new route to the target destination.
+The lower levels are useful as responses while the higher levels are more useful for long term strategies. 
+
+5. 
+In maes system the active events gets more priority. The recency might be difficult to implement. 
+But by removing som of the priority by activity the system might focus more on the newer goals. 
+Negative Wheighting of the older, more active, goals cal also be useful.
+
+6. 
+Backward chaining can be used in Maes system to improve the chosing goals. 
+Take a goal, bacward chain, find the start state, compare the start state with previously encountered states and actions. 
+This should be used on the lesser active goals to give them higher priority and completeness. 
+Two goals might share previously visited states and solutions. Prevously visited states should be stored to improve this aspect. 
+
+7. 
+The systems bias towards already activated goals makes the system blind. 
+The system committs to the already engaded tasks and the choosen path gets more priority as the activi increases. 
+This is the problem about the system. That it mindlessly rushes towards the one goal that is in focus.
+While there might be other goals that could be better for the overall strategy. 
+
+8. 
+The main difference with the two approaches to leveling is that Brook has very independent layers, while Ferguson's levls have much more inter communication.
+Brooks levels take control of the lower level to enforce it's decision making and action. 
+With Furgusons leveling system the decisions are sent to other layers for processing there.
+Fergusons system also have context-activated control rules that are activated before the layers come into effect. 
+
