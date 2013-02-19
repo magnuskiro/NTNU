@@ -1,4 +1,4 @@
-﻿% latex article template
+% latex article template
 
 % cheat sheet(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/latexsheet.pdf
 % cheat sheet2(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/LaTeX-cheat-sheet.pdf
@@ -22,7 +22,7 @@
 \title{TDT4215 - 1 - Exercise}
 % Author
 \author{
-        Magnus L Kirø
+        Magnus L Kirø \\
 }
 \date{\today}
 
@@ -30,24 +30,16 @@
 \maketitle
 \pagenumbering{arabic}
 
-% imgae example. 
-%\begin{figure}[htb]
-%	\centering
-%	\includegraphics[width=\textwidth]{nameOfImageFile}
-%	\caption{The text that shows under the image, image text.}
-%	\label{fig:FigureLableName}
-%\end{figure}
-
 \subsection{Task 1}
 % Describe the most important processes in information retrieval, and what they consist of.
 
-The most important parts of  IR is document retrieval and text mining. 
+The most important parts of  IR is document retrieval and text mining.
 
-Document retrieval is the part where we aquire the collection of text. 
-It's the raw data that we can extract information from later. 
+Document retrieval is the part where we aquire the collection of text.
+It's the raw data that we can extract information from later.
 
-Text minig is the process of analysing the retrieved documents. 
-Tagging, lemmatization and otherwise adding meta data to the raw data to better be able to extract information. 
+Text minig is the process of analysing the retrieved documents.
+Tagging, lemmatization and otherwise adding meta data to the raw data to better be able to extract information.
 
 \subsection{Task 2}
 % Mention the three common information retrieval models, and describe shortly what they are based on. 
@@ -200,7 +192,7 @@ direction 	& 1 & [1,1]\\
 \end{tabular}
 
 A compression of this inverted index list would be: \\
-[1, [1,1,1,1,1,1,2,1,2,1,1,1,2,1,2,1,1,1,1,1,1,1]]
+\[1, [1,1,1,1,1,1,2,1,2,1,1,1,2,1,2,1,1,1,1,1,1,1]\]
 
 \subsection{Task 17}
 Serching an inverted index follows three general steps: 
@@ -221,5 +213,7 @@ If the user input is a perfect query we will stil have problems with the interpr
 \subsection{Task 19}
 Centralsed web architecture and distributed web architecture. 
 The main difference is that the centralised architecture has a master copy of the information in one location while the rest of the system has copies, while the distributed system has lots of main chunks of information with no master copy. In the distributed system the information you are looking for might not be in the nearest location. You might need to ask the first location first before being redirected to the next location. 
+
+
 
 \end{document}
