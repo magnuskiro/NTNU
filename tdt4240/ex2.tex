@@ -1,0 +1,59 @@
+% latex article template
+
+% cheat sheet(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/latexsheet.pdf
+% cheat sheet2(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/LaTeX-cheat-sheet.pdf
+% reference manual(eng): http://ctan.uib.no/info/latex2e-help-texinfo/latex2e.html
+
+\documentclass[12pt, a4paper]{article}
+\title{Exercise TDT4240: Patterns}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[pdfborder=0 0 0]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+
+% hides the section numbering. 
+\setcounter{secnumdepth}{-1}
+
+% Graphics/image lications and extensions. 
+\DeclareGraphicsExtensions{.pdf, .png, .jpg, .jpeg}
+\graphicspath{{./images/}}
+
+% Author
+\author{
+        Magnus L Kirø \\
+		Håvard Tørresen
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+\pagenumbering{arabic}
+
+\subsection{Step 4 - theory}
+
+\subsection{a} 
+
+Design patterns: Template method, Observer, Abstract factory, State, Pipeline
+Architectural patterns: MVC
+
+
+Architecture is the overall plan. The bigger picture. The patterns here describe high level goals and intentions. 
+
+Design is more speciffic. It is the small picture. The implementation specifics are decided in this phase. 
+
+\subsection{b} %done 
+We chose the Observer pattern. The class that was changed is the Collision class, inside the PongScreen class. 
+The ballSprite class works as the subject, while the collision class has the role of the observer.  
+
+\subsection{c} %done
+Yes, there are advantages of using the Observer pattern in this program. 
+
+The main advantage of this is that we have controll of all the collisions in one class. 
+Another advantage is that the implementation is simpler because we don't have to manyally check overlaping points in sprites. 
+
+\subsection{Selfevaluation}
+For the total time of this exercise we used aproximatly three hours. 
+
+\end{document}
