@@ -1,0 +1,141 @@
+% latex article template
+
+% cheat sheet(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/latexsheet.pdf
+% cheat sheet2(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/LaTeX-cheat-sheet.pdf
+% reference manual(eng): http://ctan.uib.no/info/latex2e-help-texinfo/latex2e.html
+
+% The document class defines the type of document. Presentation, article, letter, etc. 
+\documentclass[12pt, a4paper]{article}
+
+% packages to be used. needed to use images and such things. 
+\usepackage[pdfborder=0 0 0]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\PassOptionsToPackage{hyphens}{url}
+
+% hides the section numbering. 
+\setcounter{secnumdepth}{-1}
+
+% Graphics/image lications and extensions. 
+\DeclareGraphicsExtensions{.pdf, .png, .jpg, .jpeg}
+\graphicspath{{./images/}}
+
+% Title or header for the document. 
+\title{TDT4171 Artficial Intelligence Methods, Exercise 2}
+% Author
+\author{
+        Magnus L Kirø \\
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+\pagenumbering{arabic}
+
+\section{Part A}
+
+\begin{itemize}
+	\item The unobservable variables for the umbrella example is the weather. The weather is unobservable locally. For each time t we have a waether observation. 
+	\item The observable variables are the evidence for the model. For a given time slice t, do we see the umbrella or not? We base our calculations on this observations.
+
+	\item{
+		The dynamic model would be like this: \\ 
+		\begin{equation}
+		P(X_t | X_{t-1}) = 
+		\begin{tabular}{ a b }
+		  0.7 & 0.3 \\
+		  0.3 & 0.7 \\
+		\end{tabular}
+		\end{equation}
+		\\
+		While the observation model would be like this: \\ 
+		\begin{equation}			
+		P(E_t | X_t) = 
+        \begin{tabular}{ a b }
+          0.9 & 0.0 \\
+          0.0 & 0.2 \\
+        \end{tabular}
+		\end{equation}
+        \\
+	}
+
+	\item{
+		\textbf{First-order Markov process}:
+		This model depends only on the previous observation, and not any other earlier states. In the case of weather this will not work.
+		Seasons should be considerd, along with the last two or three days. 
+		Depending og location and season rain might have higher probability of occuring multiple days in a row.   
+		
+		\textbf{Stationary Process}: 
+		As the wather is controlled by the laws of nature we can conclude that the process is stationary. 
+		While the probability of P(R$_t$\|R$_t_-_1$) is always the same, the previous statement is proved. 
+
+		\textbf{Sensory Markov assumptions}:
+		Since we base our sensory model on the values observed in a time slice t, we can assume this to be a reasonable conclusion. 
+
+		The assumptions are reasonable for this model.  
+	}
+\end{itemize}
+
+\subsection{Part B}
+
+Running the forward operation we get this output:
+
+\begin{verbatim}
+kiro@kiro ~/ntnu/tdt4171/ex2 $ python ex2.py 
+Forward:
+fw msg 1: [ 0.81818182  0.18181818]
+fw msg 2: [ 0.88335704  0.11664296]
+fw msg 3: [ 0.19066794  0.80933206]
+fw msg 4: [ 0.730794  0.269206]
+fw msg 5: [ 0.86733889  0.13266111]
+\end{verbatim}
+
+From this we can see that:
+
+\begin{equation}
+P(X_2|e_{1:2}) = 0.88335704
+\end{equation}
+
+and given the evidence: \\
+{ e1:5 = Umbrella1 = true, Umbrella2 =true, Umbrella3 = false, Umbrella4 = true, Umbrella5 = true } \\
+that: 
+
+\begin{equation}
+P(X_5|e_{1:5}) = 0.86733889
+\end{equation}
+
+\section{Part C}
+Running the code we get this output: 
+
+\begin{verbatim}
+kiro@kiro ~/ntnu/tdt4171/ex2 $ python ex2.py 
+Forward:
+fw msg 1: [ 0.81818182  0.18181818]
+fw msg 2: [ 0.88335704  0.11664296]
+\end{verbatim}
+
+From this we can see that: 
+
+\begin{equation}
+P(X_1|e_{1:2}) = [ 0.883,0.117 ]
+\end{equation}
+
+Further we have the backward messages:  
+
+\begin{verbatim}
+kiro@kiro ~/ntnu/tdt4171/ex2 $ python ex2.py 
+(...)
+Backward:
+bw msg: 5: [1 1]
+bw msg: 4: [ 0.69  0.41]
+bw msg: 3: [ 0.4593  0.2437]
+bw msg: 2: [ 0.090639  0.150251]
+bw msg: 1: [ 0.06611763  0.04550767]
+bw msg: 0: [ 0.04438457  0.02422283]
+\end{verbatim}
+
+\section{Part D}
+See ex2.py for the code. 
+
+\end{document}
