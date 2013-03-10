@@ -93,3 +93,16 @@ Per nå er det bare mulig å beskrive det intrykket man har av de andre. Noe som
 * One incident has happened, as expected. Disciplinary cake was issued as punishment. 
 * Also, we have to little time to do anything useful in this subject. 7 hours a week per person is very little. 
 
+# 20.02.13
+-----
+ingen log ble skrevet
+
+# 27.02.13
+-----
+bra dag. kom litt seint. Har fått laga mestparten av prototypen/framvisningsHTMLen
+
+Også var det foredrag av deler av pensum. 
+
+Gruppelog er fortsatt bortkasta tid. 
+
+
