@@ -1,0 +1,20 @@
+#bread,milk
+#bread,diapers,beer,eggs
+#milk,diapers,beer,cola
+#bread,milk,diapers,beer
+#bread,milk,diapers,cola
+#bread,diapers,milk
+
+@attribute 'bread'
+@attribute 'milk'
+@attribute 'diapers'
+@attribute 'beer'
+@attribute 'eggs'
+@attribute 'cola'
+
+t,t,?,?,?,?
+t,?,t,t,t,?
+?,t,t,t,?,t
+t,t,t,t,?,?
+t,t,t,?,?,t
+t,t,t,?,?,?

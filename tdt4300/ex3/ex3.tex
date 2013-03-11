@@ -1,0 +1,140 @@
+% latex article template
+
+% cheat sheet(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/latexsheet.pdf
+% cheat sheet2(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/LaTeX-cheat-sheet.pdf
+% reference manual(eng): http://ctan.uib.no/info/latex2e-help-texinfo/latex2e.html
+
+% The document class defines the type of document. Presentation, article, letter, etc. 
+\documentclass[12pt, a4paper]{article}
+
+% packages to be used. needed to use images and such things. 
+\usepackage[pdfborder=0 0 0]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\PassOptionsToPackage{hyphens}{url}
+
+% hides the section numbering. 
+\setcounter{secnumdepth}{-1}
+
+% Graphics/image lications and extensions. 
+\DeclareGraphicsExtensions{.pdf, .png, .jpg, .jpeg}
+\graphicspath{{./images/}}
+
+% Title or header for the document. 
+\title{TDT4300 Datavarehus og datagruvedrift
+\\
+Assignment 3: Classification}
+% Author
+\author{
+        Magnus L Kirø \\
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+\pagenumbering{arabic}
+
+\section{1 Decision Trees}
+\begin{itemize}
+	\item 1: tot gini= 0.930801388889
+	\item 2: id : gini= 0.95
+	\item 3: age : gini= 0.665
+	\item 4: student : gini= 0.5
+	\item 5: creditworthiness : gini= 0.5
+	\item 6: The best gini value is the total for the whole set. Besides that
+age is the best gini value. The id(UserID) is a unique value and would in many
+cases be useless when searchinf for information. 
+\end{itemize}
+
+The two last gini indexes are "income : gini= 0.645" and "pc : gini= 0.48"
+
+\section{2.2 datasets}
+%How many variables do they contain?
+%How many instances?
+%What kind of data do they describe?
+%Which one one do you assume is the most difficult to classify?
+
+\begin{itemize}
+	\item Iris dataset \\
+	\subitem The dataset contains three (3) variables. 
+	\subitem 150 instances are available. 
+	\subitem The variables describe, petal length, petal width and class. 
+	\subitem I assume the petal width is the most difficult to classify. 	
+
+	\item Diabetes dataset \\
+	\subitem Has nine attributes. 
+	\subitem 768 instances are present in the dataset. 
+	\subitem The data describes the condition and stats of diabetes patients. 
+	\subitem I would presume that the \textit{insu} variable is the hardes to
+classify. 
+
+	\item Spambase dataset \\
+	\subitem 58 variables can be found in the dataset.
+	\subitem 4601 instances ar present in the dataset. 
+	\subitem The content of the dataset describes content of spam email. 
+	\subitem Class as a variable here would be the most difficult one to
+classiy. 
+
+\end{itemize}
+
+
+\section{2.3 Classification}
+%List the most important parameters.
+%Describe how changing them changes the overall result. 
+%Overal result/accuracy. 
+
+
+List the algorithems, with corresponding findings. 
+\begin{itemize}
+	\item J48
+	\subitem Iris; The petal width is the most important variable.
+The accuracy is 96.08\%
+	\subitem Diabetes; \textit{Plas} is the most important variable here.
+The accuracy is 76.25\%
+	\subitem spambase; \textit{word\_freq\_remove} is here the most important
+variable. Accuracy=92.20\%
+
+	\item k-NN
+	\subitem Iris; Using the neares neighbour the petal width variable is the
+most significant one. accuracy=96.08\%
+	\subitem Diabetes: the plas variable would still be the most significant
+one. accuracy=72.80\%
+	\subitem spambase; The most deciding variable is \textit{word\_freq\_remove}
+and the accuracy is 89.0\%
+	
+
+	\item Support vector machines
+	\subitem Iris; petal width has the most weight here. accuracy=96.08\%
+	\subitem Diabetes; Plas has the most significant value here. accuracy=79.31\%
+	\subitem spambase; \textit{word\_freq\_remove} is still the most
+significant variable accuracy=90.54\%
+\end{itemize}
+
+
+\subsection{2.4 Evaluation}
+Cross-validation is the process of splitting the dataset into subsets,
+execute calculations, then comparing all the calculation of the subsets to
+create a better total estimate of the calculation. 
+
+With the k-NN algorithm the cross-validation gives the biggest difference in
+accuracy. 
+
+Cross-validation will be a better choice with bigger datasets and more complex
+datasets. Splitting the calculations into sub calculations can save time and
+complexity, thus reducing resource and time usage. And the over all result
+becomes a bit more accurat.
+
+In the case where the data is sorted the percentage split won't help much. Then
+the subsets would be to different to give good results. Having four fruits, two
+apples and two oranges, there would be little point in dividing them into two
+sets where the same fruits are in the same sets. Splitting like this,
+calculating and then combine would only result in bigger resource usage and
+time delay. 
+
+\section{2.5 Best Classifiers}
+
+J48 showed the best performance with all datasets. 
+The REPTree algorithm showed better results then any of the others. 
+
+\end{document}
