@@ -63,7 +63,9 @@ def gain(data, parent):
 
 	for a in data:
 		alen = float(len(a))
+		# if there are no elements in a return 0
 		if not alen: return 0
+		# calculate the gain by the formula in the book.
 		# remainder = this sets persentage of all observations multiplied with B(), where B() is given the number of desierables diveded by the length of the current set. 
 		remainder += (alen/n)*B( a.count(1) / alen )
 		#print "%s / %s * B(%s / %s) - result: %s" % (al, n, a.count(1), al, remainder)
@@ -71,18 +73,25 @@ def gain(data, parent):
 	return 1-remainder
 
 def B(q):
+	# when q is 1 or 0, the logarithm will return 0 or infinity, therefore we return 0 always. 
 	if q >= 1 or q <= 0: return 0
+	# calculate the B formula from the book. 
 	return -(q * np.log2(q) + ((1.0-q) * np.log2(1.0-q)))
 
 # plurality value
 def pv(parent):
+	# if the parten data set has no entries. 
 	if not parent: return None
 	# element count
-	ec = {}	
+	ec = {}
+	# for all elements in the parent dataset 	
 	for e in parent:
+		# if the last element in a set exsists in our dictionary
 		if e[-1] in ec:
+			# increment the instance count
 			ec[e[-1]] += 1
 		else: 
+			# if the element dosn't exsist in the dictionary, add it. 
 			ec.update({e[-1]: 1})
 	# sort the element list in decreasing order. 
 	wlist = sorted(ec, key = ec.get, reverse = True)
@@ -90,20 +99,27 @@ def pv(parent):
 	# select a random value of the top 4 elements 
 	n = random.randint(0, 3)
 
+	# if we have no values 
 	if len(wlist) == 0 : return 0
+	# while we can't find an existing value
 	while(True):	
 		try: 
+			# try to retur an existing value.
 			return wlist[n]
 		except IndexError:
+			# if the value don't exist try another list element. 
 			n = random.randint(0, 3)	
 
+# check if all values in a data set are equal. eg all_elemets==1. 
 def all_equal(data):
 	for li in data[1:]:
 		if li != data[0]: return False
 	return True
 
+# random and gain importance functions. 
 def importance(data, attributes):
 	if is_random:
+		# for the random importance function we just return a random value for b. 
 		return random.choice(attributes.keys())
 	else:
 		# list of all values for an attribute 
@@ -126,13 +142,17 @@ def importance(data, attributes):
 
 		b = {} 
 		i = 0
+		# for all attributes
 		for key,val in attributes.iteritems():
+			# calculate the b value
 			b[key] = gain([att_vals[i], arr[i]], outcomes)	
 			i += 1
 
+		# find the highest B value
 		high = max(b.values())	
+		# find all nodes that has the highest value
 		high_list = [key for key in b.keys() if b[key] == high]	
-
+		# return one of the nodes that has the highest value. 		
 		return random.choice(high_list)
 
 # decision Node learning
@@ -168,8 +188,6 @@ def dt_learning(data, parent, attributes):
 			#print i, subtree
 			root.new_child(i, subtree)
 		return root		 
-
-
 
 def main(random_importanse = False):
 	is_random = random_importanse
