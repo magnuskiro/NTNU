@@ -270,7 +270,6 @@ def main(random_importanse = False):
 
 # start execution of the program
 print "Decision tree, importance implementation exercise"
-print "\n ----- \n"
 # use random importance
 main(True)
 # use importance function with gain calculations and such. 
