@@ -1,16 +1,23 @@
 import numpy as np
 import random
 
-is_random = False 
+# random variable for use in the importance function
+# it is set first in the main function, by input argument to the main function.
+is_random = None 
 
+# node class for tree building. 
+# each node without children is the root of this subtree. 
+# a node without children is leaf node. 
 class Node():
 	def __init__(self, data):
 		self.data = data
 		self.children = {}
-		
+	
+	# add child to node	
 	def new_child(self, key, value):
 		self.children.update({key: value})
 
+	# function for printing the tree of this node.
 	def display(self, space):
 	#	print self.children, self.data
 		if len(self.children) == 0:
@@ -19,7 +26,9 @@ class Node():
 #			print len(self.children)
 #			print self.children
 			for key, value in self.children.iteritems():
+				# print this node of the tree. 
 				print space + "-%s" % self.data
+				# print the child nodes. 
 				self.children[key].display(space+" ")		
 	
 	def classify(self, attributes):
@@ -42,6 +51,7 @@ class Node():
 			#print self.children[key]
 			return self.children[key].classify(attributes)
 
+# read the text files for training data and test data. 
 def get_data(file_name):
 	# init dataset
 	data = []
@@ -52,6 +62,9 @@ def get_data(file_name):
 	for line in input_file.readlines():
 		# insert data into dataset
 		data.append(line.rstrip("\n").split("\t"))
+	
+	# debug to see the data structure. 
+	#print data
 
 	# return dataset
 	return data
@@ -61,6 +74,7 @@ def gain(data, parent):
 	n = float(len(parent))
 	remainder = 0.0
 
+	# for all attribute sets in the dataset. 
 	for a in data:
 		alen = float(len(a))
 		# if there are no elements in a return 0
@@ -72,6 +86,8 @@ def gain(data, parent):
 
 	return 1-remainder
 
+# function to calculate the B value
+# critical part for the gain function. 
 def B(q):
 	# when q is 1 or 0, the logarithm will return 0 or infinity, therefore we return 0 always. 
 	if q >= 1 or q <= 0: return 0
@@ -207,9 +223,14 @@ def main(random_importanse = False):
         "7": [],
     }
 
+	# populate the attributes list
+	# for the length of the data set
 	for i in range(len(data)):
+		# for the length of the data record. 
 		for j in range(1,len(data[i])):
+			# if the data-record value equals "1"
 			if(data[i][j] == "1"):
+				# add data-record value to the attribute dictionary under the j key. 
 				attributes[str(j)].append(data[i][j-1])
 
 	# test gain function
