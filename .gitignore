@@ -2,6 +2,10 @@
 # Folders
 runtime-EclipseApplication/
 
+# tex files
+*.aux
+*.blg
+*.bbl
 
 *.log
 
