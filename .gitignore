@@ -25,4 +25,5 @@ runtime-EclipseApplication/
 .settings
 .metadata
 
-
+# subjects and projects that have their own repository.
+master/
