@@ -1,13 +1,18 @@
 NTNU subjects
 =============
 
-Courses attended at ntnu, and the files/code created and used in the course. 
+Courses attended at NTNU, and the files/code created and used in the course. 
+
+Status
+-----
+Updated Apr 11 with possible missing project files. Most for the pleasure of
+not having anything to commit. 
 
 Subjects
 -------
 (h=høst/fall, v=vår/spring)
 
-
+* io1001 - h2013+v2014 - Leadership in practice. 
 * tdt4117 - h2012 - Information Retrieval
 * tdt4136 - h2011 - Logic and Reasoning systems
 * tdt4150 - h2012 - Advance Databases - h2012
