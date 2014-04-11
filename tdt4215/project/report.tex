@@ -1,0 +1,56 @@
+% latex article template
+
+% cheat sheet(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/latexsheet.pdf
+% cheat sheet2(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/LaTeX-cheat-sheet.pdf
+% reference manual(eng): http://ctan.uib.no/info/latex2e-help-texinfo/latex2e.html
+
+% The document class defines the type of document. Presentation, article, letter, etc. 
+\documentclass[12pt, a4paper]{article}
+
+% packages to be used. needed to use images and such things. 
+\usepackage[pdfborder=0 0 0]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\PassOptionsToPackage{hyphens}{url}
+
+% hides the section numbering. 
+\setcounter{secnumdepth}{-1}
+
+% Graphics/image lications and extensions. 
+\DeclareGraphicsExtensions{.pdf, .png, .jpg, .jpeg}
+\graphicspath{{./images/}}
+
+% Title or header for the document. 
+\title{Document Title}
+% Author
+\author{
+        Magnus L Kirø \\
+		representing ThisOrThat organization % in what capacity are you presenting this document? as yourself, the sales manager, ceo, etc? 
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+\pagenumbering{arabic}
+
+\begin{abstract}
+This is the paper's abstract \ldots
+\end{abstract}
+
+• Introduction.
+• System architecture. Justify your choices.
+• Components; function and role. Show the structure of the
+components (use e.g. UML).
+• Limitations given in the assignment. Present theories used.
+Are any theories outside of the curriculum been used? Explain
+the reason for the selection.
+• How have the theories been adapted to the assignment?
+• Summary of the results.
+• Evaluation and discussion of the results. Limitations of your
+evaluation results.
+• Thoughts of potential improvements.
+• Conclusions.
+
+
+\end{document}
