@@ -6,12 +6,17 @@
 
 % The document class defines the type of document. Presentation, article, letter, etc. 
 \documentclass[12pt, a4paper]{article}
+%12pt, 1,5 linjeavstand, 15-20 sider.
+%Filnavn: 'studnr_kandnr.pdf'
+% 713703_10015.pdf
 
 % packages to be used. needed to use images and such things. 
 \usepackage[pdfborder=0 0 0]{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[norsk]{babel}
 \usepackage{graphicx}
+\usepackage[options]{natbib} % bibliography thing.
+\usepackage{hyphenat}
 \PassOptionsToPackage{hyphens}{url}
 
 % hides the section numbering. 
@@ -37,72 +42,492 @@
 \pagenumbering{arabic}
 
 \begin{abstract}
-Abstrakt, kort definisjon av innholdet og funnen av denne oppgaven \ldots
+Oppgaven tar for seg aspekter ved omorganisering, de kommunikasjons
+utfordringene man har der og litt om konflikter rundt det. Frivillige
+porganisasjoner er tema kontekst for oppgaven og ledelsesteori står sentralt i
+diskusjonene.  
 \end{abstract}
 
+% listings
+\tableofcontents
+%\addcontentsline{toc}{section}{List of Contents}
+\clearpage
+
+\renewcommand{\baselinestretch}{1.50}\normalsize
 \section{Introduksjon}
-Innlede oppgaven og definere kontekst. 
+%Innlede oppgaven og definere kontekst. 
+%refleksjonsoppgave. (sånn har jeg oppfattet det)
 
-\paragraph{Kontekst}
+%\paragraph{Kontekst}
+%\hspace{0pt}\\
+Et sentralt tema for erfaringene beskrevet senere er omorganisering. Hovedsaklig
+bygging av ny struktur og grunnlegging av kultur. Tematisk sett er ledelse,
+omorganisering, frivillighetskultur, og kommunikasjon sentrale.  
 
-\paragraph{Problemstilling}
-presentere problemstillingen. 
+Erfaringen som danner grunnlaget for oppgaven er ervervet gjennom en
+omorganiseringsprosess i en frivillig organisasjon. Den motvilje og det
+byråkrati som er konsekvens av omorganiseringen spiller en viktig rolle.
+Ringvirkningen av omorganiseringen har påvirket arbeidet i organisasjonen og i
+enkelte avdelinger. En avdeling i en vanskelig situasjon krever konkrete
+avgjørelser og konstant kamp mot endring der endring ikke har noen hensikt.  
 
-\paragraph{Struktur}
+I en omorganiseringsprosess er kommunikasjon veldig viktig. I frivillige
+organisasjoner må man balansere tidsbruken. Man kan ikke bare kommunisere uten
+å få tid til å få utrettet noe også. Balansen mellom møter og eget arbeid er
+vanskelig når man driver frivillig. Spessielt med studenter.
 
-\section{Tidligere Arbeid}\label{tidligere arbeid}
-Det arbeid som er lagt ned tidligere for å bygge opp under denne oppgaven. 
+Prioriteringer rundt dette er også et utfordrende område. Når alle vil at man
+skal gjøre som de sier må man velge etter eget hode. Man kan ikke oppfylle
+alles ønsker til enhver tid. Problemer rundt prioriteringer og begrunnelse for
+gitt prioritering kan til tider være vanskelig og i noen tilfeller
+konfliktskapende.     
+
+%\paragraph{Problemstilling}
+%\hspace{0pt}\\
+
+Som tittelen på oppgaven sierbeskriver er ordlyden på problemstillingen
+følgense: "IT på frivillig basis, omorganisering, prioritering og
+kommunikasjon.". 
+
+Problemstillingen tar for seg de utfordringer og egenskaper man må ha, eller
+må tilegne seg, for å starte opp og drive en IT-avdeling på frivillig basis. 
+Diskusjonen rundt tema dreier seg om noen nøkkelegenskper en leder på ha
+for å kunne utfylle stillingen sin effektivt. 
+
+Formålet med oppgaven er å belyse og reflektere over, de innvirkningene og
+effektene, omorganisering, prioriteringer, og kommunikjasjon har i en frivillig
+organisasjon.  
+
+%\paragraph{Struktur}
+%\hspace{0pt}\\
+Oppgaven består av syv deler. 'Introduksjonen' som definerer den konteksten vi er
+i. 'Teori' delen som presentere de teorier som er nødvendige å ha med for at
+resten av oppgaven skal gi mening. 'Frivillige organisasjoner' som sier en del
+om organisasjoner bassert på frivillighet og de problemene man har der.
+'Omorganisering' er en samling observasjoner fra en omorganiseringsprosess i en
+frivillig organisasjon. 'Kommunikasjon' tar for seg kommunikasjons aspekter ved
+ledelse og generelt. 'Konflikter' går inn på noen vanlige årsaker til
+konflikter og hvordan man kan håndtere dem. Og til slutt har vi
+'Oppsummering' med noen av de hovedaspektene som er nevt i oppgaven. 
+
+\section{Teori}\label{tidligere arbeid}
+Gruppers utvikling er en viktig del av det å skape en ny kultur. Man har de
+fire fasene som er beskrevet av Bruce Tuckman, orientering, utprøving, norming,
+og performing. De forskjellige fasene danner forskjellige egenskaper og
+relasjoner innad i gruppen. 
+\cite[]{teamet}
+
+Orienteringsfasen er den fasen som tilrettelegger det å bli kjent. Man møter
+gruppen og man finner de ulikhetene og kunnskapene man har. Det er en slags
+kartlegging av kompetanse, interesser, og personligheter i gruppen. Naturlige
+ledere bemerket i denne prosessen. 
+
+I utprøvingsfasen utfordrer parter i gruppen hverandre og man legger lista for
+vidre sammarbeid. Man tester grenser og prøver å finne sin plass i gruppen.
+Interessekonflikter og knuffing mellom medlemmer er veldig vanlig i denne
+fasen. På mange måter bryter man ned de fordommer medlemmene har, før man
+iverksetter gjenoppbygging i normeringsfasen. 
+
+Normeringsfasen tar for seg utgjevningen av konflikter og normalisering av
+arbeidsforholdene. Det er her man kommer til en slags enighet og hvordan ting
+skal fungere og hvordan man vil ha det i arbeidsmiljøet. Som leder er det mest
+her man legger føringer for hvordan gruppen skal arbeide vidre. Skapningen av
+en felles kultur og nedleggelsen av felles verdier skjer her. Man endrer fokus
+på gruppens energi til de problemene man vil at gruppen skal løse, slik at de i
+arbeidsfasen kan ha full fokus på synergi. 
+\cite[]{teamet}
+
+Arbeidsfasen tar for seg synergiskapningen. Altså hvordan man finpusser på
+sammarbeidet til gruppen og løser problemer. Rett og slett den delen av
+gruppearbeidet hvor man har satt konflikter til side og fokuserer på de felles
+målene man tidligere har blitt enige om. Graden av måloppnåelse i denne fasen
+er høy, men det er ikke alltid en gruppe kommer til arbeidsfasen. Det er mye
+som kan skje på veien hit. I mange tilfeller endrer man gruppens sammensetning
+før man kommer til arbeidsfasen, eller man har fått nye eksterne påvirkninger
+som endrer gruppens dynamikk.  
+
+Vidre har vi tid som et styrende element. Joseph McGrath mener at man ikke
+bruker de fire, tidligere beskrevede, fasene sekvensielt, men at grupper har
+fire moduser som byttes på etter behov. De fire modusene er oppstart,
+problemløsning, konfliktløsning, og utføring. Modusene har mange likhetstrekk
+til de tidligere nevnte fasene. 
+
+Det strides om hvorvidt alle modusene må være tilstede i et gruppearbeid eller
+ikke. Alle modusene er viktig for gruppens utvikling, men ikke nødvendigvis for
+gruppens oppnåelse av resultater.  
+
+William Schutz sier med FIRO-teorien at alle grupper trenger tre faktorer:
+nærhet, kontroll, og åpenhet \cite[]{teamet}. Forskjellige medlemmer av en
+gruppe trenger forskjellig grad av de tre faktorene. Noen trenger kontroll,
+mens andre trenger åpenhet. Personlighet spiller en viktig rolle i hvordan man
+tilpasser arbeidsmiljøet til disse faktorene. Noen personer trenger mer
+tilretteleggelse og oppfølging enn andre. Faktorene er viktige i utviklingen av
+en gruppe.
+
+For å beskrive balansen mellom forskjellige elementer av gruppesammensetningen
+har vi SPRG-modellen. Den beskriver samspillet mellom kontroll, omsorg,
+opposisjon, avhengighet, synergi, og tilbaketrekning. Synergi og
+tilbaketrekning er to indikatorer på en gruppes kvalitet. Kontroll,
+omsorg, opposisjon, og avhengighet er fire gruppefunksjoner som beskriver
+gruppens interne tilstand. Gruppens plassering i SPGR-rommet basserer seg på
+disse seks konseptene, og vil variere mye eller lite avhengig av eksterne
+påvirkninger. 
+
+En gruppes rollefordeling forteller om gruppens status. Det vil si at man ved å
+se på hver person sin påtatte rolle kan si noe om tilstanden til gruppen som
+helhet. Hvis man har mange klart definerte roller har man en lavt utviklet
+gruppe. Om rollefordelingen flyter og er vanskelig å finne har man en godt
+utviklet gruppe. Det hele handler om fri flyt. Om gruppen har fri flyt av
+roller og ansvar har man en velutviklet gruppe med gode forusetninger for å
+løse problemer og skape resultater \cite[]{teamet}.  
+
+I dannelses fasen av grupper er balanse mellom kontroll og omsorg viktig. For
+mye kontroll og man ender opp med en splittet gruppe med konkurranse innad. Med
+for mye omsorg og for lite kontroll vil gruppen ikke ha noe håndfast å forholde
+seg til og dermed vil gruppen gå i oppløsning grunnet for lite produktivitet.
+
+Den ideelle balansen mellom kontroll og omsorg i frivillighet er kombinasjonen
+av selvstendig arbeid med predefinerte rammer og sosiale tiltak som binder
+gruppens medlemmer sammen gjennom omsorg og sosiale kontrakter. 
+De predefinerte rammene for arbeid sammen med oppfølging utgjør kontroll. 
+Ansvar for egen læring er et godt eksempel på idealet, med gitte rammer skal
+man utvikle seg selv. Ulempen er at gruppens modenhet bestemmer læringsevnen,
+jo mer moden en gruppe er, jo større læringsutbytte er det.     
+
+En kompliserende faktor for ledelse og gruppedannelse er medlemskap i flere
+grupper. Med forskjellig kultur og formål i forskjellige grupper innad i samme
+organisasjon får man problemer med produktiviteten på et eller annet tidspunkt.
+Noen grupper ved, spessielle omstendigheter, utvikler seg negativt og blir
+mindre produktiv som resultat av utviklingen. Noen grupper ender også opp med å
+være selvdestruktie, altså de går i oppløsning når utviklingen er veldig
+negativ, eller har vært negativ over lengre tid. \cite[]{teamet} 
+
+Problematisk for en gruppes integritet og effektivitet er ekstern innblanding, fra
+personer eller andre faktorer. Personer har en begrenset kapasitet til å
+samhandle med andre. I mange tilfeller trenger man tid til å tilpasse seg selv
+og sin rolle i en gruppe. Med tilpassningen og tilvenning til sin rolle får man
+mer selvtillit og etterhvert mer energi til å håndtere eksterne innspill.
+Etterhvert som det blir kjedelig innad i ens egen gruppe vil man vende blikke
+utover og interagere mer med eksterne de andre gruppene rundt seg.   
+
+Som leder tar man på seg forskjellige kapper i forskjellige situasjoner. Man
+trer inn i formelle og uformelle roller. I en del tilfeller er det viktig å
+påpeke dette konkret gjerne verbalt, men veldig ofte gjennom ritualer. De
+formelle rollene er de stillingene eller vervene man har påtatt seg, og de
+ansvarsområdene for følger stillingen man har. De uformelle rollene er den
+sosiale personen eller rollen man velger å ta forskjellige situasjoner. Ved
+bevisst å endre roller, i formelle og uformelle situasjoner, kan man påvirke
+andres roller i situasjoner og dermed fremheve eller nedtone denne personen
+eller personens adferd. Slik kan man forbedre en gruppe ssosiale dynamikk. 
+
+Gitt en struktur vil det være naturlig i en del tilfeller at ens formelle rolle
+er tilbakelent eller trilbaketrukket. Dette tilsier ikke at man ikke har
+innflytelse på gruppen i den gitte situasjonen, men heller det at man har mer
+innflytelse når man først bruker det innflytelsen man har. \cite[]{teamet} 
 
 \section{Frivillige organisasjoner}
+%koble erfaring mot teori. 
+
+Organisasjoners struktur blir fort stor og kompleks. I en middels stor
+organisasjon, 100 til 400 ansatte, har man ofte behov for en godt definert
+organisasjonsstruktur. Dette medfører ofte ekstra kompleksitet. Den økte
+kompleksiteten vil være fremtredende i kommunikasjon og sammarbeid i
+organisasjonen.
+
+Når man ser på strukturen som frivillig organisasjon blir kompleksiteten av
+strukturen fremtredende. Samhandling blir i større grad påvirket og mange i
+organisajonen vil ikke investere i det å sette seg inn i strukturen. Noe som
+igjen vil gå på bekostning av effektiviteten til organisasjonen som helhet. 
+Som leder i en frivillig organisasjon er en stor del av jobben å sette seg inn
+i strukturen og vite hvem som har ansvaret for hva og hvem som har kunnskap på
+hvilke områder. 
+
+Som del av en organisasjon er det naturlig å ha en IT-avdeling, eller kontakt
+med IT på en eller annen måte. Når man har egen IT-avdeling som driver med
+utikling kommer det med sine egne utfordringer, men også med en del goder.
+Som sjef for en frivillig IT-avdeling får man erfaring med mange aspekter av
+en organisasjon og de utfordringene organisasjonen skaper. 
+
+IT på frivillig basis har sine egne spilleregler, slik som et hvert fagfelt har
+sine type mennesker, sine normer og sine steriotypier. Man har sine egne
+viktige verdier, og sitt eget syn på hva som er viktig for organisasjonen. Og
+med det kommer store utfordringer med prioriteringer av funksjonalitet og
+fokus.    
+
+Som leder av en avdeling i en frivilling organisasjon er balansen mellom
+frivillig arbeid og andre beskjeftigelser en problematisk affære. Man må til
+enhver tid prioritere mellom avdelingen man er leder for, den overordnede
+gruppen man er medlem av og de verdiene og den strategien organisasjone har
+lagt til grunn for arbeidet man utfører. 
+
+Frivillige organisasjoner kontra andre ogranisasjoner sliter med
+prioriteringene til medarbeiderene. Man må hele tiden motivere folk til å
+prioritere sitt frivillige verv. De insetiver som er vanlige i arbeidslivet er
+ikke tilgjengelig for frivillige organisasjoner. Kanskje med unntak av
+forplaining og sponsing av sosiale arrangementer. 
+
+I den frivillighetskulturen man har i Trondheim må man være konkurranse dyktig
+blant organisasjonen. Man må ha de beste vilkårene for å få de beste folkene og
+holde på dem over tid. Man må på mange områder også legge seg på et nivå som
+kan konkurrere med de bedriftene som holder bedriftspresentasjoner for
+linjeforeningene også. 
+
+Utfordringene dette medfører må man overkomme ved å ha
+et bedre sosialt tilbud og et godt tilbud for faglig utvikling. Som leder må
+man tilrettelegge disse forholdene godt og skape læringssynergier for sine
+medlemmer. Når man leder en frivillig organisasjon må man finne ut hva som
+driver folk til å være med og sørge for at disse verdien blir ivaretatt. Sterkt
+fokus på faglig utbytte og sosialt gode forhold skaper et godt sosialt lag, som
+igjen skaper sterke sosiale kontrakter. De sosiale kontraktene kan på mange
+måter ses på som den kulturen man bygger opp over tid. 
+
+Kulturen i den frivillige organisasjonen er det viktigste elementet for å ha en
+god organisasjon. Ved å ha en god kultur vil folk trekke til organisasjonen og
+man forteller venner og kjente om hvor bra det er. Slik får man nye søkere go
+nye flinke medarbeidere. Dette er viktige aspekter som man tar i betraktning
+som leder. 
+
+Et av hovedproblemen ved de frivillige organisasjonene i Trondheim er at
+utskiftningen av medarbeidere er veldig høy. Man har folk engasjer bare et,
+kanskje to år. Dette er lite når man må bygge kulturer og tunge systemer over
+tid. Som leder på man finne nye folk to ganger i året, og integrere dem i
+gruppen når de er blitt tatt opp i gjengen. 
+
 \section{Omorganisering}
-\section{Kommunikasjon og prioriteringer}
+%koble erfaring mot teori. 
+
+Under en omorganiseringsprosess tar man, enklet sagt, de normer og verdier man
+har fra før av og kaster ut vinduet. Man dropper den kulturen man har fra før
+og begynner i mange tilfeller helt på nytt. Dette er et kjempeproblem for
+mange. I en slik omorganiseringsprosess må man finne de verdiene man vil ta
+vare på og dyrke de gjennom prosessen. 
+
+Prosessen som legger grunnlag for erfaringen her reduserte effektiviteten til
+IT-avdelingen veldig. Det var også mye kunnskap og en del prosjekter som har
+lidd igjennom prosessen. Vi endte også opp med å starte en hel del prosjekter
+på nytt. Spessielt for omorganiseringsprosess var sammenslåingen av fire
+eksisterende IT-grupper.
+
+I utgangspunktet lå IT-avdelingen et semester forran resten av organisasjonen i
+sammenslåingsprosessen. Men det ble gjort dårlig arbeid med integreringen i den
+perioden, tross tidligere godt arbeid. Dette ser man etterdønningen av enda. Og
+ganske sikkert et års tid til, men det er vanskelig å si og for mange vanskelig
+å se.
+
+Erfaringsmessig er omorganiseringsprosesser veldig lærerike. Man får mye ny og
+god informasjon ut av det, og man kommer ut av prosessen med en hel rekke ting
+man ville gjort annerledes. Det grunnlaget man danner i prosessen må man bygge
+på etterpå. Resultatet er at man får en base å bygge vidre på, men som ikke er
+veldig funksjonell.  
+
+Som leder i en omorganiseringsprosess må man hele tiden tenke over de
+konsekvensene som er ved de valgene man gjør. De tingen man velger på fokusere
+på får konsekvenser for hele organisasjone, og man må over tid tilpasse
+prioriteringene.   
+
+I utviklingen av en IT-avdelingen som gruppe er det mange utfordringer. Man har
+gruppedynamikken om de rollene forskjellige medlemmer tar på seg for å få ting
+til å gå rundt. Starten presenterer gruppens medlemmer for hverandre og man
+prøver å bygge relasjoner for å skape en fungerende gruppe. Over tid får man
+tilpasset gruppen og skapt synergier. Lederen tilrettelegger for at folk skal
+bli kjent of finne ut hva de er gode på mens de lærer seg ny teknologi og får
+faglig utbytte.  
+
+Det er spessielt utprøvingsfasen som er viktig. Her prøver man forskjellige
+måter å jobbe på og man ser hva som fungerer. Det å lede en gruppe igjennom
+denne fasen kan til tider være problematisk. Når man får sterkt eksternt press
+vil denne utprøvingsfasen og opposisjonsmodusen til gruppen forsterkes. Man kan
+observere sterke tendenser til redusert effektivitet, og til tider kommer man
+så langt at det kan kalles en skikkelig konflikt. 
+
+Problematisk er det spessielt når slike konfliker er bassert på manglende
+kunnskap på tvers av avdelinger i organisasjonen. Disse kunnskapsgapene jobber
+men som leder aktivt med å tette. Mangelen på kunnskap gjelder ikke bare den
+ene parte, men begge.  
+
+De eksterne gruppene rundt IT-avdelingen har presset og ikke fått de
+resultatene de håpet på. Dette skyldes dannelsen av avdelingen og den kulturen
+og gruppedynamikken som må være tilstede før man kan utsette gruppen for større
+ekstern påvirkning. Typisk driver man med team-building i arbeidslivet for å
+sammkjøre konsulent-team før de kommer ordentlig i gang med oppdrag. For
+organisasjonen som helhet er dette en forsinkende faktor de ikke får gjort noe
+med. Forståelsen av dette, eller mangelen av forståelse, skaper irritasjon og
+negative påvirkninger utad fra avdelingen til resten av organisasjonen.     
+
+\section{Kommunikasjon}
+%koble erfaring mot teori. 
+
+I en ideell situasjon forbedrer man kommunikasjonen over tid. Man blir bedre på
+å formulere seg, og man blir bedre til å tolke andres ønsker. Det man i
+hovedsakk blir bedre på er å forstå andres problemstillinger og ønsker. Uansett
+kommunikasjonsform er det viktig å bli enige om noe man skal gjøre. Er man
+enige om den neste handlinge er det lettere å forholde seg til noe senere.
+Ellers kommer man tilbake til situasjoner hvor en part tror man har kommet til
+enighet om noe, hvor man ikke har det.
+
+Møter som kommunikasjonsform er i mange tilfeller et godt alternativ. Man får
+sagt mye til mange, og man får den sosiale interaksjonen som danner sosiale
+kontrakter. Men man må ikke glemme at all enighet er bort når man forlater
+rommet. For å bøte på det problemet må man alltid sikre seg møtereferater og
+oppsummeringer av møter man ikke har vært på.
+
+Effektivitet i møtevirksomhet er også et aspekt hvor mange kan forbedre seg.
+Ordstyring og dedikert referent er gode strategier for dette. Ellers blir det
+ofte slik at den naturlige lederen i rommet må steppe inn og ta styringen. Der
+det ikke er en naturlig leder får man veldig ofte uenighet og veldig lite
+effektiv oppfølging. Et alternativ for å effektivisere slike møter kan også
+være å ta inn en ekstern konsult, en megler eller tillitsperson, som kan styre
+samtalen og holde fokus på tema.
+
+For å øke produktiviteten i en gruppe er det også naturlig å bytte roller. Man
+vil gjerne ta på seg rollen som ordstyrer når man har mange meninger, mens man
+trekker seg tilbake om saken som diskuteres ikke angår en. Det er også viktig
+at alle gruppens medlemmer prøver å bytte på rollene etterhvert, slikt av
+forskjellige parter belyser et problem fra forskjellige sider. Rolle bytte
+utgjør en vital forskjell i kommunikasjonen i møter.   
+
+Et aspekt av ledelse er det å sile informasjon. Man presenterer den
+informasjonen man mener er viktig for sin avdeling. Det er ofte en god strategi
+å filtrer bort de elementene man ikke har noe interesse av selv. De man er
+leder for har antagelig ikke bruk for den informasjonen heller. Denne formen
+for sensur er bra fordi det gir større rom for fokus hos den enkelte
+medarbeideren.
+
+Erfaringsmessig er det veldig mange som ikke bryr seg om organisasjonen som
+helhet, men kun er interessert i sitt lille hjørne av samensuriet de mener er
+resten av organisasjonen. For disse medarbeiderene er det viktig å påpeke og
+fremheve informasjon som faktisk er viktig for dem. Slik som endringer i
+strategien og verdiene som ligger til grunn for den jobbe de gjør. Nærmere
+bestemt om premissene for deltagelse i gruppen endres bør alle vite om det med
+en gang.
+
+Med god kommunikasjon på tvers i organisasjoner øker man produktivitete ved at
+man eleminerer kommunikasjonsledd. Det er ikke noe vits for en avdeling å gå
+opp et nivå i hierarkiet, for så å gå ned igjen et annet sted. Det skjer
+uheldigvis ofte at man får redusert kommunikasjon og dårlige resultater fordi
+man ikke får tak i rett person når man trenger det.  
+
+En ulempe ved å aktivt filtrere informasojnsflyt ettersom man ser behoved for
+det er at man skaper en polariseringe i organisasjonen. Man har de som vet hva
+som skjer og bryr seg, samtidig som man har de som ikke vet og kanskje ikke
+bryr seg. Dette er i mange tilfeller veldig frustrerende for ledelsen, da de
+ikke kan være sikre på at den viktig informasjonen har kommet ut til alle
+parter.  
+
+Kommunikasjon rundt prioriteringer er vanskelig. Interessepartene i et prosjekt
+må i mange tilfeller prøve å se hele bildet, mens man holder fokus på det gitte
+prosjektet. Ressurs fordelingen blant prosjekter og omfordeling av ressurser
+skjer ofte med innspill fra øvrig ledelse. I mange tilfeller er det gunstig å
+ta avgjørelser i fellesskap, men i en del tilfeller er det mer effektivt og
+lønnsomt for kunnskapspersonen å ta avgjørelsen.  
+
+De manglende kunnskapene skaper kommunikasjonsgap som er vanskelig å overkomme,
+og man vil over en tid ha vansker med å få utrettet noe fornuftig. Det er
+viktig å praktisere god kommunikasjon, slik at man kan utvikle seg på det
+området over og forhindre miskommunikasjon på sikt. Det er også et håp om at
+man gjør seg godt forstått og får skapt sammarbeid på tvers i organisasjonen
+over tid.  
+
+Vanligvis tas avgjørelsen, om prioriteringer av de forskjellige prosjektene og den ønskede
+funksonaliteten, demokratisk mellom de interessehaverene som er med i
+kommunikasjonsprosessen. I mange sammenhenger skjer det ikke slik, men heller
+at den ene parten presenterer ønsket funksjonalitet og handling, mens den andre
+parten kjapt bestemmer seg for å utføre de oppgavene som gagner en selv best.
+Dette skaper også konflikter i organisasjonen.  
+
+Når man nærmer seg en konflikt eller et sårt tema er det vanlig at den ene
+parten går inn i opposisjonsmodus. Parten er ikke villig til å sammarbeide
+fordi man er redde for at de oppgaver og prioriteringer man får servert ikke er
+de beste prioriteringene man kan ta. 
+
 \section{Konflikter}
-it-drift. 
+%koble erfaring mot teori. 
+ 
+Konflikter er ikke til å komme utenom. De dukker opp bare man ser rart på noen.
+Og i organisasjoner kan det ofte ende med konflikt i tilfeller hvor man
+ikke helt vet hvem som har ansvaret for hvilke ting. Dette er et vanlig
+senario. Noen blir sinte og irritert på noen andre, mens en tredje part har
+ansvaret for den tingen. Med dårlig kommunikasjon ender men opp med en
+situasjon hvor noen er sure på noen andre uten god grunn.
 
-\section{Diskusjon}\label{resultater}
-Diskutere de funn og problemer som er presentert i de tre tidligere seksjonene. 
+Ressursfordeling er også en sterk grunn til konflikt. Man ønsker ofte at sine
+egne behov blir prioritert over andres. Og det kan hende man ikke skjønner
+hvorfor ens egne behov ikke er viktigere enn andres. Som leder må man her være
+god på å si at ting er som de er og at man har fokus på de tingen man har fokus
+på av gitte hensyn. Om man forklarer situasjonen til folk vil de ofte forstå
+det litt bedre enn de gjorde før. 
 
-\section{Konklusjon}\label{konklusjon}
-Oppsumering av de funn og konklusjoner vi kan dra fra de konflikter og 
+Erfaringsmessig kommer konfliktene ofte av avhengiheter eller
+kommunikasjonsproblemer. De vanskeligste konfliktene er de som basserer seg på
+avhengigheter. Det er vanskeligere å forstå at den tingen man vil ha utrettet
+først kan skje etter et gitt antall andre oppgaver. Dette er spessielt
+vanskelig på tvers av fagfelt. Her kommer opplæring inn i bildet som et viktig
+aspekt. 
 
-\section{Referanser}
-De kilder jeg har brukt of referert til i oppgaven. 
+I frivillige organisasjoner er opplæring en av de aktivitetene som tar lengst
+tid. Og gjerne det som skaper flest unødvendige konflikter. Man forventer at
+nå som man har 5 nye folk så går ting så mye fortere. Men det gjør det ikke før
+om et semester når de nye medarbeiderene kan noe. Kommunikasojnen av at ting
+tar tid er vanskelig i omgivelser hvor forventningene er urealistiske. 
 
-\section{Notater}
+Forventninger som kilde til konflikter er vanskelig å gjøre noe med. Man må
+stadig fortelle folk at vi ikke jobber så kjapt som man tror. Og når man
+sammenlikner seg selv med noen som gjør det samme på proffersjonell skala vil
+man alltid komme til kort med forventningene.      
 
-studnr_kandnr
+Problematisk i konfliktløsning er når partene finner ut hvor problemet ligger,
+og så frasktiver man seg ansvaret ved å påpeke at det er noen andre som har
+ansvaret for saken det gjelder. I slike tilfeller er det viktig at
+ansvarsfordelingen er klart definert på forhånd. Og at eventuelle endringer
+blir dokumentert fortløpende.  
 
-har vi lært noe?
-skjønt pensum?
-lært pensum?
-fått med oss noe?
+Det som værre er, og som skaper flere konflikter, er de som påtar seg oppgaver,
+men som ikke fullfører eller følger opp gitt oppgave. Dette skaper kaos of
+konflikter i resten av organisasjonen. Eneste måten å løse slike problemer er å
+omdelegere oppgavene.   
 
-mest refleksjons oppgave for min egen del. 
+\section{Oppsummering}\label{konklusjon}
+%aggregert erfaring + teori om ledelse. 
+Roller og rollebytte er et gdt verktøy som leder. Man får anledning til å
+påvirke grupper på forskjellige måter, og man får sett ting fra forskjellige
+vinkler. Det er viktig å sette seg inn i saker fra andre synsvinkler sin
+hovedrolle. Forskjellige roller oppnår forskjellig reksjon i forskjellige
+miljøer.
 
-koble erfaring mot teori. 
+For å ha god kommunikasjon må man holde en god tone, og være forberedt til
+møter man har. Man kan også benytte hersketeknikker og kropsspråk for å påvirke
+andre parter. Det viktigste er at man trener på det å kommunisere godt og kan
+annerkjenne sine feil når man blir konfrontert med det. Man må ikke være redd
+for å ta kontakt. 
 
-aggregert erfaring + teori om ledelse. 
+For konflikter og håndtering av dem må man være godt forberedt til
+løsningsprosessen. Det lønner seg å høre på alle parter og se deres side før
+man kritiserer noen. Og så lenge man holder fokus på målet og ivaretar ønskene
+til alle partene kommer man godt ut av konflikter. Mange konflikter er bassert
+på misforståelser.  
 
-konflikt gjennom forventmingsavklaring. 
+I store organisasjoner må man vite om de ulike avdelingen og kompetansepersonen
+for å kunne kommunisere og lede effektivt. Man må ivareta gruppers integritet
+og man må erkjenne at man ikke er ekspert på alt for at samspillet skal
+fungere. Kommunikasjon på tvers av avdelinger er også viktig for å eliminere
+byråkratisk arbeid og unødvendig tunggroddhet.  
 
-bytte roller og se ting fra foskjellige vinkler. 
+Gruppens modenhet påviker gruppens produktivitet. I noen tilfeller vil det også
+være gunstig at gruppens produktivitet går på bekostning av produktiviteten.
+Det er mest fordi man prioriterer gruppens langtidsutsikter overfor gruppens
+kortsiktige resultater. Når man skaper en ny kultur må man ha fokus på de
+interne faktorene først og sørge for at man får en godt fungerende gruppe før
+man kan begynne å løse problemer for andre på en effektiv måte.  
 
-12pt, 1,5 linjeavstand, 15-20 sider.
+Gjennom omorganiseringsprosesser lærer man masse om gruppers dynamikk og
+samhandling. Man får innsikt i organisasjonens struktur og virkemåte samtidig
+som man får intim kjennskap til de verdiene medarbeiderene hadde som grunnlag
+tidligere. 
 
-seksjoner: 
-innledning, teori, metodedel, diskjusjon(størst), avslutning. 
-
-teori: 
-finne og lese teorier og ledelses filosofer. 
-må være i sammenheng med tema. 
-
-analyse/diskusjon er det viktigste:
-få inn motsetninger og erfaringer. Ting som er lært og åpenheten for å lære noe
-nytt. 
-
-refleksjonsoppgave. (sånn har jeg oppfattet det)
-
-
+%Bibliography
+\addcontentsline{toc}{section}{Referanser}
+\bibliographystyle{plainnat}
+\bibliography{bibliography}
 
 \end{document}
 This is never printed
