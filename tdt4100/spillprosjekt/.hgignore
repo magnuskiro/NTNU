@@ -1,0 +1,5 @@
+
+syntax: regexp
+^Misc/\.~lock\.klassediagram\.odt#$
+syntax: regexp
+^resources/progress$

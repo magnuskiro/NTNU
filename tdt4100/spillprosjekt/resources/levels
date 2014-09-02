@@ -1,0 +1,498 @@
+Levels
+
+# = wall
+@ = player start position
+$ = goal
+B = box
+S = switch 
+P = wall for ghosts, player crossable
+G = wall for player, ghost crossable
+D = door
+T = sign
+
+level0 is a template, not to be use in the game. 
+!.-
+nr:0
+code:level0-
+sing1: 
+sign2:  
+sign3:  
+################################################################
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+# @                                                            #
+################################################################
+-.!
+!--
+nr:1
+code:level1-13195-29-13-7-5
+sign1: You have to jump using the up-arrow key./n(or whatever key you changed it to in the Options)
+sign2: Welcome/nThis is a Game
+sign3: The goal is getting to 'The Goal'/n(That green Exit sign)
+##########################
+#                        #
+#                        #
+#                        #
+#                     $  #
+#                  #######
+#                        #
+#  @T2 T3  T1               #
+##########################
+--!
+!--
+nr:2
+code:level2-spaceships_don't_make_a_sound
+sign1: Luke, press space!                                
+sign2: Nothing to see here, move along.
+sign3: Enjoying this are you? /n Maybe you should play the originally we blatantly ripped off: /n http://armorgames.com/play/4918/the-company-of-myself
+##############################################
+#                                            #
+#                                            #
+#                                    T3       #
+#                                   #####    #
+#       T2                                    #
+#     #####                                  #
+#                                            #
+#                                            #
+#                    $                       #
+#                 #######                    #
+#                 #     #                    #
+#                 #     #                    #
+#                 #     #                    #
+#                 #     #                    #
+#   @            T1#     #                    #
+##############################################
+--!
+!--
+nr:3
+code:level3-øøpijcdzxtj
+sign1: <--- Oh, look. A switch!
+sign2: Still the green Exit sign/nI think there might be a Pattern
+sign3:
+###############################
+#                 	#          #
+#                 	#      	   #
+#                 	#          #
+#                 	#          #
+#                 	#          #
+#                 	#          #
+#                 	#          #
+#                 	#          #
+#          @       D1          #
+#   S1  T2   T1       D1      $   #
+###############################
+--!
+!--
+nr:4
+code:level4-42
+sing1: Ghosts can go through walls. 
+sign2: 
+sign3: 
+#####################
+#           #       #
+#           D1       #
+#           D1   $   #
+#           #########
+#                   #
+#   T2               #
+########            #
+#      G            #
+#S1     G     T1   @  #
+#####################
+--!
+!--
+nr:5
+code:police-can't-go-through
+sing1: 
+sign2:  
+sign3:  
+############################################################
+#                                                          #
+#                                                          #
+#                                                          #
+#                                                          #
+#                             @                            #
+#GGGGGGGGGGGGGGGG#########################D1D1D1D1D1D1D1D1D1D1D1D1D1D1D1D1D1#
+#                #                       #                 #
+#                #                       #                 #
+#                #                       #                 #
+#                #                       #                 #
+#       S1        #                       #        $        #
+############################################################
+--!
+!--
+nr:6
+code:level6-ThisIsAT
+sign1:This game has some special rules when it comes to Momentum                      
+sign2:It's loosely based on physics.
+sign3:But mostly based on Bugs™
+##############################################
+#                                            #
+#                                            #
+#                                            #
+#                                            #
+#                                            #
+#                                            #
+# @            T1              T3            $ #
+##################          ##################
+                #            #
+               #              #
+              #                #
+             #                  #
+            #                    #
+           #                      #
+          #                        #
+         #                          #
+        #                            #
+       #              T2               #
+      ###################################
+--!
+!--
+nr:7
+code:level7-ishakke
+sing1: Some walls you can't go through,/n but maybe someone else can?
+sign2:  
+sign3:  
+##########################################
+#                                        #
+#                                        #
+#                                        #
+#           G           P                #
+#           G           P                #
+#           G           P                #
+#           G           P                #
+# @  T1      G           P        $       #
+##########################################
+--!
+!--
+nr:8
+code:level8-kake
+sing1:Walking on the edge?
+sign2:Hitch a ride on ghost to get over
+sign3:   
+################################################################
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#    @    T1                                             $      #
+#################                                 ##############
+                #                                 #
+                #                                 #
+                #                                 #
+                #                                 #
+                #                                 #
+                #PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP#
+                #                                 #
+                #                                 #
+                #                                 #
+                #                                 #
+                #                                 #
+                #       T2                         #
+                ###################################
+--!
+!--
+nr:9
+code:level9-ThatWasHard
+sing1:
+sign2:
+sign3:
+############################
+#       S1  S2  S2  S5  S5  S4  S2#
+#       S2  S2  S3  S3  S1  S3  S4#
+#@  ########################
+#       D1  D4  D2  D4  D2  D5   #
+#       D3  D3  D2  D1  D3  D1  $#
+############################
+--!
+!--
+nr:10
+code:level10-done
+sinn1:Timing; you got it 
+sign2:  
+sign3:
+#############################################
+#                                           #
+#                                           #
+#                                           #
+#                                           #
+#                         D2         D3       #
+#                D1        D2         D3 T1 $   #
+#                D1        D2         #########
+#                D1        D3D3D3D3D3     #       #
+#                D2D2D2D2D2              #       #
+#                                   #       #
+#   @   S1 S2 S3                       #       #
+#################                   #########
+--!
+!--
+nr:11
+code:level11-
+sing1:              Use the Bugs™
+sign2: You should explore the Bugs™ some more.
+sign3: This sign is UnreadAble© /nIf you are reading this you seem to be good at finding Bugs™/nEven better than us... 
+################################################################
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+# @                                                            #
+# T1                                                          $ #
+##############          #####          #####          ##########
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                         GGG                  #
+#                               T2         GT3G                  #
+################################################################
+--!
+!--
+nr:12
+code:scooby-doo i love you
+sing1: 
+sign2:  
+sign3:  
+################################################################
+#                                                              #
+#                         $                                    #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                         D4                                    #
+#                         D4                                    #
+#                         D4                                    #
+#                         D3                                    #
+#                         D3                                    #
+#                         D3                                    #
+#                         D2                                    #
+#                         D2                                    #
+#                         D2                                    #
+#                         D1                                    #
+#                         D1                                    #
+#    @ S1 S2 S3 S4            D1                                    #
+################################################################
+--!
+!--
+nr:13
+code:level0<--YouDidn'tGuessThatDidYouNow?HAHAHAHA...
+sing1: Press <Action Key>
+sign2: Remember Bugs™? Maybe Ghosts have 'Super jump abilities' too?
+sign3: That was disappointing...
+################################################################
+#      G                                                       #
+#      G                                                       #
+#      G                                                       #
+#      G                                                       #
+#      G                                                       #
+#      G                                                       #
+#      G   #          ########                                 #
+#      G   #                  ###                    BBB       #
+# S2    G T3 #                     ###                 BBB       #
+############                        ###              D1D1D1       #
+#          D1                           ###                     #
+#          D1                                          $        #
+#@ T1       D1                T2                        D2D2D2       #
+##GGG################################################   ########
+
+   S1
+--!
+!--
+nr:14
+code:level14-...HAHAHAHAHAHAHAHAHAHAHA
+sing1: Is it really a floor?
+sign2: Good luck getting up... 
+sign3:  
+################################################################
+#                                       D1                      #
+#                                       D1                      #
+#                                       D1                      #
+#                                       D1                  $   #
+#                                       ########################
+#                                                              #
+# @  T1                       ######                            #
+######                                                         #
+#                                       ####                   #
+#                                                              #
+#                                               ###            #
+#    ###                                                       #
+#                                                              #
+#                                       PPPPP###################
+#            ###           ###          G                      #
+#                                       G                      #
+#                                       G                     S1#
+#PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP###############
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#           T2                                                  #
+################################################################
+--!
+!--
+nr:15
+code:level15-awesomeLVLcleerit!NOW
+sing1: 
+sign2:  
+sign3:  
+################################################################
+#                 #                                  P         #
+#                S1#                                  P        S3#
+#            PPPPP#G      GGGGGGGG          #        P      GGG#
+#       PPP       #                         #        P         #
+#                 #                         #        PGG       #
+#                 #     G                 GG#        P         #
+#PPP              #                         #        P      GGG#
+#                 #                 GGG     #        P         #
+#                 #G                        #        PGG       #
+#       PPP       #                         #        P         #
+#                 #                         #        P      GGG#
+#                 #     G                   #        P         #
+#PPP              #                         #                  #
+#                 #                         #   B              #
+#                 #G                        #D3D3D3D3D3D3D3D3D3D3D3D3D3D3D3D3D3D3#
+#       PPP       #                         #                  #
+#                 #                         #                  #
+#                 #     G                   #                  #
+#              PPP#                         #                  #
+#                 #                         #                  #
+#                 #G                        #                  #
+#       PPP       #   D2                     #                  #
+#                 #   D2                    S2#                  #
+#                 #GGG                    GG#                  #
+#PPP              #                         #                  #
+#                 #                         #                  #
+#                 #       GGGG     GGGG     #                  #
+#       PPP       #                         #                  #
+#                 #                         #                  #
+#                 #               GGGG      #                  #
+#              PPP#                         #                  #
+#                 D1                         #                  #
+# @               D1                         #           $      #
+################################################################
+--!
+!--
+nr:16
+code: level16-ThisIsProbablyTheHardestLevelInTheGame,AlthoughYouMightFindSomeOfTheOtherLvlsHarder,ButIDontThinkSo.NowThatWasHardToGuess.
+sing1: Hang in there,         /n            this is a long one. /n 
+sign2: That was stupid, how do you get out now? 
+sign3: Maybe 'the Code' is hidden here somewhere...
+################################################################
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                              #
+#                                                        #     #
+#                                                        #     #
+#D4D4D4D4###############PP#####       #        ##       ##   #     #
+#            #      PP#          # #       # #     # #   #     #
+#            #     S1PP#         #   #   GGG#  #   #  #   #     #
+###          #    PPPP#####    #     #     #   # #   #   #     #
+#            #      PP#       #########    #    #    #   #     #
+#     ###    #      PP#      #         #   #         #         #
+#            #PP    PP#####P#           #D1D1#         #         #
+#           ##      PP                               G   $     #
+#            P      PP                               G         #
+#            P    PPPP                    ###        G         #
+#PPPP#########      PP      #########################GGGGGGGGGG#
+#           G       GG      #                                  #
+#           G   #   GG      #                                  #
+#####      ####PPPPPP###    #                               S6  #
+#   D3         #        #    D2                         ##########
+#S4  D3         #       S2#    D2                                  #
+########PPPP###GGGGG####GGGG#                                  #
+#                           #                                  #
+#                           #PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP#
+#      ####PPPPPPPPPPPPPPPPP#              ###                 #
+#         #                 #                                  #
+#         #                 #       ###                        #
+###       #                 ##                                 #
+# D6       #                 D2P                B                #
+#$D6 T1 @   #      T2          D2P           #### T3     S3          #
+################################################################
+--!
+!--
+nr:17
+code:TEAM!
+sing1: TEAM!
+sign2: TEAM!
+sign3: TEAM!
+                                                    BB         
+  @                                                 BB         
+        T1                                                      
+ #################                                             
+ #################                                             
+ #################                                  $$       
+        ###        #######     ##       ##    ##    ##              
+        ###        #######    ####      ##    ##    ##
+        ###        ##        ##  ##    ####  ####   ##        
+        ###        #######  ##    ##   ## #### ##   ##             
+        ###        #######  ########   ##  ##  ##   ##           $
+        ###        ##       ##    ##   ##      ##   ##          
+        ###        #######  ##    ##   ##      ##             
+        ###        #######  ##    ##   ##      ##   ##
+                                                    ##
+--!
