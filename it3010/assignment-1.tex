@@ -1,0 +1,70 @@
+% latex article template
+
+% cheat sheet(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/latexsheet.pdf
+% cheat sheet2(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/LaTeX-cheat-sheet.pdf
+% reference manual(eng): http://ctan.uib.no/info/latex2e-help-texinfo/latex2e.html
+
+% The document class defines the type of document. Presentation, article, letter, etc. 
+\documentclass[12pt, a4paper]{article}
+
+% packages to be used. needed to use images and such things. 
+\usepackage[pdfborder=0 0 0]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\PassOptionsToPackage{hyphens}{url}
+
+% hides the section numbering. 
+\setcounter{secnumdepth}{-1}
+
+% Graphics/image lications and extensions. 
+\DeclareGraphicsExtensions{.pdf, .png, .jpg, .jpeg}
+\graphicspath{{./images/}}
+
+% Title or header for the document. 
+\title{
+	Document Title
+}
+% Author
+\author{
+	Magnus L Kirø \\
+	Representing ThisOrThat organization % in what capacity are you presenting this document? as yourself, the sales manager, ceo, etc? 
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+\pagenumbering{arabic}
+
+\begin{abstract}
+This is the paper's abstract \ldots
+\end{abstract}
+
+\section{Introduction}
+
+deadline 11.09.
+
+
+Write an initial research proposal. The purpose of a research proposal is to
+convince others that you have a worthwhile research project. In this initial
+research proposal, you should include:
+
+    research motivation. The research motivation should describe: (a) what is
+the problem to be investigated?, (b) why is the problem important?.
+    a brief review of relevant articles (2-3 articles). Focus on (a) clearly
+explaining the main objective and main findings of the article, (b) clearly
+describing how the study support the findings, (c) clearly explain how the
+article relates to your proposal.
+    research objective(s). The research objective(s) should provide a simple,
+clear and concrete statement of purpose.
+    research question(s).  The research question(s) should be: (a) answerable,
+(b) consistent with the research objective(s), (c) adequate in term of scope and
+effort need to address the question(s), (d) related to each other (if there is
+more than 1 research questions).
+
+The research plan should not exceed 2 A4 pages (or 900 words excluding
+references).
+
+
+\end{document}
+This is never printed
