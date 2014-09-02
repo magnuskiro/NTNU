@@ -1,0 +1,47 @@
+
+Two basic rules in finance
+-----
+* Money today is more worth than money tomorrow. 
+* Safe money is worth more then risky money. 
+* Reward follows risk. 
+
+Time value of money
+-----
+* 'Human impatience', present is better than future. 
+* Don't consume now, invest, and consume more later. 
+* Compounding: bring money to the future for comparison.
+* Discounting: bring future money back, and than compare.
+
+* Devaluation more often results in greater devaluation: 1.05^2 != 1.025^4
+
+* Formulas for calculating interest. 
+* Discretely compounded and completely compounded. 
+
+* Annuities(annuitet) and perpetuities()
+
+* Gordon growth model
+** present value / (interest rate - inflation rate) = estimated value.
+
+Utility and risk aversion
+-----
+* Utility is individual and situation dependant. 
+* indifference curves. 
+* Having a lot of something renders you willing to pay a lot of that something
+ for a little of another thing.
+
+Discounting in investment analysis
+-----
+* previous spending is no factor in new decisions.  
+* Net present value.  
+* payback period is a stupid way of making stupid decisions. 
+* decide by cash flow. 
+* 'internal rate of return' to calculate risk. 
+* economic depreciation.
+* 
+
+The role of financial markets
+----- 
+* Fisher's optimal investment analysis. 
+*  
+
+ 
