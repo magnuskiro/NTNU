@@ -13,3 +13,5 @@ hs_err_pid*
 *.zip
 *.iml
 .idea/
+*.mov
+*.avi
