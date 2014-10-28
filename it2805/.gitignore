@@ -15,3 +15,11 @@ hs_err_pid*
 .idea/
 *.mov
 *.avi
+
+
+# bower and js stuff
+bower_components
+node_modules
+*/libs/*
+libs/
+
