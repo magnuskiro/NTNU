@@ -1,0 +1,1005 @@
+
+%% bare_jrnl_compsoc.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE Computer
+%% Society journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+% The Computer Society usually requires 12pt for submissions.
+%
+\documentclass[12pt,journal,compsoc]{IEEEtran}
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[12pt,journal,compsoc]{../sty/IEEEtran}
+
+\usepackage[utf8]{inputenc}
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\ifCLASSOPTIONcompsoc
+  % IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  % \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  % \usepackage{cite}
+\fi
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+%
+% Note that some packages require special options to format as the Computer
+% Society requires. In particular, Computer Society  papers do not use
+% compressed citation ranges as is done in typical IEEE papers
+% (e.g., [1]-[4]). Instead, they list every citation separately in order
+% (e.g., [1], [2], [3], [4]). To get the latter we need to load the cite
+% package with the nocompress option which is supported by cite.sty v4.0
+% and later. Note also the use of a CLASSOPTION conditional provided by
+% IEEEtran.cls V1.7 and later.
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%\usepackage[tight,normalsize,sf,SF]{subfigure}
+%\else
+%\usepackage[tight,footnotesize]{subfigure}
+%\fi
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. Computer Society papers
+% use a larger font and \sffamily font for their captions, hence the
+% additional options needed under compsoc mode. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false]{caption}
+%  \usepackage[font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false]{caption}
+%  \usepackage[font=footnotesize]{subfig}
+%\fi
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley and Jeff Goldberg.
+% This package may be useful when used in conjunction with IEEEtran.cls'
+% captionsoff option. Some IEEE journals/societies require that submissions
+% have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.3.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% For subfigure.sty:
+% \let\MYorigsubfigure\subfigure
+% \renewcommand{\subfigure}[2][\relax]{\MYorigsubfigure[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat/subfig command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/endfloat/
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a 
+% page by themselves.
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{
+Investigating soft skills in network management
+}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+%
+%\IEEEcompsocitemizethanks is a special \thanks that produces the bulleted
+% lists the Computer Society journals use for "first footnote" author
+% affiliations. Use \IEEEcompsocthanksitem which works much like \item
+% for each affiliation group. When not in compsoc mode,
+% \IEEEcompsocitemizethanks becomes like \thanks and
+% \IEEEcompsocthanksitem becomes a line break with idention. This
+% facilitates dual compilation, although admittedly the differences in the
+% desired content of \author between the different types of papers makes a
+% one-size-fits-all approach a daunting prospect. For instance, compsoc 
+% journal papers have the author affiliations above the "Manuscript
+% received ..."  text while in non-compsoc journals this is reversed. Sigh.
+
+\author{Candidate number: 10006}
+
+%\author{Michael~Shell,~\IEEEmembership{Member,~IEEE,}
+%        John~Doe,~\IEEEmembership{Fellow,~OSA,}
+%        and~Jane~Doe,~\IEEEmembership{Life~Fellow,~IEEE}% <-this % stops a space
+%\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem M. Shell is with the Department
+%of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
+%GA, 30332.\protect\\
+% note need leading \protect in front of \\ to get a newline within \thanks as
+% \\ is fragile and will error, could use \hfil\break instead.
+%E-mail: see http://www.michaelshell.org/contact.html
+%\IEEEcompsocthanksitem J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
+%\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
+
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+\markboth{}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+% The publisher's ID mark at the bottom of the page is less important with
+% Computer Society journal papers as those publications place the marks
+% outside of the main text columns and, therefore, unlike regular IEEE
+% journals, the available text space is not reduced by their presence.
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% or like this to get the Computer Society new two part style.
+%\IEEEpubid{\makebox[\columnwidth]{\hfill 0000--0000/00/\$00.00~\copyright~2007 IEEE}%
+%\hspace{\columnsep}\makebox[\columnwidth]{Published by the IEEE Computer Society\hfill}}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark (Computer Society jorunal
+% papers don't need this extra clearance.)
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+% for Computer Society papers, we must declare the abstract and index terms
+% PRIOR to the title within the \IEEEcompsoctitleabstractindextext IEEEtran
+% command as these need to go into the title area created by \maketitle.
+\IEEEcompsoctitleabstractindextext{%
+\begin{abstract}
+%\boldmath
+The abstract goes here.
+TODO
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway. In particular, the Computer Society does
+% not want either math or citations to appear in the abstract.
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+Research proposal, Network, Network management, Business networks, Strategic nets
+\end{IEEEkeywords}}
+
+
+% make the title area
+\maketitle
+
+
+% To allow for easy dual compilation without having to reenter the
+% abstract/keywords data, the \IEEEcompsoctitleabstractindextext text will
+% not be used in maketitle, but will appear (i.e., to be "transported")
+% here as \IEEEdisplaynotcompsoctitleabstractindextext when compsoc mode
+% is not selected <OR> if conference mode is selected - because compsoc
+% conference papers position the abstract like regular (non-compsoc)
+% papers do!
+\IEEEdisplaynotcompsoctitleabstractindextext
+% \IEEEdisplaynotcompsoctitleabstractindextext has no effect when using
+% compsoc under a non-conference mode.
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+
+%what is this
+This is a research proposal. A proposed research project that will contain the
+main ideas, main methods, recipe for execution, detailed research questions,
+and expected results. 
+
+%Area or research
+The area of research is of a business related theme. As the title says we
+propose to look into the role of soft skills in network management. 
+
+First off we have to define soft skills. Soft skills are skills that affects
+people. In general these skills are people skills. The ability to
+communicate, interpret, and understand other peoples actions and emotions.
+
+Second we have to know what network management is. Network management is the
+result of all actions that are executed to cooperate, coexist, and have
+co-evolution with other business entities in the ecosystem surrounding a given
+firm.  
+
+In essence we want to investigate how social skills affects the management of
+networks, that is how human input, and interaction, makes network management. 
+
+%why? Why this theme. 
+This topic is interesting on many levels, mostly business related. To link it
+up to a challenge that are on the rise today we can see this topic in
+association with computer science, or rather the IT consulting business. One
+shortcoming of IT-personnel is that they are very technically competent while
+at the same time have no idea of how what they are doing fits into a bigger
+picture. To expand on this issue, soft skills in network management can be one
+part of the diverse problem of integrating IT into the core of business
+strategies. 
+
+Another reason for looking into this topic further may be the lack of existing
+empirical data. As of now there are few studies into this angle of network
+management, and it would be natural to expand this area as well as others. 
+
+Also, the multi-disciplinary aspect that combines social and behavioural psychology,
+organizational psychology, business strategy, management, and a potential field
+of application such as computer science(IT). 
+
+%how?
+The research would have to be executed in multiple steps. 
+First would be to
+execute interviews of current management in bigger IT firms to map the
+boundaries of the research task. Second interviews of multiple levels of
+management would be executed. Third two or three case studies would give
+insight into the companies that interact in networks. Fourth, the collected data
+would have to be interpreted, and then aggregated. Fifth, statistics can be
+created from the collected data. Sixth, conclusions can be drawn based on the
+statistical findings. 
+
+\subsection{Outline}
+Continuing this proposal are the research questions, research strategy,
+detailed description of research execution, expected results, a literature
+review into the field of network management, and a conclusion at the end.  
+
+\section{Research Questions}
+%Why the importance.
+The importance of research questions is big. Research questions define the
+wanted outcome of the research, and in many ways define the expectations for
+the work to be executed. 
+
+%What to research:rq1, rq2, rq3
+To be specific, we want this research to find out: 
+1: What soft skills are used in relation to network management, 2: Whether or not soft
+skills affect network management, and 3: How the soft skills
+affects the interactions between firms in a network.
+
+%Why the RQ is interesting
+These three questions are natural to ask in an emerging are of research. They
+enlighten core aspects and uses for the field, and would provide useful
+information fro practical application later on.  
+
+\section{Research Strategy}
+%how I am going to research the thing I want to know more about. 
+
+The strategy of research will have three data gathering parts, a data
+aggregation part, and a conclusive part. In the core of the strategy we have
+qualitative methods. Methods that dive deeper into the little data we have
+gathered, in contrast to qualitative methods that require lots of data, and
+provides shallow aggregations of the data. 
+
+%(case study, design science, survey)
+%what: case study + interviews + surveys
+%why: to get people opinions about networking and management. 
+
+For the data acquisition, the three parts, both qualitative and quantitative
+methods will be used, although the quantitative depends on findings of the
+qualitative. The suggested approach is that the findings from preliminary
+interviews decide which firms to be considered in a series of case studies, and
+that the results from the case studies and interviews dictate the content of a
+survey. 
+
+For data aggregation a programmatic approach would be beneficial. This will be
+faster for the amount of data from the survey, but also give interesting
+results from the case studies as well. For the interviews there is little
+reason to use programs to extract data, although it might result in interesting
+new aspects.
+
+Conclusions will be based on the aggregated data, and related to the research
+questions. 
+
+\section{Research execution}
+
+The majority of the work will be done with the three data gathering parts.
+These three parts are interviews, case studies, and surveys.
+
+Interviews serves the purpose of limiting the field of research, and finding
+its boundaries. As well as creating the first data points, and pointers for the
+next two data gathering parts. The interviews will be with management
+officials, such as middle and high level managers in respectable firms. The
+number of interviewees has to be limited to those who have a high degree of
+perceived influence in the terms of the research.
+
+The interviews will ideally be held at the interviewees location, as that would
+be more practical, and it would give the interviewer insight into the work
+environment of the interviewee. Questions should be prepared, be related to the
+topic at hand, and be posed the same way to all interviewees. This will
+hopefully decrease digressions in answers, and result in more uniformly shaped
+answers. The key here is to keep on topic, not to force the interviewees to
+answer the same ting as everyone else. 
+
+Case studies provide the business and network context for the interviews. The
+case studies are mostly to elaborate on the business aspects of networking, and
+network communications. Hopefully such case studies will give insight on how
+soft skills affect network aspects of business.      
+
+Three to five case studies proposed, to provide a variety in data, and also to
+provide ample opportunity to find areas to execute surveys. The case studies
+have to be qualitative, and focus on the company as a whole while at the same
+time emphasise the focus of soft skills. Areas such as human resources, work
+environment, competitors, collaborators, partners, strategy, vision, and values
+have to be considered in these case studies. 
+
+The data from a case study have to be interpreted critically in association to
+network management, and a verdict of the firm's network management capabilities
+have to be decided. Here strategies of the different firms have to be compared
+to give a bigger picture of which aspects of the case studies that affect soft
+skills in network management.  
+
+The last data acquisition tool is surveys. Surveys are targeted to the masses
+of the firms. This is to map management influence, the use of soft skills, and
+the importance of soft skills. The surveys have to be adapted to the context,
+and built from data gathered in the previous two methods for data gathering,
+interviews and case study.   
+
+The results of these surveys will be the easiest part to interpret. Surveys
+more or less give the number of this and that answer out of the box, while
+interviews and case studies are more difficult. Although after getting the
+survey data there is the aspect of interpreting what the data means. Or rather
+which conclusions we can draw from the collected data. This is the difficult
+part.  
+
+%how to analyse the data. 
+After the acquisition of data there is the aspect of data aggregation, and
+finding conclusive parts of it. This is the difficult part of the research
+execution. The data aggregation will be manual for the interviews, semi manual
+for the case studies, and automated with the surveys. The case studies can be
+aggregated with the use of some programs that compare the cases, and find
+similarities. Common traits and passages will be useful for the enlightenment
+of the research questions. For the surveys a series of simple programs can be
+created to generate graphs, and other aggregated statistics. 
+
+%how to answer the RQ. 
+When the data has been aggregated to useful statistics, the statistics can be
+used to directly answer parts of the research questions. A typical approach
+would be to adapt the data aggregation programs to give direct answers to the
+research questions. If there are no direct answers, techniques for a broader
+and more fussy answer can be used to condense the data related each research
+question into something digestible. The most probable case would be to manually
+read the data and draw conclusions.  
+
+\section{Expected Results}
+%what I expect to find in my research.
+
+Through the research so far described, there are some expectations of results.
+The expectations regard the three research questions. 
+
+Firstly we expect to gain good knowledge about the selected firms, and their
+area of operations. In this regard we hope to find the most common uses of soft
+skills related to network management, and their application. 
+
+Secondly we hope to find evidence of the effect soft skills has on network
+management. More specifically we hope to determine confidently whether or not
+soft skills has an impact on network management. 
+
+Third, there are interactions between firms in networks, and how these
+interactions are affected by soft skills. Here we hope to find clear
+indications of ways soft skills affect management in networks. These
+indications will be the foundation for future work in this field of research in
+the future. 
+
+On the whole it is expected that the main area of research is enlightened a
+bit, while at the same time new areas of unexplored management aspects are
+uncovered. It is also hoped that the multi-disciplinary part of the research
+can be brought together into a new and more interesting direction that will
+make headway in the future of business management.  
+
+\section{Literature Review}
+The following literature review is based on the three articles stated in the
+references. The review is about network management, an important first step
+before bringing the soft skills into the picture. 
+\vspace{.5cm}
+
+Håkansson and Snehota, \cite{hakansson}, states that the basic assumption about the environment is that it is faceless, atomistic, and beyond the control of the individual firm. Opportunities in the environment cannot be created or enacted, rather they can be exploited so that a firm adapts to its environment. In many cases of industrial networks many actors are unknown to others; each company has a limited number of identifiable actors. While the environment is hard to influence, each firm can to some degree choose its environment.
+
+To survive in the environment a firm have to adapt to the ecosystem of actors,
+and to the market. Moore (\cite{moore},1996) states that single actions without an ecosystem are ineffective. A firm has to do competitive cooperation and systems thinking. Co-evolution in coexistence is the result of ongoing interactions in the network environment, and lack of sufficient co-production and innovation results in demise of companies in the environment.
+
+Moore’s (1996) ecosystem, and Håkansson and
+Snehota’s (\cite{hakansson},1989) concept of environment can be compared. The
+development we can see is that Moore talks about an ecosystem as a place where
+companies strive to survive, where Håkansson and Snehota uses the concept of
+environment as the set of interactions and entities that always influence the
+other actors. In some ways the environment and the ecosystem are the same thing,
+Ritter et al. (2004) sees this as a self-organizing systems, which, in the
+context of management of industrial networks, will be discussed here.
+
+In a network all participants are continuously affected by the influence of the
+other contributors. Ritter et al. (\cite{ritter},2004) suggests the ongoing management of the network is a simultaneous process where all firms partake, and that the performance and structure is the coproduce of managerial actions of the network. Further we see that business networks generally don’t have a controlling firm, but are widely regarded as self-organizing systems. In these systems order emerges through local interactions among the participating firms, resulting in a bottom-up emergence of structure.
+
+While the understanding of management in networks is currently limited, we can
+pose some implications that affect management in networks. The ability to manage
+and develop relationships with other firms in a network can be seen as a core
+competence of a firm. This core competence influences the firm’s position in,
+and profit from a network. “On short, relationship and network management is
+about managing interactions with others, not about managing others,” (Ritter et
+al., \cite{ritter},2004).
+
+The level of management in a network is disputed. Ritter et al.
+(\cite{ritter},2004) suggests that management of networks to a small extent can
+be possible. A frequent question is whether a firm should try to manage its
+network, or try managing in its network. The difference is the amount of
+influence the firm should exercise in the network, or if a firm should take the
+reactive or proactive role in the network. Ritter et al. (\cite{ritter},2004) shows the concept of power for one actor over another and how this power influences the relationship. The essence is that the more perceived power the firms have the better the relationship between these two actors. If both companies have strong perceived power over the other it is a mutual relationship.
+
+Möller and Rajala (\cite{moller},2007) says that one of the fundamental shifts
+in the 21st century is from a dyadic perspective of interorganizational exchange
+relationships, towards a network perspective of value creation involving
+different types of network organizations. This, in the light of Ritter et al.
+(\cite{ritter},2004), arguments for a model where networks of organizations and network organization are the two opposites in regards to influence and control in industrial networks. Here networks of organisations are weakly manageable, while network organization are argued to have to be managed to be effective.
+
+The aspect of control varies from network to network. In some networks a firm wants a high level of control. High levels of control in a network gives the firm a central role, it becomes a ‘hub firm’. In networks where hub firms are present these firms can to some extent choose its partners and direct the way relationships operate. When a firm can control all other actors in the network it is a monopolist.
+
+When comparing the two ways of influencing a network, except control or not,
+Ritter et al. (\cite{ritter},2004) argues that firms are not in total control
+over their resources as other actors influence or restrict actions taken by a
+given firm. In this context a key resource is the ability to manage
+relationships in a network. To develop a networking ability that enables firms
+to connect their resources to those of other actors is seen as a challenge for
+managers. As part of a continuous process within network relations are dyadic
+and cross-relational management tasks (Ritter et al., \cite{ritter},2004).
+
+After discussing issues of management in networks Ritter et al.
+(\cite{ritter},2004) pose some propositions. The propositions describe aspects
+of management in networks. These propositions are important when strategizing in
+industrial networks, as all the managerial decisions affect the position of a
+firm in relation to the other actors in a network. In short, decisions of
+management decide the success of a firm, and to some extent the successfulness
+of networks in which the firm participates. 
+
+\section{Conclusion}
+%The conclusion goes here.
+
+Through this research proposal we have covered the topic of research, the more
+detailed research questions, the strategy for research, methods of data
+gathering, a literature review, and now a concluding part. 
+
+The proposal suggests investigation into soft skills in association with
+network management. This is a little research field today, and would give
+valuable insight for managers today.
+
+The research questions specify the details of the what is hoped to be found,
+while the research strategy explains the approach to gain results. Expanded on
+the strategy the method part explains in more detail how it is hoped to gain
+data and knowledge in the specific parts of the proposal. 
+
+Data in three parts will be the building blocks of the conclusive findings of
+the proposed research, while the data aggregation described has to be
+elaborated and improvised to give adequate results when executing the actual
+research. The challenge will be to gather good data from representable firms
+that are in networks.   
+
+The literature review gives insight into the field of network management, but
+it is limited and have to be expanded significantly in the actual research.
+Literature review into soft skills, and the previously mentioned other
+scientific disciplines have to be conducted also. 
+
+Throughout a thorough research process it will be possible to shed light on
+aspects discussed in this research proposal. Especially the multi-disciplinary
+part of the research has an interesting appeal to it. Combining different
+research disciplines will be more important in the future. 
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+%\appendices
+%\section{Proof of the First Zonklar Equation}
+%Appendix one text goes here.
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+%\section{}
+%Appendix two text goes here.
+
+
+% use section* for acknowledgement
+%\ifCLASSOPTIONcompsoc
+  % The Computer Society usually uses the plural form
+%  \section*{Acknowledgments}
+%\else
+  % regular IEEE prefers the singular form
+%  \section*{Acknowledgment}
+%\fi
+
+
+%The authors would like to thank...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+%\ifCLASSOPTIONcaptionsoff
+%  \newpage
+%\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+%\bibitem{IEEEhowto:kopk}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+\bibitem{hakansson}
+Håkansson, H., & Snehota, I. (1989). No business is an island: the network
+concept of business strategy. Scandinavian journal of management, 5(3), 187-200.
+
+\bibitem{moore}
+Moore, James Franklin. 1996. The death of competition: leadership and strategy
+in the age of business ecosystems. Harper Business: New York, USA, chapter 1.
+
+\bibitem{ritter}
+Ritter, T., Wilkinson, I. F., & Johnston, W. J. (2004). Managing in complex
+business networks. Industrial Marketing Management, 33(3), 175-183.
+
+\bibitem{moller}
+Möller, K., & Rajala, A. (2007). Rise of strategic nets—New modes of value
+creation. Industrial marketing management, 36(7), 895-908.
+
+\end{thebibliography}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+%\begin{IEEEbiography}{Michael Shell}
+%Biography text here.
+%\end{IEEEbiography}
+
+% if you will not have a photo at all:
+%\begin{IEEEbiographynophoto}{John Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% that's all folks
+\end{document}
+
+
