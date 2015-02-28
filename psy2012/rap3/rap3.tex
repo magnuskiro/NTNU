@@ -1,0 +1,256 @@
+% latex article template
+
+% cheat sheet(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/latexsheet.pdf
+% cheat sheet2(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/LaTeX-cheat-sheet.pdf
+% reference manual(eng): http://ctan.uib.no/info/latex2e-help-texinfo/latex2e.html
+
+% The document class defines the type of document. Presentation, article, letter, etc. 
+\documentclass[12pt, a4paper]{article}
+
+% packages to be used. needed to use images and such things. 
+\usepackage[pdfborder={0 0 0},colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage[top=3cm, bottom=3cm, left=2cm, right=2cm]{geometry}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{setspace}
+
+% hides the section numbering. 
+\setcounter{secnumdepth}{-1}
+
+% Graphics/image lications and extensions. 
+\DeclareGraphicsExtensions{.pdf, .png, .jpg, .jpeg}
+\graphicspath{{./images/}}
+
+% Title or header for the document. 
+\title{
+	The uses and limitations of game theory in psychology
+}
+% Author
+\author{
+	%Magnus L. Kirø \\
+}
+\date{\today}
+
+\begin{document}
+\onehalfspace
+\maketitle
+\pagenumbering{arabic}
+
+Course code: PSY2012
+
+Semester: Autumn 2014
+
+Candidate number: 10077
+
+Course responsible: Ruud van der Weel
+
+\tableofcontents
+\newpage 
+
+\section{Literature and research}
+% The uses and limitations of game theory in psychology
+
+%Describe the difficulty of finding articles. 
+Finding relevant game theory articles linked towards psychology proved to be
+difficult. Searching with simple queries, such as 'game theory' or
+'game+theory+ psychology', proved to give poor results. This implies that
+research into the field of game theory in psychology must be a diverse field,
+or a very sparse one.
+
+By taking the few articles that resulted from the search the impression of the
+research field begins to form. Based on the Paul A. Wagner (2013)
+\cite{psyinvest}, the impression of the field becomes wide. Wagner writes about
+game theory as a means of investigation. He describes a wide area where game
+theory is used, and elaborates on the basics of it. Wagner states that
+"Together game theory and psychology excavated into mental life more than
+previous behavioral stipulations and methodologies would have ever
+allowed."\cite{psyinvest}. 
+
+%a brief discussion of why there are still psychologists working in these
+%fields(game theory related approaches.)
+
+For social scientists game theory can be a new tool to look at human
+motivations for decision making. More specifically weighting of wanted goals
+and risks, and a wider range of mechanisms are provided by game theory in a
+psychology context. As game theory provides wider possibilities for research it
+is likely that the use of game theory in psychology will emerge in new ways
+over time. Per now it looks like it will take some time for all parts of
+the community to embrace game theory, but some already have. Rather game theory
+lacks momentum toady, and would benefit from more use.   
+
+\section{Game Theory}
+%short explanation of what game theory is
+Game theory is shortly described as strategic decision making. It is in essence
+interactive decision making. Zero-sum games, such games where one persons
+winnings equals the other players net losses, was addressed early by game
+theory. Developing game theory from zero-sum games it is now used in wide
+range of behavioral contexts. Game theory has evolved into a umbrella term that
+today consists mostly of the logical aspects of decision making.\cite{wiki}
+
+Three assumptions was proposed by von Neumann and Morgenstern. Game theory
+builds on these three basic facts as a foundation for further assumptions. The
+three assumptions are: humans are self-interested, humans are rational, and
+humans are self-determining consumers.\cite{psyinvest}
+
+To the basic assumptions there were added five more. These are: 
+1: All outcomes can be known to varying degrees of certainty, 2: Player
+information is often incomplete, 3: Utilities(measures of one's relative gain)
+can be measured, 4: The utilities of all outcomes when the other assumptions
+are met can be discounted and summarised in a single quantity, 5: Some games
+are competitive, some are constant sum games, and some constant sum games and
+non-zero sum games often favor dominant strategies whose equilibrium invites
+cooperation as an attractive strategy \cite{psyinvest}.
+
+PD, the prisoners dilemma, is a classic example of a game theory. It describes
+the scenario where two prisoners are interrogated in separate rooms without
+contact. And they shall try to get the best deal with the police. Either can
+give up the other, or be silent. This gives four outcomes. Prisoner A tells on
+prisoner B, prisoner B tells on prisoner A, both tells on each other, and none
+of them tell. By applying rewards, or in this years in prison, to the option
+we have that if only one of them tells on the other, the one that tells gets 0
+years in prison, the other one gets 10. If both tell they get 5 years each, but
+if none of them tell they get 2 years each.\cite{psyinvest}
+
+The described PD scenario bottoms out in a paradox when we look at the
+assumptions of game theory. Both prisoners are self-interested and will
+probably choose to tell on the other prisoner, resulting in a 5 year sentence
+for each. But this means that the 2 year for each option is unreachable, which
+is the paradox. 
+
+By adding assumptions about the context of the game, such as that the prisoners
+know each other, then the game have changed and other options open up. Now it
+seems that securing the best decisions is no longer a simple mathematical
+problem, but rather more complex problem involving psychology. When this was
+presented a new direction opened up for science to explore.\cite{psyinvest}
+
+Nash and other found out that, given a zero-sum or constant-sum game, there was
+a set of actions that would result in an equilibrium for the expected value for
+all players. This happens when every player has found an acceptable expected
+value in a common strategy. Such a strategy will dominate all other strategies.
+If such a strategy would be found in society, world peace and social problems
+would be reduced to simple puzzles. But that is hardly the case in the real
+world. \cite{psyinvest}
+
+Game theory has a wide range of application.
+"Not only is game theory used in economics, international trade, military 
+strategizing, and business operations at every level it is now also used to
+illuminate various evolutionary models in biology, anthropology, sociology, and
+psychology all in addition to economic theory."\cite{psyinvest}.
+As an example it is observed that wealthy people find cost of lottery tickets a
+poor buy, while the risk reward picture looks totally different for the poor. 
+
+An aspect to risk vs reward problem, or maximization of reward is the 'Beauty
+Game'. The beauty game is a problem where every man wants the pretties girl in
+the group, but no one can have her. If every one goes for the pretties girl,
+only one can be successful, but if everyone goes for a different girl in the
+same group the chances are increased for everyone. Another approach to this
+problem would be to remove oneself from the first round, and aim for the
+greater expected value in a discrete second round.\cite{psyinvest} 
+
+On the contrary an experiment found that strangers who were offered money to help
+move a couch was less likely to help than strangers not offered a reward. The
+experiment shows that rewards can dampen the response form people. People seem
+to value money in a way that increases possibilities in life, while it is
+weighted against some value assigned to labour, or personal
+dignity.\cite{psyinvest}  
+
+As for cooperation, which is a central aspect of game theory and reward
+maximization, Scharlemann et al. (2001) looked at how people perceive the value
+of smiles. This is good example of how game theory has elaborated on the social
+sciences. The article talks about how smiles effect the cooperativeness of
+people. Participants score pictures of varying smiling degree. The main
+variable Scharlemann et al. (2001) are interested in is the ability to identify
+cooperative partners. They do this by examining the value of a smile in a
+simple bargaining context.\cite{smile}   
+
+Two research questions are stated by the paper, 1: 'Does smiling elicit trust
+among strangers?', 2: 'Is there a difference between the sexes in assessing
+trust?'. As signalers, people who smile, always benefit form smiling, there has
+to be some way for the receiver to verify the authenticity of the smile. This
+results in a handicap, or cost, for signaling false information. Non-smiling
+individuals may be discriminated by receivers due to hidden bad qualities about
+that individual.\cite{smile} 
+
+Scharlemann et al. (2001) conclude the article by answering the research
+questions, and briefly presenting the results. The experiments find that both
+men and women are more trusting towards the opposite sex, Smiling positively
+affects trust, and that facial features can affect cooperation regardless of
+smiling. Smiling then serves as an informative stimulus which promotes trusting
+behaviour. While smiles are increasing trust, then genuine smiles should have a
+greater effect than false ones. Face-to-face interactions are also found to be
+better than anonymous interactions.\cite{smile}
+
+% humans are self-interested
+% humans are rational
+% humans are self-determining consumers 
+
+Based on the three base assumptions, stated earlier, there are a few things
+that limits game theory. Humans are not always rational, and humans are not always
+self-interested.
+
+To take these statements a bit further. Humans are often steered and influenced
+by emotions. Hunger makes people eat. Such feeling based necessities are
+rational acts in a way, but thoroughly anchored in underlying feelings beyond
+the rationale. The use of game theory in social settings will for most people
+prove difficult. Game theory states that the strategies used are rational, but
+people performing them might be incapable of executing them over time, thereby
+acting irrational.   
+
+Self-interest is the focus on the desires and need of oneself. A simple
+argument that people does not act in self-interest all the time are mothers.
+Mothers in vary many cases acts in the interest of her children. The whole
+concept of family to some degree disregards the self-interest that is required
+by game theory. In a family context the members of the group works for the
+betterment of the group, and not necessarily itself. 
+
+\section{Conclusion}\label{conclusions}
+%We worked hard, and achieved very little.
+
+%What has been discussed in this essay. 
+This essay has covered the basics of game theory, the prisoner dilemma, Nash
+equilibrium, and an example of modern use of game theory. Literature search and
+the state of game theory has been touched. And some limitations of the base
+assumptions of game theory has been discussed. 
+
+% applications of game theory. 
+The applications of game theory are more numerous now than ever, but the
+diversity has made it difficult to narrow the field of search for game theory.
+Meaning that while game theory is being used more, the use of it is also more
+hidden, and maybe of a more inspirational influence rather than of a direct
+influence. 
+
+Concluding statement that Game theory is more important than ever, but it is
+hard to find articles relating directly to game theory. Although it might be a
+lot easier to find new, and relevant, research if a more specialised field
+under the umbrella term that game theory has become. Another thing to do would
+be to do an extensive literature review of game theory and its sub fields of
+research.  
+
+
+% bliography
+%\cite{deyer}
+\addcontentsline{toc}{section}{References}
+\begin{thebibliography}{1}
+%\bibitem{deyer}
+%Dyer, J. H., Kale, P., & Singh, H. (2001). Strategic alliances work. MIT Sloan
+%Management Review, 37-43.
+
+\bibitem{psyinvest}
+Paul A. Wagner. Game Theory as Psychological Investigation. InTech, 2013
+\url{http://cdn.intechopen.com/pdfs/43924/InTech-Game_theory_as_psychological_investigation.pdf}
+
+\bibitem{smile}
+Jörn P.W. Scharlemann, Catherine C. Eckel, Alex Kacelnik, Rick K. Wilson. The
+value of a smile: Game theory with a human face. Journal of Exonomic Psychology
+22 (2001) 617-640. 
+
+\bibitem{wiki}
+Game Theory on Wikipedia, 30.11.14,
+\url{https://en.wikipedia.org/wiki/Game_theory}
+
+\end{thebibliography}
+
+\end{document}
+This is never printed
