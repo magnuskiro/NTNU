@@ -32,3 +32,26 @@ runtime-EclipseApplication/
 # subjects and projects that have their own repository.
 master/
 it2805/
+
+# ignore all article folders
+*/articles
+
+
+# other random noise to be ignored by git
+tdt4242/2015-week+2+General-intro.pdf
+tdt4242/2015-week+2-1og2-Intro.pdf
+tdt4242/iso-15622.pdf
+tdt4252/TDT4252+DT8802+Assignment-description-2015.pdf
+tio4161/Notater\ fra\ timen\ 12.09.\ Gruppe\ 1,2,3.pdf
+tio4161/Oppgave\ 2\ .pdf
+tio4161/PPL\ -\ Felles\ mappe\ -\ \ Gruppe\ 3.zip
+tio4161/PPL\ -\ Felles\ mappe\ -\ \ Gruppe\ 3/
+tio4161/Sammendrag\ av\ Wilton\ .pdf
+tio4161/Sammendrag\ av\ empiri\ relevant\ til\ oppgave\ 2..pdf
+tio4161/documents-export-2014-09-12.zip
+tio4161/gd-dump/
+tio4161/project\ management\ 4th\ ed.\ (maylor\ 2010).pdf
+tio4265/lectures/
+Oving_1-Dokument_for_Oppgave_1.pdf
+Samlet_dokument_for_oppgave_1_og_2_JOBBING_BOR_SKJE_HER_FREMOVER.pdf
+Utvikling og videreutdanning (Morten og Oddbjorn).pdf
