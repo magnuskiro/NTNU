@@ -1,0 +1,242 @@
+% latex article template
+
+% cheat sheet(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/latexsheet.pdf
+% cheat sheet2(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/LaTeX-cheat-sheet.pdf
+% reference manual(eng): http://ctan.uib.no/info/latex2e-help-texinfo/latex2e.html
+
+% The document class defines the type of document. Presentation, article, letter, etc. 
+\documentclass[12pt, a4paper]{article}
+
+% packages to be used. needed to use images and such things. 
+\usepackage[pdfborder={0 0 0},colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[norks]{babel}
+\usepackage{graphicx}
+\PassOptionsToPackage{hyphens}{url}
+
+% hides the section numbering. 
+% this makes \ref{marker} show up as empty. use \nameref{}, or \pageref{}
+\setcounter{secnumdepth}{-1}
+
+% Graphics/image lications and extensions. 
+\DeclareGraphicsExtensions{.pdf, .png, .jpg, .jpeg}
+\graphicspath{{./images/}}
+
+% Title or header for the document. 
+\title{
+	Alternative tolkninger til Kantega-analyse
+}
+% Author
+\author{
+	Magnus L. Kirø \\
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+\pagenumbering{arabic}
+
+\tableofcontents
+\newpage
+
+\section{Introduksjon}
+Denne oppgaven går ut på å komme med en alternativ
+forståelse, tolkning, eller løsning på tre områder fra gruppe 3 sin analyse av
+Kantega. Analysen blir referert til som 'Kantega-analyse' i denne oppgaven. 
+Analysen tar for seg prosjekt- og personal-ledelsesperspektiver.
+
+Gruppe 3 har fokusert på rekruttering, og ledelsesutvikling, etter en
+overordnet organisasjonsanalyse. Disse aspektene blir også belyst her, men fra
+en litt annen vinklig. 
+
+\paragraph{Kantega} er et konsulentselskap, med kontorer i Trondheim og Oslo.
+De spessialiserer seg på skredersydde IT-løsninger. De er moderne, og holder
+seg oppdatert på de nyeste utviklingsmetodologiene og teknologiene i markedet.
+For Kantega er det viktig å oppfylle forventningene til kundene, og utvikle
+kompetansen innad i organisasjonen.   
+
+%Beskriver Kantega og empirien rundt. 
+Kunnskapsarbeidere, flesteparten av de ansatte,  står i sentrum av den operative
+kjernen i Kantega. Kantega ønsker ansatte som vil bruke seg selv, lære noe
+ofte, finne ut hvor god vi kan bli, jobbe samen med andre, og bidra til
+felleskapet og til samfunnet.
+
+\paragraph{De tre tilnærmingene,} struktur, rekruttering, og ledelse, er de tre
+aspektene resten av oppgaven tar for seg. Hovedvekten vil ligge på ledelse, da
+det ser ut som det er dette punktet Kantega har lyst til å forbedre mest, eller 
+har mest problemer med. 
+
+Gjennom oppgaven kommer det forslag og innspill på følgende tre spørsmål. Kan
+strukturen i Kantega endres til det bedre, evt hvordan? Er det egentlig bedre
+å rekruttere eksterne ledere, kontra interne? Hvordan kan Kantega forbedre ledelsen?
+
+%Få med teori her! 
+Oppgaven tar i hovedsak utgangspunkt i teorien beskrevet av gruppe 3. Dette er
+hovedsaklig teori fra Bolman \& Deal om organisasojn og ledelse og Wilton om
+personalledelse.
+
+\paragraph{} Oppgavens hoveddel starter med diskusjon om \nameref{struktur}.
+Fortsetter med \nameref{rekruttering}, og fullføres med \nameref{ledelse}. 
+En oppsummering av diskusjonen og foreslåtte forbedringer kommer sist i
+\nameref{konklusjon}.
+
+\section{Struktur}\label{struktur}
+%hierarkiet, flatt, men ikke flatt nok?
+
+Strukturanalysen basserer seg på Mintzbergs strukturkonfigurasjoner. 
+Som gruppe 3 påpeker er det vanskelig å plassere Kantega i en bestemt
+organisasjonsstruktur (Kantega-analyse, gruppe3, s11). Kantega bærer preg av
+flere av Mintzbergs
+strukturkonfigurasjoner(Bolman og Deal, 2009, s104). Selv mener Kantega at de
+er et adhockrati, mens man fra utsiden kan oppfatte Kantega som et fagbyråkrati.
+Uoverensstemmelsen mellom de to bildene burde man forbedre på sikt. Et
+alternativ er å ta til seg adhockratiet til det fulle og redusere den vertikale
+avstanden i Kantega ytterligere.
+
+Den operative kjernen i Kantega består i all hovedsak av utviklings-team.
+Teamene har ofte en prosjektleder. Gruppe 3 sier følgende om
+prosjektlederbegrepet:  
+"Begrepet om en 'prosjektleder' unngås, og man har i stedet en 'Scrum master' som
+sørger for det administrative." (Kantega-analyse, gruppe 3, s10)
+Ettersom en scrum master har ansvaret for å
+holde oversikt over arbeidsoppgaver, beslutningsdokumentering, måling av
+framgang, kommunikasjon med ledelse, og kommunikasjon med kunde vil det være
+veldig naturlig å kalle rollen 'prosjektleder' i daglig tale (Sommerville,
+2011, s72-74). Essensen av å være prosjektleder er å tilrettelegge arbeidet for
+teamet best mulig. Med flat struktur er dette et ansvarsområde på lik linje med
+resten av utviklerene i teamet. Det er også viktig å påpeke at det ikke er
+noe 'ovenfra og ned' perspektiv for en scrum master(Sommerville, 2011, s74).
+
+% dra scrum teamene inn i det at man har flat struktur selv her. Og at man kan
+% se på personene som å ha forskjellige ansvarsområder i motsetning til
+% forskjellig hierarkisk plassering.  
+
+Siden Kantega allerede i dag har bassert seg på scrum-team vil det være
+naturlig å benytte tilhørende kvaliteter i resten av organisajsjonen. 
+"Som vi ser er arbeidet med en strategi for bedriftskulturen avhengig av
+hvordan Kantega oppfatter strukturen sin, og det er derfor viktig at de ser på
+alle apsketer ved strukturen sin for å kunne tilpasse strategien best mulig."
+(Kantega-analyse, gruppe 3, s38). Det gruppe 3 poengterer er veldig riktig. En
+naturlig tilpassning til dette vil være å benytte scrum-team-flatheten, med en
+sterkere tilnærming til adhockratiet for å redusere avstanden mellom utviklere
+og ledere.
+
+\section{Rekruttering av ledere}\label{rekruttering}
+mangfoldet er ikke i fokus, men de vet at mangfoldet kan bli bedre. mangfoldet
+blir likevel nedprioritert til fordel for kompetansen til de man ansetter. 
+
+Selv om ikke mangfoldet er i fokus når Kantega ansetter, så vet de at
+mangfoldet har forbedringspotensiale. Kompetanse og personlighet er viktig i
+ansettelsesprosessen. 
+
+"En løsning kunne vært å ansette ledere fra eksterne kilder, dyktige ledere som
+er der for å lede ikke for å utvikle. På den måten får man ikke problemet med
+at noen utviklere ikke er gode nok og blir ledere."(Kantega-analyse, gruppe 3,
+s26).
+
+Rekruttering av leder er vanskelig, men man kan tilpasse det. Det kan se ut som
+Kantega vil ha ledere som også har erfaring med utvikling. 
+Ekstern rekruttering av profesjonelle leder gir, ut fra denne antagelsen,
+ingen fordeler. Det som derrimot er gunstig er å finne personer med interesse, og
+helst erfaring, innenfor ledelse og utvikling. Om man finner dem internt, eller
+henter inn nye etenfra har liten betydning. Man bør heller se på de egenskapene
+man mangler i Kantega. Leder som bare er til stede for å lede, ikke for å
+utvikle, tilfører ikke kjernevirksomheten, utvikling, i Kantega noe ekstra. 
+
+Gruppe 3 sier at rekruttering av ekstern kontra interne ledere essensielt
+handler om effektivitetsøkning, og potensielt negative kulturreaksjoner
+(Kantega-analys, gruppe 3, s32). Vidre sier de også at "rekruttering for å øke 
+mangfoldet gir økt kreativitet." (Kantega-analyse, gruppe 3, s35). 
+Den, potensielt, økte kreativiteten og effektivitetsøkningen 
+kan gi flere konflikter, og undergrave de rekrutteringsverdiene man har i dag.
+Man børe være forsiktig med å endre ting som allerede fungerer.
+
+En langsiktig løsning kan være å ansette utviklere med interesse for, og
+erfaring med, ledelse. Da rekrutere man mindre utviklerrettet, men mer ledelsesrettet. 
+Så man får folk som er interessert i prosjektledelse, ledelse og strateg,
+samtidig som de har erfaring med utvikling. 
+
+\section{Ledelse og lederrollen}\label{ledelse}
+Kan lederrollen være et ansvarsområde på lik linje med
+utviklere? Og hvordan påvirker makt dette? 
+
+% bruken av makt.
+Gruppe 3 beskriver makt i Kantega hovedsaklig av 'ekspertmakt' typen, hvor
+personen som kan mest om et tema har mest makt i den sammenhengen. Vidre i
+maktkonteksten trekkes utviklernes oppfatning av lederne fram som 'ledere med
+dårlig utviklerevne', altså en negativ kontekst. Her neglisjeres det faktum at
+alle ansatt i Kantega er kunnskapsarbeidere med ekspertmakt på sitt spesifikke
+område. Tilpasset ledelseskonteksten kan vi se at ledere også kan ha samme
+ekspertmakt som utviklerne, bare på sine respektive områder. 
+
+Antagelsen om at alle lederne er avdankede utviklere som ikke var gode nok på
+det tekniske er svak. Man må ta høyde for personlige interesser, egenskaper og
+ferdigheter. Noen er flinkere, og mer interessert, til å drive med ledelse.
+
+%"Men at lederne ikke nødvendigvis skal være sterke tradisjonelle ledere betyr
+%ikke at lederne bare skal være avdankete utviklere, dette er noe Kantega bør
+%vurdere..."
+%(Kantega-analyse, gruppe 3, s32). 
+
+Alle har HR-ansvar, også kjent som personalansvar, eller kjent som at alle har
+ansvar for trivselen i bedriften og at man når dagens visjon om å være verdens
+beste arbeidsplass.
+
+"Lederrollen er noe uklar." (Kantega-analyse, gruppe 3, s36). Det har gruppe 3
+rett i. Kantega burde definere ledere klarere. En måte å gjøre det på er som
+tidligere nevnt ansvarsområder. Om man ser bortifra hvem som er over hvem i et
+hierarki kan man fokusere på arbeidsoppgavene, med tillhørende ansvarsområde.
+Et slikt område vil være koordinering mellom prosjekter, og forskjellige
+entiteter i Kantega. 
+
+Et eksempel på et ansvarsområde er HR-ansvaret. HR-ansvar er en naturlig del av
+de å lede. Gode ledere vet hvordan man drive med HR. Man
+trenger ikke eksplisitt å definere en person som har personalledelse som arbeidsoppgave.
+Når det ikke er definert vil noen ta initiativet til ansvar, og forbedre
+situasjonen. 
+
+"Vekst uten klare roller kan føre til en hodeløs kjempe", men det kan også føre
+til et velfungerende nettverk av entiteter i Kantega. 
+
+\section{Konklusjon}\label{konklusjon}
+
+Diskusjonen så langt har dreid seg om hvordan Kantega kan utvikle strukturen i
+en utflatende rettning, at ekstern rekruttering ikke nødvendigvis er bedre enn
+intern, og at lederrollen i sammenheng med struktur kan utvikles til at alle i
+Kantega føler mer ansvar og handlingsfrihet. 
+
+Som Gruppe 3 påpeker i sin empiri del, "Kantega opplever at det blir satt av for liten tid til forbedringsforslag fra
+de ansatte. Wulff nevner i bedritsfbesøket at: 'de mest grunleggende
+ledelsesutfordringene ligger i at de ansatte ønsker å forbedre mye, og at det
+er for lite tid for ledelsen å utføre det'(K. Wulff,
+05.09.14)"(Kantega-analyse, gruppe3, s4), ser vi at
+dagens struktur ikke fungerer optimalt. Det kan se ut som man forventer at
+lederene gjør mer enn de har tid til. Hver enkelt kan kanskje også føle at man
+ikke har mandat til å forbedre noe utover sin stilling. Har kan man vurdere å
+bryte ned grensene enda mer enn man har gjort i dag, og si at alle, ikke bare
+ledelse, har ansvar for å forbedre bedriften. Det er ingenting som tilsier at
+hver og en ikke kan bidra utover sine hovedoppgaver, noe man burde oppfordre
+til.
+
+Rekruttering av ledere fungerer som det er i dag. Kantega har god erfaring med
+å rekrutere leder intern, og så vidreutdanne dem. Dette burde man holde på. Man
+kan også vurdere å rekrutere langsiktig, hvor kandidatene med interesse for
+ledelse kommer høyere på lista.  
+
+Ledelsen i Kantega kan forbedre ved å fokusere på og bedre
+spessifisering av ansvarsområder og reduksjon av barrierer. Da vil utviklere og
+leder komme nærmere hverandre hierarkisk.  
+
+
+\section{Referanser}
+\begin{itemize}
+	\item Kantega-analyse, Gruppe 3, Høst 2014, TIØ4161, NTNU, Trondheim.
+	\item Bolman, L. \& Deal, T. 'Nytt perspektiv på organisasjon og ledelse',
+4.utg. Oslo, Gyldendal Akademiske Forlag, 2009. 
+	\item Wilton, N. An introduction to human resource management, 2nd
+edition, London, SAGE.
+	\item Sommerville, Software Engineering 9th edition, Pearson, Boston, 2011.
+\end{itemize}
+
+\end{document}
+This is never printed
