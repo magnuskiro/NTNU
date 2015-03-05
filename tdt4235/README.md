@@ -1,6 +1,9 @@
-tdt4235
-=======
+TDT4235 - Software Quality and Process Improvement
+======
+Semester: ()<-- insert here:[v15/v11/h09/]
 
-Software quality and Process improvement
+# 
 
-Recommended subject. Got C by reading on wikipedia the day before the exam. 
+
+# 
+

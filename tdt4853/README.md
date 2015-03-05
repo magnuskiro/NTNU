@@ -1,16 +1,9 @@
-Experts in Teams
-=======
+TDT4853 - Experts in Teamwork - The  Intelligent  Transport System
+======
+Semester: ()<-- insert here:[v15/v11/h09/]
 
-* tdt4853
+# Web link
+http://www.ntnu.no/eit/tdt4853
 
-Team: Dremmt
-
-Thomas - KomTek
-Erik - Matte
-Ragnhild - Bygg
-Mathilde - Inf
-Dag Erik - Inf
-Magnus aka Kirø  -Inf 
-
-
+# Course materiel
 

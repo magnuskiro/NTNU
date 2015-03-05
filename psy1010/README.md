@@ -1,91 +1,20 @@
-# Pyshologiens historie.
-refleksjon overordnet detaljkunnskap.
+PSY1010 - History of Psychology
+======
+Semester: ()<-- insert here:[v15/v11/h09/]
 
-skaffe oversikt over de forskjellige retningen i psykologien. 
+# Academic content
+The course provides a basic understanding of the historical development of major psychological issues. Modern psychology as it emerged in the early 20th century is considered central to the course, as are the main tendencies in the development of contemporary psychology.
+The subject is a general introduction to other introductory subjects of the psychology program.
 
-# dyr i psykologien 
-Bevissthetspsykologi,
-differensialpsykologi, eksperimentell sosialpsykologi, humanistisk psykologi og deler av kognitiv
-psykologi er eksempler på tradisjoner der bruk av dyr ikke er akseptert/ikke blir oppfattet som
-relevant
+# Learning outcome
+Knowledge:
+The student has basic understanding of the historical development of psychology.
+The student has developed an understanding of the relationships and differences between the various trends in the history of psychology.
 
-dyr ok:
-komparative psykologien etter Darwin, i
-funksjonalistisk psykologi, behaviorisme,
-gestaltpsykologisk
-læringsforskning, biologisk psykologi, og
-i deler av kognitiv psykologi. 
+Skills:
+The student can reflect on current psychological theory and practice by putting it into historical context.
+The student can find detailed literature for futher reflection.
+The student can put newer directions and theories in a historical perspective.
 
-# vilje i psykologien 
-går som en rød tråd igjennom historien. 
-drøftes i lys av drift, intensjonalitet, frie valg
-
-redegjøre for hvilke problemer den frie vilje har skapt i forsøkene på å utvikle psykologi til å bli en moderne vitenskap. 
-
-# darwins inflytelse i psykologi
-prinsippene for det naturlige utvalg og hvilke konsekvenser det gir for forståelsen av mennesket
-
-# humanistisk psykologi
-redegjøre for hva dette er. 
-Maslow, Rogers og May bør være nevnt
-hva humanistisk psykologi i prinsippet står for
-vise hvordan den skiller seg fra andre samtidige retninger(retninger som har gjort seg gjeldende i siste halvdel av det tyvende århundre. )
-
-# gestaltpsykologi
-
-# behaviourism
-
-# kritikk av psykologien som vitenskap
-redegjør, og kom med eksempler hvordan dette har slått ut gjennom psykologiens historie.
-
-Reflektere over spørsmålet om vitenskapelighe
-
-
-# kognitiv psykologi
-etterkrigstiden 
-redegjøre for hva kognitiv psykologi er. 
-
-hvordan kognitiv psykologi har påvirket ett eller flere av de fem basalområder i psykologien i etterkrigstiden. 
-
-stort pluss om kandidaten også kan si noe om de konsekvenser dette har gitt for etterkrigstidens oppfattelse av psykologi
-
-trekkes tilbake til fakultetspsykologien.
-
-# «det ubevisste»
-gå utover Freud og Jung ved for eksempel å trekke linjene bakover i retning av Carus, Leibniz
- 
-fremover ved å peke på bevissthetsterskler i kognitiv forskning. 
-
-# fysiologi og psykologi
-Wundts parallellitetstese
-psykoanalyse eller behaviorisme dersom kandidaten er i stand til å bygge opp en god redegjørelse.
-
-# adferd
-gå utover adferdspsykologien. 
-
-# teigen
-skille mellom de to typer psykologi, og psykologi som vitenskap. 
-
-# sosial psykologi
-Kurt Lewins 
-eksperimeltell sosialpsykologi. 
-wilhel wundts. 
-
-# Reading material:
-## day 1: 
-https://en.wikipedia.org/wiki/Timeline_of_psychology
-## day 2
-https://en.wikipedia.org/wiki/History_of_psychology
-## day 3
-https://en.wikipedia.org/wiki/Social_psychology
-https://en.wikipedia.org/wiki/Cognitive_psychology
-https://en.wikipedia.org/wiki/Behavioral_neuroscience
-https://en.wikipedia.org/wiki/Abnormal_psychology
-https://en.wikipedia.org/wiki/Comparative_psychology
-https://en.wikipedia.org/wiki/Evolutionary_psychology
-https://en.wikipedia.org/wiki/Developmental_psychology
-https://en.wikipedia.org/wiki/Experimental_psychology
-https://en.wikipedia.org/wiki/Neuropsychology
-https://en.wikipedia.org/wiki/Personality_psychology
-
-
+General competence:
+The student can present important academic material both in writing and orally with a background in the field. 

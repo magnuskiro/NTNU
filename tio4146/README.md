@@ -1,40 +1,10 @@
-# Finance for science and technology students
-tio4146, autumn 2014. 
+TIO4146 - Finance for Science and Technology Students
+======
+Semester: ()<-- insert here:[v15/v11/h09/]
 
-# The course is conceptual - not technical:
-* How should investment decisions be made?
-* What determines the cost of capital for a project?
-* What is market efficiency?
-* What determines option prices and how
+# Academic content
+The course presents the major insights from financial economics in a way that assumes no previous knowledge of finance but that utilizes the quantitative skills of science and technology students. Topics include the analysis and decomposition of risk and the (Nobel prize winning) methods to price the risk of investments in real and financial assets, including options. The use of real options analysis to value flexibility in investment is extensively discussed. Modern theory of market efficiency is also included. The insights are primarily applied to investment analysis, but also to decision making problems like these: What are the relevant risks in investment decisions and how can they be priced? Should our pension fund pursue an active investment strategy or not? When has flexibility in projects value and how can that value be calculated? 
 
-
-# Risk
-
-# Portfolio
-
-# Market Efficiency 
-* Capital asset pricing model. 
-* efficiency market hypothesis. 
-	* Properly anticipated prices fluctuate randomly
-* High unexplained variance means that the market is healthy. 
-* uncertainty:
-	* adjust the discount rate to the risk adjusted discount rate
-	* Adjust the cash flows to certainty equivalent cash flows
-	* Adjust the probabilities (expectations operator) from normal
-	to risk neutral or equivalent martingale probabilities
-
-# Capital structure and Financial instruments
-
-# Options and other derivatives
-
-# Real Options analysis. 
-
-# Abbreviations
-CoC: Cost of Capital 
-CAPM: Capital asset pricing model
-
-
-# Resources: 
-https://www.wikipendium.no/TI%C3%984146_Finance
-
+# Learning outcome
+The course’s place and role in the study program: the course is aimed at science and technology students who want to understand how investment decisions regarding projects are made and who want to obtain sufficient knowledge of finance to be able to competently discuss the valuation of projects, including the strategic aspects of future expansion possibilities (real options analysis). The course is intended to convey the following knowledge: General knowledge about the workings of financial markets through arbitrage and equilibrium and markets’ role in allocating capital to productive investment opportunities and dividing risk over different capital categories. The course is intended to convey specific knowledge about the analysis and decomposition of risk and methods to price the risk of investments in real and financial assets, including derivatives like options. The course is also intended to convey specific knowledge about the use of real options analysis to value flexibility in investments and modern theory of market efficiency. Practical examples and exercises will help students to develop the necessary skills to apply this knowledge in practical decision making problems regarding investment, financing and risk management, both in a business and a private context.
 
