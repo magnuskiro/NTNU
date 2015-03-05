@@ -10,23 +10,37 @@ not having anything to commit.
 
 Subjects
 -------
-(h=høst/fall, v=vår/spring)
-
-* io1001 - h2013+v2014 - Leadership in practice. 
-* tdt4117 - h2012 - Information Retrieval
-* tdt4136 - h2011 - Logic and Reasoning systems
-* tdt4150 - h2012 - Advance Databases - h2012
-* tdt4165 - h2011 - Programming languages
-* tdt4171 - v2013 - Methods in Artificial intelligence
-* tdt4186 - h201? - Operating systems
-* tdt4190 - h201? - Distributed systems
-* tdt4215 - v2013 - Web intelligence
-* tdt4235 - h2012 - Software quality and process improvement
-* tdt4240 - v2013 - Software Architecture
-* tdt4250 - h2012 - Model based deveopmet of information systems
-* tdt4258 - v2011 - Micro controllers and system design
-* tdt4280 - v2013 - Distributed Intelligent Agents 
-* tdt4300 - v2013 - Dataminig
-* tdt4853 - v2013 - Experts in Teams
-* ttk4145 - v2012 - Realtime Programming
-
+* IO1000 - Leadership in a Practical Context
+* it1103 - 
+* IT2805 - Web Technologies
+* IT3010 - Research Methodology in Computer and Information Science
+* PSY1010 - History of Psychology
+* PSY1012 - Cognitive Psychology I
+* PSY1013 - Biological Psychology I
+* PSY1015 - Developmental Psychology I
+* PSY2012 - Cognitive Psychology II
+* PSY2019 - Work and Organizational Psychology
+* TDT4100 - Object-Oriented Programming
+* TDT4117 - Information Retrieval
+* TDT4136 - Introduction to Artificial Intelligence
+* TDT4150 - Advanced Database Management Systems
+* TDT4165 - Programming Languages
+* TDT4171 - Artificial Intelligence Methods
+* TDT4186 - Operating Systems
+* TDT4190 - Distributed Systems
+* TDT4215 - Web Intelligence
+* TDT4235 - Software Quality and Process Improvement
+* TDT4240 - Software Architecture
+* TDT4242 - Requirements and Testing
+* TDT4250 - Model-Driven Development of Information Systems
+* TDT4252 - Enterprise Modeling and Enterprise Architecture
+* TDT4258 - Energy Efficient Computer Systems
+* TDT4280 - Multi Agent Systems and Game Theory
+* TDT4300 - Data Warehousing and Data Mining
+* TDT4853 - Experts in Teamwork - The  Intelligent  Transport System
+* TIO4116 - Microeconomics and Investment Science
+* TIO4146 - Finance for Science and Technology Students
+* TIO4161 - Project and Human Resource Management
+* TIO4265 - Strategic Management
+* TIO4345 - Management of Business Relationships and Networks
+* TTK4145 - Real-time Programming
