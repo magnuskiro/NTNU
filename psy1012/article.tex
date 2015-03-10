@@ -1,0 +1,225 @@
+% latex article template
+
+% cheat sheet(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/latexsheet.pdf
+% cheat sheet2(eng): http://www.pvv.ntnu.no/~walle/latex/dokumentasjon/LaTeX-cheat-sheet.pdf
+% reference manual(eng): http://ctan.uib.no/info/latex2e-help-texinfo/latex2e.html
+
+% The document class defines the type of document. Presentation, article, letter, etc. 
+\documentclass[12pt, a4paper]{article}
+
+% packages to be used. needed to use images and such things. 
+\usepackage[pdfborder={0 0 0},colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\PassOptionsToPackage{hyphens}{url}
+
+% hides the section numbering. 
+% this makes \ref{marker} show up as empty. use \nameref{}, or \pageref{}
+%\setcounter{secnumdepth}{-1}
+
+% Graphics/image lications and extensions. 
+\DeclareGraphicsExtensions{.pdf, .png, .jpg, .jpeg}
+\graphicspath{{./images/}}
+
+% Title or header for the document. 
+\title{
+	Sensing and Perception, what is the difference?
+}
+% Author
+\author{
+	Magnus L. Kirø \\
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+\pagenumbering{arabic}
+
+%\begin{abstract}
+%1200 words, deadline 10.03, topic: Explain the difference between sensing and perception.
+%\end{abstract}
+
+\section{Introduction}
+
+The understanding of perception has been a topic for discussion a long time.
+From the ancient Greeks and through modern times until today. The Greeks
+introduced the three perspectives on perception. Something reaching out to
+sense the world, something radiating from the world and contacts the sensing
+organs, and the thought that the world and the sensing organs are connected
+through a medium. 
+
+In modern days we have split the act of perceiving into two aspects. The
+sensory system, what happens in the body, and the cognitive aspects, what
+happens in the mind. The sensory system is the complex biological combination
+of sensors, nerve system, and brain. "Perception is the organization,
+identification, and interpretation of sensory information in order to represent
+and understand the environment" \cite{Wiki-perception}.
+
+Both the sensory system and perception is affected by external influences. 
+Perception is affected by several factors such as learning, memory,
+expectations, and attention. These factors shapes our perception of
+experiences. The sensory system can be affected by disabilities, or more often
+drugs. 
+
+Psychophysics describe relations between perception and sensory input from
+physical qualities. An application of psychophysics is lossy-compression of
+media content, where concepts of psychophysics have enlightened how humans
+perceive sound and vision. Psychophysics is also referred to as a set of
+methods that can be used for studying perceptual systems.
+\cite{Wiki-psychophysics} 
+
+Other significant developments of perception are events like the cognitive
+revolution. Where anthropology, psychology, and linguistics were combined with
+the new developments and ideas from computer science, neuroscience, and
+artificial intelligence. \cite{Wiki-cognitiveRevolution} 
+
+The body as the sensory system, and the mind as perception is presented next. 
+Both as different aspects of the perceiving system, where sensing and
+perception are different things. A discussion of the core question, what is the
+difference between sensing and perception, will conclude the essay. 
+
+\section{Body}
+The five common senses that create the sensory system touch, smell, taste,
+hearing and sight. The vestibular system, responsible for balance, are also part
+of the sensory system. The information from the sensory system is transmitted to
+the brain, where it is interpreted, and transformed into the foundation for our
+perception or view of the world around us.  
+
+Stimulus is the central task of the sensory system. It reacts based on the
+stimulus that is exerted on the body. The stronger the stimulus, the stronger
+the sensory signal, and the stronger the reception in the brain. Along with
+intensity duration and location is important in relation to stimulus.  
+
+The sensory system consists of three main parts: the neural pathways that
+transmits signals, the sensory receptors, like hands, eyes, and the nose, and
+parts of the brain that interprets the electrical signals that represent the
+different observations of the sensory inputs.
+
+Essential concepts of the sensory system are receptors, cortex, modality. 
+
+There are five types of receptors in the body: chemo-, photo-, mechano-,
+thermoreceptors, and nociceptors. The chemoreceptors detect chemical stimuli.
+Tasting buds are an example of chemoreceptors. The photoreceptors detect light,
+eyes are photoreceptors. There are four categories of mechaoreceptors that
+react to mechanical stimuli of different intensities. Thermoreceptors are
+affected by temperature, warm and cold. Nociceptors are internal sensors that
+react to potential damage to internal organs.  
+
+Accompanying the senses we have cortices in the brain. Somatosensory cortex for
+touch, auditory cortex for processing sound, gaustatory cortex for processing
+taste, primal olfactory cortex to interpret smell, and the visual cortex to
+handle the optical information from the eyes.
+
+Modality is the physical phenomenon that is sensed by the sensory organs,
+taste, smell, pressure, and temperature. 
+
+The information from the different censors, the cortices in the brain, and the
+sensory modality of the world creates, in combination, a foundation of
+information for perception.
+
+\section{Mind}
+Perception can roughly be described in two perspectives, bottoms-up and top-down. 
+The top-down approach starts at the highest level of abstraction, and works its
+way down. It uses attention, concepts, and knowledge to comprehend the sensory
+input. The bottoms-up way is to take the smallest building blocks first and gradually
+build a bigger picture. Here low-level information is processed to become
+higher-level information. An example of this is that rough shapes can be
+interpreted as objects. \cite{Wiki-perception}
+Attention, learning, memories, and expectations are part of perception. These
+four aspects are what represents the experience part of perception. 
+
+In Gestalt psychology perception focusses on the whole picture. 
+”Perception of the whole is prior to that of its parts” - Wertheimer. And 
+”The whole is more than the sum of its parts” - Aristotle. 
+The world is apparently chaotic in Gestalt psychology. This has its effect on
+the ability to maintain and acquire meaningful perceptions. An understanding of
+laws in this context is what the Gestalt psychologist try to find. The notion
+that the mind creates a self-organizing global whole in this chaotic world is a
+central principle. \cite{Wiki-gestalt} 
+
+Direct vs indirect perception. 
+A popular discussion in psychology is direct vs indirect perception. The two
+thoughts that we on one side perceives the world directly, and the other, that
+we interpret the sensory input along the way. Here we have two distinct
+thoughts of how mind and body works on perception. In direct perception the
+body more or less places the finished though in the mind, while indirect
+perception provides the mind with information to be processed. Direct
+perception leaves experience and memory to be spice for the idea, while
+indirect perception uses memory and experiences as a filter for the sensory
+image. \cite{Wiki-naiveRealism} 
+
+Perception-in-action is the theory where action and perception is closely
+connected. Action is not possible without perception, and perception serves no
+purpose without action. Continual adjustment of perception and action to
+external input is regarded in constructivism as what constitutes the 'entity'. 
+
+Evolutionary psychology if associated with perception in some forms. Some
+evolutionary psychologists thinks that the purpose of perception is not knowledge,
+and that a primary use of perception is to guide movement. It is as an example
+suggested that eyesight is used to direct action, collision avoidance, and not for knowledge. 
+
+Perception is by some thought of to be the whole process of comprehending the
+environment around us. While others believe that perception is only the part
+where previous experience and sensory input is combined to a new abstract
+impression. 
+
+\section{Discussion}\label{conclusions}
+The basis for a discussion around perception and sensing has been presented
+with the sensory system and theories about perception. Where the sensory system provides the
+physical aspect of perception and the theories provide the different ideas of
+how perception really works in our mind.
+
+The two polarised ideas are that perception is the whole process of perceiving
+the environment we inhabit, and that perception is only the interpreting aspect
+of combining sensory information and experiences. 
+
+For the first idea, perception as a whole, reduces the difference of sensing
+and perception to more or less the same action/event. This is described by
+Gibson in his theory of direct-perception. We can also see this in evolutionary
+psychology where it is believed that perception is used to guide action. 
+
+On the other hand, with the second idea, perception is used in many cases to
+gain knowledge. People can also use reflection and think of new ideas that
+change perception, or change how we perceive the environment we currently
+occupy.
+
+The two ideas have two different complexity levels. The first idea is much more
+complex than the second. It is easier to understand a modular system where the
+sensing happens in the sensory system, and perception is the product of
+different sources of information(sensory input, and previously experienced
+knowledge).  
+
+% references / bibliography
+%\cite{deyer}
+\addcontentsline{toc}{section}{References}
+\begin{thebibliography}{1}
+
+\bibitem{Wiki-sensorySystem}{
+Wikipedia on the Sensory System, 09.03.15, \url{https://en.wikipedia.org/wiki/Sensory_system}
+}
+
+\bibitem{Wiki-perception}{
+Wikipedia on Perception, 09.03.15, \url{https://en.wikipedia.org/wiki/Perception}
+}
+
+\bibitem{Wiki-gestalt}{
+Wikipedia on Gestalt psychology, 10.03.15, \url{https://en.wikipedia.org/wiki/Gestalt_psychology}
+}
+
+\bibitem{Wiki-psychophysics}{
+Wikipedia on Psychophysics, 10.03.15, \url{https://en.wikipedia.org/wiki/Psychophysics}
+}
+
+\bibitem{Wiki-cognitiveRevolution}{
+Wikipedia on Cognitive Revolution, 10.03.15, \url{https://en.wikipedia.org/wiki/Cognitive_revolution}
+}
+
+\bibitem{Wiki-naiveRealism}{
+Wikipedia on Naïve Realism, 10.03.15, \url{https://en.wikipedia.org/wiki/Na%C3%AFve_realism}
+}
+
+\end{thebibliography}
+
+\end{document}
+This is never printed
