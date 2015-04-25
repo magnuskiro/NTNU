@@ -1,4 +1,4 @@
-TDT4252 - Enterprise Modeling and Enterprise Architecture
+TDT4252 - Enterprise Modelling and Enterprise Architecture
 ======
 Semester: ()<-- insert here:[v15/v11/h09/]
 
